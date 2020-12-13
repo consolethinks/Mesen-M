@@ -14,6 +14,7 @@ protected:
 	void InitMapper() override
 	{
 		AddRegisterRange(0x5000, 0x5003, MemoryOperation::Write);
+		AddRegisterRange(0x8000, 0xffff, MemoryOperation::Write);
 	}
 
 	void Reset(bool softReset) override
@@ -37,14 +38,16 @@ protected:
 	{
 		if(_regs[0] & 0x80) {
 			if(_regs[1] & 0x80) {
-				SelectPrgPage2x(0, (_regs[1] & 0x1F) << 1);
+				SelectPrgPage2x(0, (_regs[1] & 0x3F) << 1);
 			} else {
-				int bank = ((_regs[1] & 0x1F) << 1) | ((_regs[1] >> 6) & 0x01);
+				int bank = ((_regs[1] & 0x3F) << 1) | ((_regs[1] >> 6) & 0x01);
 				SelectPRGPage(0, bank);
 				SelectPRGPage(1, bank);
 			}
 		} else {
-			SelectPRGPage(1, ((_regs[1] & 0x1F) << 1) | ((_regs[1] >> 6) & 0x01));
+			SelectPRGPage(0, ((_regs[1] & 0x3C) << 1) | _regs[3]);
+			SelectPRGPage(1, ((_regs[1] & 0x3C) << 1) | 0x07);
+			//SelectPRGPage(1, ((_regs[1] & 0x3F) << 1) | ((_regs[1] >> 6) & 0x01));
 		}
 		SetMirroringType(_regs[0] & 0x20 ? MirroringType::Horizontal : MirroringType::Vertical);
 		SelectCHRPage(0, (_regs[2] << 2) | ((_regs[0] >> 1) & 0x03));
@@ -55,7 +58,7 @@ protected:
 		if(addr < 0x8000) {
 			_regs[addr & 0x03] = value;
 		} else {
-			_regs[3] = value;
+			_regs[3] = (value & 0x07);
 		}
 
 		UpdateState();
