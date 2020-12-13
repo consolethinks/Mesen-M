@@ -1,0 +1,22 @@
+
+image: ubuntu:20.04
+
+stages:
+  - build
+
+before_script:
+  - apt update
+  - apt install build-essential
+  - apt install libsdl2-devel
+  - apt install mono-devel
+
+release:
+  stage: build
+  only:
+    - master
+  artifacts:
+    paths:
+      - bin/x64/Release/Mesen.exe
+  script:
+    # The output path is relative to the position of the csproj-file
+    - make
