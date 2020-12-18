@@ -27,12 +27,23 @@ protected:
 
 	void UpdateState()
 	{
-		uint8_t prgReg = (_regs[1] >> 3) & 7;
-		uint8_t prgMask = (_regs[1] >> 4) & 4;
-		SelectCHRPage(0, (((_regs[0] >> 4) & 0x07) & ~(((_regs[0] & 0x01) << 2) | (_regs[0] & 0x02))));
-		SelectPRGPage(0, prgReg & (~prgMask));
-		SelectPRGPage(1, prgReg | prgMask);
+		//uint8_t prgReg = (_regs[1] >> 3) & 7;
+		//uint8_t prgMask = (_regs[1] >> 4) & 4;
+		//SelectCHRPage(0, (((_regs[0] >> 4) & 0x07) & ~(((_regs[0] & 0x01) << 2) | (_regs[0] & 0x02))));
+		//SelectPRGPage(0, prgReg & (~prgMask));
+		//SelectPRGPage(1, prgReg | prgMask);
+		
+		uint8_t prgReg = ((_regs[1] >> 2) & 0x06) | ((_regs[1] >> 5) & 0x01);
+		uint8_t prgMask = (_regs[1] >> 6) & 0x01 ^ 0x01;
+		SelectCHRPage(0, _regs[0] >> 4);
+		SelectPRGPage(0, prgReg & (0xFE | prgMask));
+		SelectPRGPage(1, prgReg | ((~prgMask) & 0x01));
 		SetMirroringType(_regs[1] & 0x80 ? MirroringType::Vertical : MirroringType::Horizontal);
+		
+		//uint8_t prgReg = ((_regs[1] >> 2) & 0x06) | ((_regs[1] >> 5) & 0x01);
+		//if (_regs[1] & 0x40)
+		//{
+		//	
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
