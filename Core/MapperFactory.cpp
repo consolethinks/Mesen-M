@@ -129,6 +129,7 @@
 #include "Mapper213.h"
 #include "Mapper214.h"
 #include "Mapper216.h"
+#include "Mapper217.h"
 #include "Mapper218.h"
 #include "Mapper221.h"
 #include "Mapper222.h"
@@ -177,7 +178,7 @@
 #include "MMC3_205.h"
 #include "MMC3_208.h"
 #include "MMC3_215.h"
-#include "MMC3_217.h"
+//#include "MMC3_217.h"
 #include "MMC3_219.h"
 #include "MMC3_224.h"
 #include "MMC3_238.h"
@@ -511,7 +512,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 214: return new Mapper214();
 		case 215: return new MMC3_215();
 		case 216: return new Mapper216();
-		case 217: return new MMC3_217();
+		//case 217: return new MMC3_217();
+		case 217: return new Mapper217(); // Mapper 217 was redefined
 		case 218: return new Mapper218();
 		case 219: return new MMC3_219();
 		case 220: return new Kaiser7057();
