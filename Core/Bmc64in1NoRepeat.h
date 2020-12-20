@@ -14,7 +14,6 @@ protected:
 	void InitMapper() override
 	{
 		AddRegisterRange(0x5000, 0x5003, MemoryOperation::Write);
-		AddRegisterRange(0x8000, 0xffff, MemoryOperation::Write);
 	}
 
 	void Reset(bool softReset) override

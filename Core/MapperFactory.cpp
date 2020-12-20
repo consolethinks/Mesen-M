@@ -213,6 +213,7 @@
 #include "Racermate.h"
 #include "Rambo1.h"
 #include "Rambo1_158.h"
+#include "Realtec8031.h"
 #include "ResetTxrom.h"
 #include "Rt01.h"
 #include "Sachen_133.h"
@@ -629,6 +630,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 350: break; //891227
 
 		case 366: return new BmcGn45();
+
+		case 390: return new Realtec8031();
 
 		case 513: return new Sachen9602();
 		//514-517
