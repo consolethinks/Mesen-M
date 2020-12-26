@@ -105,15 +105,13 @@ protected:
 	void Reset(bool softReset) override
 	{
 		if(softReset) {
-			if(_wramConfigEnabled && _selectChrRam && HasBattery()) {
-				_prgBaseBits = 0;
-				UpdateState();
-			}
+			InitMapper();
 		}
 	}
 
 	void StreamState(bool saving) override 
 	{
+		BaseMapper::StreamState(saving);
 		SnapshotInfo a12Watcher { &_a12Watcher };
 		ArrayInfo<uint8_t> regs { _mmc3Registers, 12 };
 
@@ -244,7 +242,7 @@ protected:
 					return;
 				}
 
-				switch(addr & 0x03) {
+				switch(addr & 0x0F) {
 					case 0:
 						_prgBankingMode = value & 0x07;
 						_outerChrBankSize = (value & 0x10) >> 4;

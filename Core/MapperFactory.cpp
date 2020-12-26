@@ -7,6 +7,7 @@
 #include "RomData.h"
 #include "VirtualFile.h"
 
+#include "970630C.h"
 #include "A65AS.h"
 #include "Ac08.h"
 #include "Action53.h"
@@ -186,6 +187,7 @@
 #include "MMC3_249.h"
 #include "MMC3_250.h"
 #include "MMC3_254.h"
+#include "MMC3_534.h"
 #include "MMC3_Bmc411120C.h"
 #include "MMC3_BmcF15.h"
 #include "MMC3_ChrRam.h"
@@ -631,6 +633,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 
 		case 366: return new BmcGn45();
 
+		case 380: return new _970630C();
+
 		case 390: return new Realtec8031();
 
 		case 513: return new Sachen9602();
@@ -648,6 +652,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 528: break; //831128C
 		case 529: return new T230();
 		case 530: return new Ax5705();
+		
+		case 534: return new MMC3_534();
 
 		case UnifBoards::Ac08: return new Ac08(); //mapper 42?
 		case UnifBoards::Cc21: return new Cc21();

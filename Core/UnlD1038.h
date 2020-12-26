@@ -25,6 +25,14 @@ protected:
 		Stream(_returnDipSwitch);
 	}
 
+	void Reset(bool softReset) override
+	{
+		if(softReset) {
+			// M2 signal interrupted -> mapper resets itself
+			InitMapper();
+		}
+	}
+
 	uint8_t ReadRegister(uint16_t addr) override
 	{
 		if(_returnDipSwitch) {
