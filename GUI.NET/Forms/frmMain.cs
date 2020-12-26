@@ -1369,7 +1369,7 @@ namespace Mesen.GUI.Forms
 
 		private void UpdateWindowTitle()
 		{
-			string title = "Mesen";
+			string title = "Mesen-M";
 			if(!string.IsNullOrWhiteSpace(_currentGame)) {
 				title += " - " + _currentGame;
 			}

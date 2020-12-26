@@ -157,7 +157,7 @@ namespace Mesen.GUI.Forms
 
 		private void mnuReportBug_Click(object sender, EventArgs e)
 		{
-			Process.Start("http://www.mesen.ca/ReportBug.php");
+			Process.Start("https://gitlab.com/consolethinks/mesen-m/-/issues/new");
 		}
 
 		private void mnuHelpWindow_Click(object sender, EventArgs e)

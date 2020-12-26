@@ -39,5 +39,15 @@ namespace Mesen.GUI.Forms
 		{
 			Process.Start("http://www.mesen.ca/Donate.php?l=" + ResourceHelper.GetLanguageCode());
 		}
-	}
+
+	  private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+	  {
+
+	  }
+
+	  private void labelCopyright_Click(object sender, EventArgs e)
+	  {
+
+	  }
+   }
 }
