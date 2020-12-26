@@ -52,7 +52,13 @@ struct TraceLoggerOptions
 class TraceLogger
 {
 private:
+#ifndef _WIN32
 	static constexpr int ExecutionLogSize = 30000;
+#else
+	// for some reason, newest VS2019 just doesn't like 30000 heap allocation
+	// though 30000 units on the heap is already stretching it
+	static constexpr int ExecutionLogSize = 15000;
+#endif
 
 	//Must be static to be thread-safe when switching game
 	static string _executionTrace;
