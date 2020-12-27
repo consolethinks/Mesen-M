@@ -7,7 +7,7 @@ class SuborKeyboard : public BaseControlDevice
 private:
 	uint8_t _row = 0;
 	uint8_t _column = 0;
-	bool _enabled = false;
+	//bool _enabled = false;
 
 protected:
 	string GetKeyNames() override
@@ -77,7 +77,8 @@ protected:
 	void StreamState(bool saving) override
 	{
 		BaseControlDevice::StreamState(saving);
-		Stream(_row, _column, _enabled);
+		//Stream(_row, _column, _enabled);
+		Stream(_row, _column);
 	}
 
 	void RefreshStateBuffer() override
@@ -98,14 +99,18 @@ public:
 
 	uint8_t ReadRAM(uint16_t addr) override
 	{
-		if(addr == 0x4017) {
+		/*if(addr == 0x4017) {
 			if(_enabled) {
 				uint8_t value = ((~GetActiveKeys(_row, _column)) << 1) & 0x1E;
 				return value;
 			} else {
 				return 0x1E;
 			}
+		}*/
+		if(addr == 0x4017 && _row < 13) {
+			return ((~GetActiveKeys(_row, _column)) & 0x0F) << 1;
 		}
+
 		return 0;
 	}
 
@@ -115,11 +120,22 @@ public:
 
 		uint8_t prevColumn = _column;
 		_column = (value & 0x02) >> 1;
-		_enabled = (value & 0x04) != 0;
+		/*_enabled = (value & 0x04) != 0;
 
 		if(_enabled) {
 			if(!_column && prevColumn) {
 				_row = (_row + 1) % 13;
+			}
+		}*/
+		if(value & 0x04) {
+			if (value & 0x01) {
+				_row = 0;
+			} else if(!_column && prevColumn) {
+				++_row;
+			}
+		} else {
+			if(!value) {
+				_row = 13;
 			}
 		}
 	}
