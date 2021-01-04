@@ -68,100 +68,130 @@ void EmulationSettings::InitializeInputDevices(GameInputType inputType, GameSyst
 
 	bool isFamicom = (system == GameSystem::Famicom || system == GameSystem::FDS || system == GameSystem::Dendy);
 
-	if(inputType == GameInputType::VsZapper) {
-		//VS Duck Hunt, etc. need the zapper in the first port
-		log("[Input] VS Zapper connected");
-		controllers[0] = ControllerType::Zapper;
-	} else if(inputType == GameInputType::Zapper) {
-		log("[Input] Zapper connected");
-		if(isFamicom) {
-			expDevice = ExpansionPortDevice::Zapper;
-		} else {
-			controllers[1] = ControllerType::Zapper;
-		}
-	} else if(inputType == GameInputType::FourScore) {
-		log("[Input] Four score connected");
-		SetFlags(EmulationFlags::HasFourScore);
-		controllers[2] = controllers[3] = ControllerType::StandardController;
-	} else if(inputType == GameInputType::FourPlayerAdapter) {
-		log("[Input] Four player adapter connected");
-		SetFlags(EmulationFlags::HasFourScore);
-		expDevice = ExpansionPortDevice::FourPlayerAdapter;
-		controllers[2] = controllers[3] = ControllerType::StandardController;
-	} else if(inputType == GameInputType::ArkanoidControllerFamicom) {
-		log("[Input] Arkanoid controller (Famicom) connected");
-		expDevice = ExpansionPortDevice::ArkanoidController;
-	} else if(inputType == GameInputType::ArkanoidControllerNes) {
-		log("[Input] Arkanoid controller (NES) connected");
-		controllers[1] = ControllerType::ArkanoidController;
-	} else if(inputType == GameInputType::DoubleArkanoidController) {
-		log("[Input] 2x arkanoid controllers (NES) connected");
-		controllers[0] = ControllerType::ArkanoidController;
-		controllers[1] = ControllerType::ArkanoidController;
-	} else if(inputType == GameInputType::OekaKidsTablet) {
-		log("[Input] Oeka Kids Tablet connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::OekaKidsTablet;
-	} else if(inputType == GameInputType::KonamiHyperShot) {
-		log("[Input] Konami Hyper Shot connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::KonamiHyperShot;
-	} else if(inputType == GameInputType::FamilyBasicKeyboard) {
-		log("[Input] Family Basic Keyboard connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::FamilyBasicKeyboard;
-	} else if(inputType == GameInputType::PartyTap) {
-		log("[Input] Party Tap connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::PartyTap;
-	} else if(inputType == GameInputType::PachinkoController) {
-		log("[Input] Pachinko controller connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::Pachinko;
-	} else if(inputType == GameInputType::ExcitingBoxing) {
-		log("[Input] Exciting Boxing controller connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::ExcitingBoxing;
-	} else if(inputType == GameInputType::SuborKeyboardMouse1) {
-		log("[Input] Subor mouse connected");
-		log("[Input] Subor keyboard connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::SuborKeyboard;
-		controllers[1] = ControllerType::SuborMouse;
-	} else if(inputType == GameInputType::JissenMahjong) {
-		log("[Input] Jissen Mahjong controller connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::JissenMahjong;
-	} else if(inputType == GameInputType::BarcodeBattler) {
-		log("[Input] Barcode Battler barcode reader connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::BarcodeBattler;
-	} else if(inputType == GameInputType::BandaiHypershot) {
-		log("[Input] Bandai Hyper Shot gun connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::BandaiHyperShot;
-	} else if(inputType == GameInputType::BattleBox) {
-		log("[Input] Battle Box connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::BattleBox;
-	} else if(inputType == GameInputType::TurboFile) {
-		log("[Input] Ascii Turbo File connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::AsciiTurboFile;
-	} else if(inputType == GameInputType::FamilyTrainerSideA || inputType == GameInputType::FamilyTrainerSideB) {
-		log("[Input] Family Trainer mat connected");
-		system = GameSystem::Famicom;
-		expDevice = ExpansionPortDevice::FamilyTrainerMat;
-	} else if(inputType == GameInputType::PowerPadSideA || inputType == GameInputType::PowerPadSideB) {
-		log("[Input] Power Pad connected");
-		system = GameSystem::NesNtsc;
-		controllers[1] = ControllerType::PowerPad;
-	} else if(inputType == GameInputType::SnesControllers) {
-		log("[Input] 2 SNES controllers connected");
-		controllers[0] = ControllerType::SnesController;
-		controllers[1] = ControllerType::SnesController;
-	} else {
-		log("[Input] 2 standard controllers connected");
+	switch(inputType) {
+		case GameInputType::VsZapper:
+			//VS Duck Hunt, etc. need the zapper in the first port
+			log("[Input] VS Zapper connected");
+			controllers[0] = ControllerType::Zapper;
+			break;
+		case GameInputType::Zapper:
+			log("[Input] Zapper connected");
+			if(isFamicom) {
+				expDevice = ExpansionPortDevice::Zapper;
+			} else {
+				controllers[1] = ControllerType::Zapper;
+			}
+			break;
+		case GameInputType::FourScore:
+			log("[Input] Four score connected");
+			SetFlags(EmulationFlags::HasFourScore);
+			controllers[2] = controllers[3] = ControllerType::StandardController;
+			break;
+		case GameInputType::FourPlayerAdapter:
+			log("[Input] Four player adapter connected");
+			SetFlags(EmulationFlags::HasFourScore);
+			expDevice = ExpansionPortDevice::FourPlayerAdapter;
+			controllers[2] = controllers[3] = ControllerType::StandardController;
+			break;
+		case GameInputType::ArkanoidControllerFamicom:
+			log("[Input] Arkanoid controller (Famicom) connected");
+			expDevice = ExpansionPortDevice::ArkanoidController;
+			break;
+		case GameInputType::ArkanoidControllerNes:
+			log("[Input] Arkanoid controller (NES) connected");
+			controllers[1] = ControllerType::ArkanoidController;
+			break;
+		case GameInputType::DoubleArkanoidController:
+			log("[Input] 2x arkanoid controllers (NES) connected");
+			controllers[0] = ControllerType::ArkanoidController;
+			controllers[1] = ControllerType::ArkanoidController;
+			break;
+		case GameInputType::OekaKidsTablet:
+			log("[Input] Oeka Kids Tablet connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::OekaKidsTablet;
+			break;
+		case GameInputType::KonamiHyperShot:
+			log("[Input] Konami Hyper Shot connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::KonamiHyperShot;
+			break;
+		case GameInputType::FamilyBasicKeyboard:
+			log("[Input] Family Basic Keyboard connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::FamilyBasicKeyboard;
+			break;
+		case GameInputType::PartyTap:
+			log("[Input] Party Tap connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::PartyTap;
+			break;
+		case GameInputType::PachinkoController:
+			log("[Input] Pachinko controller connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::Pachinko;
+			break;
+		case GameInputType::ExcitingBoxing:
+			log("[Input] Exciting Boxing controller connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::ExcitingBoxing;
+			break;
+		case GameInputType::SuborKeyboard:
+			log("[Input] Subor keyboard connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::SuborKeyboard;
+			break;
+		case GameInputType::SuborKeyboardMouse1:
+			log("[Input] Subor mouse connected");
+			log("[Input] Subor keyboard connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::SuborKeyboard;
+			controllers[1] = ControllerType::SuborMouse;
+			break;
+		case GameInputType::JissenMahjong:
+			log("[Input] Jissen Mahjong controller connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::JissenMahjong;
+			break;
+		case GameInputType::BarcodeBattler:
+			log("[Input] Barcode Battler barcode reader connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::BarcodeBattler;
+			break;
+		case GameInputType::BandaiHypershot:
+			log("[Input] Bandai Hyper Shot gun connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::BandaiHyperShot;
+			break;
+		case GameInputType::BattleBox:
+			log("[Input] Battle Box connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::BattleBox;
+			break;
+		case GameInputType::TurboFile:
+			log("[Input] Ascii Turbo File connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::AsciiTurboFile;
+			break;
+		case GameInputType::FamilyTrainerSideA:
+		case GameInputType::FamilyTrainerSideB:
+			log("[Input] Family Trainer mat connected");
+			system = GameSystem::Famicom;
+			expDevice = ExpansionPortDevice::FamilyTrainerMat;
+			break;
+		case GameInputType::PowerPadSideA:
+		case GameInputType::PowerPadSideB:
+			log("[Input] Power Pad connected");
+			system = GameSystem::NesNtsc;
+			controllers[1] = ControllerType::PowerPad;
+			break;
+		case GameInputType::SnesControllers:
+			log("[Input] 2 SNES controllers connected");
+			controllers[0] = ControllerType::SnesController;
+			controllers[1] = ControllerType::SnesController;
+			break;
+		default:
+			log("[Input] 2 standard controllers connected");
 	}
 
 	isFamicom = (system == GameSystem::Famicom || system == GameSystem::FDS || system == GameSystem::Dendy);

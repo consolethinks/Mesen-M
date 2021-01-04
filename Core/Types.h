@@ -422,6 +422,10 @@ enum class GameInputType
 	SnesControllers = 0x2B,
 	RacermateBicycle = 0x2C, //not supported yet
 	UForce = 0x2D, //not supported yet
+	ROBStackUp = 0x2E, // not supported yet
+	CityPatrolmanLightGun = 0x2F, // not supported yet
+	SharpC1CassetteInterface = 0x30, // not supported yet
+	SwappedButtons = 0x31, // not supported yet
 	LastEntry
 };
 
