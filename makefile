@@ -161,10 +161,10 @@ official:
 	./build.sh
 	
 debug:
-	MONO_LOG_LEVEL=debug mono $(RELEASEFOLDER)/Mesen.exe
+	MONO_LOG_LEVEL=debug mono $(RELEASEFOLDER)/Mesen-M.exe
 
 run:
-	mono $(RELEASEFOLDER)/Mesen.exe
+	mono $(RELEASEFOLDER)/Mesen-M.exe
 
 clean:
 	rm -rf Lua/$(OBJFOLDER)
