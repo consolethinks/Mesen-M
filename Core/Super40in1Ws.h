@@ -12,6 +12,8 @@ protected:
 	uint16_t GetCHRPageSize() override { return 0x2000; }
 	uint16_t RegisterStartAddress() override { return 0x6000; }
 	uint16_t RegisterEndAddress() override { return 0xFFFF; }
+	bool AllowRegisterRead() override { return true; }
+	uint32_t GetDipSwitchCount() override { return 2; }
 
 	void InitMapper() override
 	{
@@ -56,7 +58,7 @@ protected:
 
 	uint8_t ReadRegister(uint16_t addr) override
 	{
-		if(_regs[1] & 0xC0) {
+		if((_regs[1] >> 6) & GetDipSwitches()) {
 			return _console->GetMemoryManager()->GetOpenBus(0xFF);
 		} else {
 			return InternalReadRam(addr);
