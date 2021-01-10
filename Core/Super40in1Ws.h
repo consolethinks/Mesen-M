@@ -12,7 +12,6 @@ protected:
 	uint16_t GetCHRPageSize() override { return 0x2000; }
 	uint16_t RegisterStartAddress() override { return 0x6000; }
 	uint16_t RegisterEndAddress() override { return 0xFFFF; }
-	bool AllowRegisterRead() override { return true; }
 	uint32_t GetDipSwitchCount() override { return 2; }
 
 	void InitMapper() override
@@ -36,14 +35,19 @@ protected:
 
 	void UpdateState()
 	{
-		if(_regs[0] & 0x08) {
-			// NROM-128
-			SelectPRGPage(0, (_regs[0] & 0x07) | ((_regs[0] & 0x40) >> 3));
-			SelectPRGPage(1, (_regs[0] & 0x07) | ((_regs[0] & 0x40) >> 3));
+		if((_regs[1] >> 6) & GetDipSwitches()) {
+			RemoveCpuMemoryMapping(0x8000, 0xFFFF);
 		} else {
-			// NROM-256
-			SelectPrgPage2x(0, (_regs[0] & 0x06) | ((_regs[0] & 0x40) >> 3));
+			if(_regs[0] & 0x08) {
+				// NROM-128
+				SelectPRGPage(0, (_regs[0] & 0x07) | ((_regs[0] & 0x40) >> 3));
+				SelectPRGPage(1, (_regs[0] & 0x07) | ((_regs[0] & 0x40) >> 3));
+			} else {
+				// NROM-256
+				SelectPrgPage2x(0, (_regs[0] & 0x06) | ((_regs[0] & 0x40) >> 3));
+			}
 		}
+		
 
 		if(_regs[1] & 0x30) {
 			// NROM
@@ -54,15 +58,6 @@ protected:
 		}
 		
 		SetMirroringType((_regs[0] & 0x10) ? MirroringType::Horizontal : MirroringType::Vertical);
-	}
-
-	uint8_t ReadRegister(uint16_t addr) override
-	{
-		if((_regs[1] >> 6) & GetDipSwitches()) {
-			return _console->GetMemoryManager()->GetOpenBus(0xFF);
-		} else {
-			return InternalReadRam(addr);
-		}
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
