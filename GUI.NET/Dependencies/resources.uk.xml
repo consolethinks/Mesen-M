@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Resources>
 	<Forms>
-		<Form ID="frmMain" Title="Mesen">
+		<Form ID="frmMain" Title="Mesen-M">
 			<Control ID="mnuFile">Файл</Control>
 			<Control ID="mnuOpen">Відкрити</Control>
 			<Control ID="mnuSaveState">Зберегти</Control>
@@ -353,7 +353,7 @@
 		<Form ID="frmPreferences" Title="Налаштування">
 			<Control ID="tpgGeneral">Загальні</Control>
 			<Control ID="lblDisplayLanguage">Мова :</Control>
-			<Control ID="chkSingleInstance">Дозволити лише одну копію Mesen одночасно</Control>
+			<Control ID="chkSingleInstance">Дозволити лише одну копію Mesen-M одночасно</Control>
 			<Control ID="chkAutomaticallyCheckForUpdates">Автоматично перевіряти оновлення</Control>
 
 			<Control ID="lblPauseBackgroundSettings">Пауза/Фонові настройки</Control>
@@ -361,7 +361,7 @@
 			<Control ID="chkAutoHideMenu">Автоматично приховувати панель меню</Control>
 			<Control ID="chkDisplayTitleBarInfo">Відображення додаткової інформації в рядку заголовка</Control>
 
-			<Control ID="chkConfirmExitResetPower">Підтвердження перед перезавантаженням/вимиканням/вихiдом Mesen</Control>
+			<Control ID="chkConfirmExitResetPower">Підтвердження перед перезавантаженням/вимиканням/вихiдом Mesen-M</Control>
 			<Control ID="chkPauseOnMovieEnd">Призупинити емуляцію в кiнцi запису</Control>
 			<Control ID="chkAllowBackgroundInput">Дозволити введення в фоновому режимі</Control>
 
@@ -373,7 +373,7 @@
 			<Control ID="chkAutoLoadIps">Завантажувати файли IPS/BPS автоматично</Control>
 			<Control ID="chkHidePauseOverlay">Не відображати екран паузи</Control>
 			<Control ID="chkDisplayMovieIcons">Відображати значок відтворення/запису при відтворенні або запису відео</Control>
-			<Control ID="btnOpenMesenFolder">Відкрити папку Mesen</Control>
+			<Control ID="btnOpenMesenFolder">Відкрити папку Mesen-M</Control>
 			<Control ID="btnResetSettings">Скинути конфігурацію</Control>
 
 			<Control ID="tpgFiles">Файли/Папки</Control>
@@ -384,8 +384,8 @@
 			<Control ID="chkMstFormat">.MST (Збереження)</Control>
 
 			<Control ID="grpDataStorageLocation">Папка зберігання даних</Control>
-			<Control ID="radStorageDocuments">Зберігати дані Mesen у моєму профілі користувача</Control>
-			<Control ID="radStoragePortable">Зберігати дані в тій же папці що і Mesen</Control>
+			<Control ID="radStorageDocuments">Зберігати дані Mesen-M у моєму профілі користувача</Control>
+			<Control ID="radStoragePortable">Зберігати дані в тій же папці що і Mesen-M</Control>
 			<Control ID="lblDataLocation">Папка:</Control>
 
 			<Control ID="grpPathOverrides">Перепам'ятовування папок</Control>
@@ -424,7 +424,7 @@
 			<Control ID="chkAllowMismatchingSaveStates">Дозволити збереження станів завантаження на модифіковані РОМи (наприклад IPS патчi)</Control>
 
 			<Control ID="grpCloudSaves">Хмарнi збереження</Control>
-			<Control ID="lblGoogleDriveIntegration">Mesen має можливість інтеграції з Google Drive . Коли інтеграція з Google Drive включена, ваші збереження стають доступні з будь-якого комп'ютера і можуть бути синхронізовані між комп'ютерами. Також, збереження зберігаються на Google Drive можуть бути відновлені якщо ви видалите їх зі свого комп'ютера.</Control>
+			<Control ID="lblGoogleDriveIntegration">Mesen-M має можливість інтеграції з Google Drive . Коли інтеграція з Google Drive включена, ваші збереження стають доступні з будь-якого комп'ютера і можуть бути синхронізовані між комп'ютерами. Також, збереження зберігаються на Google Drive можуть бути відновлені якщо ви видалите їх зі свого комп'ютера.</Control>
 			<Control ID="lblIntegrationOK">Iнтеграція с Google Drive включена</Control>
 			<Control ID="btnDisableIntegration">Вимкнути інтеграцію</Control>
 			<Control ID="btnEnableIntegration">Увімкнути інтеграцію</Control>
@@ -549,10 +549,10 @@
 			<Control ID="btnCancel">Вiдмiна</Control>
 		</Form>
 		<Form ID="frmAbout" Title="Про програму">
-			<Control ID="labelProductName">Mesen</Control>
-			<Control ID="labelCopyright">© 2020 M. Bibaud (aka Sour)</Control>
-			<Control ID="lblWebsite">Сайт:</Control>
-			<Control ID="lblLink">www.mesen.ca</Control>
+			<Control ID="labelProductName">Mesen-M</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
+			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (aka Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">Версiя:</Control>
 			<Control ID="lblBuildDateLabel">Build Date:</Control>
 
@@ -565,17 +565,17 @@
 			<Control ID="lblCheats">Cheats:</Control>
 			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (donations, bug reports, testing, sharing information, etc.)</Control>
 
-			<Control ID="lblDonate">Якщо ви хочете підтримати Mesen, будь ласка підтримайте.&#xA;Дякую за вашу підтримку!</Control>
+			<Control ID="lblDonate">Якщо ви хочете підтримати Mesen-M, будь ласка підтримайте.&#xA;Дякую за вашу підтримку!</Control>
 			<Control ID="okButton">&amp;OK</Control>
 		</Form>
 		<Form ID="frmGameConfig" Title="Конфігурація">
 			<Control ID="grpDipSwitches">Перемикачі DIP</Control>
 		</Form>
-		<Form ID="frmUpdatePrompt" Title="Mesen - Доступно оновлення">
+		<Form ID="frmUpdatePrompt" Title="Mesen-M - Доступно оновлення">
 			<Control ID="lblLatestVersion">Остання версія : </Control>
 			<Control ID="lblCurrentVersion">Поточна версія : </Control>
 			<Control ID="lblChangeLog">Cписок змін</Control>
-			<Control ID="lblDonate">Якщо ви хочете підтримати Mesen, будь ласка підтримайте. Дякую!</Control>
+			<Control ID="lblDonate">Якщо ви хочете підтримати Mesen-M, будь ласка підтримайте. Дякую!</Control>
 			<Control ID="btnUpdate">Оновити</Control>
 			<Control ID="btnCancel">Вiдмiна</Control>
 		</Form>
@@ -648,17 +648,17 @@
 			<Control ID="tpgVideoOptions">Вiдео Опцiї</Control>
 			<Control ID="tpgAudioOptions">Аудiо Опцiї</Control>
 			<Control ID="tpgEmulationOptions">Опцiї Эмуляцiї</Control>
-			<Control ID="lblExplanation">Це запустить Mesen у повноекранному режимi з "MyGame.nes" завантаженим ромом.  Вiн також буде використовувати фiльтр NTSC, встановлений у 2x масштабi та налаштує параметри Overscan. Прапор "DoNotSaveSettings" використовується для запобігання перемикання командного рядка від випадкової зміни налаштувань Mesen.</Control>
+			<Control ID="lblExplanation">Це запустить Mesen-M у повноекранному режимi з "MyGame.nes" завантаженим ромом.  Вiн також буде використовувати фiльтр NTSC, встановлений у 2x масштабi та налаштує параметри Overscan. Прапор "DoNotSaveSettings" використовується для запобігання перемикання командного рядка від випадкової зміни налаштувань Mesen-M.</Control>
 		</Form>
 		<Form ID="frmCopyFiles" Title="Будь ласка зачекайте...">
 			<Control ID="lblCopying">Копіювання:</Control>
 		</Form>
-		<Form ID="frmConfigWizard" Title="Mesen - Configuration">
-			<Control ID="lblMesen">Mesen - NES Эмулятор</Control>
+		<Form ID="frmConfigWizard" Title="Mesen-M - Configuration">
+			<Control ID="lblMesen">Mesen-M - NES Эмулятор</Control>
 			<Control ID="lblConfigWizard">Майстер конфігурації</Control>
-			<Control ID="lblInitialSetup">Будь ласка почекайте щоб виконати початкову настройку Mesen.</Control>
+			<Control ID="lblInitialSetup">Будь ласка почекайте щоб виконати початкову настройку Mesen-M.</Control>
 			<Control ID="lblStorageLocation">Місце зберігання даних</Control>
-			<Control ID="lblStorageHint">Виберіть де ви хочете зберегти дані Mesen:</Control>
+			<Control ID="lblStorageHint">Виберіть де ви хочете зберегти дані Mesen-M:</Control>
 			<Control ID="radStorageDocuments">Зберігати дані в моєму профілі користувача</Control>
 			<Control ID="radStoragePortable">Зберігати дані в тій же папці що і програма</Control>
 			<Control ID="lblDataLocation">Папка:</Control>
@@ -779,7 +779,7 @@
 		<Message ID="FilterRomIps">Всі підтримувані формати (*.nes, *.zip, *.7z, *.fds, *.nsf, *.nsfe, *.unf, *.unif, *.studybox, *.ips, *.bps, *.ups)|*.NES;*.ZIP;*.7z;*.IPS;*.BPS;*.UPS;*.FDS;*.NSF;*.NSFE;*.UNF;*.UNIF;*.STUDYBOX|NES Roms (*.nes, *.unf, *.unif)|*.NES;*.UNF;*.UNIF|Famicom Disk System Roms (*.fds)|*.FDS|NSF files (*.nsf, *.nsfe)|*.nsf;*.nsfe|ZIP Archives (*.zip)|*.ZIP|7-Zip Archives (*.7z)|*.7z|IPS/UPS/BPS Patches (*.ips, *.bps, *.ups)|*.IPS;*.BPS;*.UPS|All (*.*)|*.*</Message>
 		<Message ID="FilterTest">Test files (*.mtp)|*.mtp|All (*.*)|*.*</Message>
 		<Message ID="FilterCheat">Всі підтримувані формати (*.cht, *.xml)|*.cht;*.xml</Message>
-		<Message ID="FilterSavestate">Mesen Savestates (*.mst)|*.mst|All Files (*.*)|*.*</Message>
+		<Message ID="FilterSavestate">Mesen-M Savestates (*.mst)|*.mst|All Files (*.*)|*.*</Message>
 		<Message ID="FilterTapeFiles">Family Basic Tape files (*.fbt)|*.fbt|All Files (*.*)|*.*</Message>
 
 		<Message ID="LastSession">Last Session</Message>
@@ -804,7 +804,7 @@
 		<Message ID="BandaiMicrophone">Bandai Microphone</Message>
 		<Message ID="DatachBarcodeReader">Datach Barcode Reader</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen - Запустити Mesen у повноекранному режимi</Message>
+		<Message ID="HelpFullscreen">/fullscreen - Запустити Mesen-M у повноекранному режимi</Message>
 		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - Заборонити збереження налаштувань на диску (корисно щоб запобігти становленню параметрів командного рядка за замовчуванням)</Message>
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - Start recording a movie after the specified game is loaded.</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession - Resumes the game in the state it was left in when it was last played.</Message>
@@ -826,11 +826,11 @@
 
 		<Message ID="ResetSettingsConfirmation">Попередження: це скине ВСІ налаштування і не може бути скасовано!&#xA;&#xA;Продовжити?</Message>
 
-		<Message ID="RandomGameNoGameFound">Mesen не зміг знайти будь-які ігри для завантаження.</Message>
+		<Message ID="RandomGameNoGameFound">Mesen-M не зміг знайти будь-які ігри для завантаження.</Message>
 
 		<Message ID="CannotWriteToFolder">Вибрану папку не можна записати - будь ласка виберіть іншу папку та спробуйте знову.&#xA;&#xA;Подробиці:&#xA;{0}</Message>
 		<Message ID="InvalidPaths">Наступні переопределені шляхи є недійсними:&#xA;&#xA;{0}&#xA;&#xA;Будь ласка використовуйте дійсні та доступні для запису папки та повторіть спробу.</Message>
-		<Message ID="CopyMesenDataPrompt">Всі файли будуть скопійовані з:&#xA;&#xA;{0}&#xA;to&#xA;{1}&#xA;&#xA;Після того як копія буде завершена, Mesen перезавантажиться.&#xA;Продовжити?</Message>
+		<Message ID="CopyMesenDataPrompt">Всі файли будуть скопійовані з:&#xA;&#xA;{0}&#xA;to&#xA;{1}&#xA;&#xA;Після того як копія буде завершена, Mesen-M перезавантажиться.&#xA;Продовжити?</Message>
 
 		<Message ID="CheatsFound">iгр {0}, читiв {1}</Message>
 		<Message ID="CheatsImported">{0} читiв імпортовано для {1}.</Message>
@@ -842,7 +842,7 @@
 		<Message ID="CouldNotInstallRuntime">The Visual Studio Runtime був встановлений неправильно.</Message>
 		<Message ID="EmptyState">&lt;немає резервної копії&gt;</Message>
 		<Message ID="ErrorWhileCheckingUpdates">Не вдалося перевірити оновлення. Перевірте ваше з'єднання з інтернетом і спробуйте ще раз.&#xA;&#xA;Детально:&#xA;{0}</Message>
-		<Message ID="AutoUpdateDisabledMessage">Автоматичні оновлення не включені в цій збірці - будь ласка завантажте останню версію коду та перекомпілюйте Mesen щоб отримати останні оновлення.</Message>
+		<Message ID="AutoUpdateDisabledMessage">Автоматичні оновлення не включені в цій збірці - будь ласка завантажте останню версію коду та перекомпілюйте Mesen-M щоб отримати останні оновлення.</Message>
 		<Message ID="BiosNotFound">A bios file is required to run this game.&#xA;&#xA;  Filename: {0}&#xA;  Size: {1} bytes&#xA;&#xA;Select bios file now?</Message>
 		<Message ID="BiosMismatch">The selected file does not match the bios required for this game.&#xA;&#xA;Expected SHA-256:&#xA;{0}&#xA;&#xA;Selected file's SHA-256:&#xA;{1}&#xA;&#xA;Would you like to use this file anyway?</Message>
 		<Message ID="FdsDiskSide">Диск {0} Сторона {1}</Message>
@@ -863,19 +863,19 @@
 		<Message ID="InstallHdPackConfirmOverwrite">Папка призначення ({0}) вже існує - ви впевнені, що хочете перезаписати її?</Message>
 		<Message ID="InstallHdPackConfirmReset">HD Pack успішно встановлено. Ви хочете скинути гру i завантажити HD Pack зараз?</Message>
 
-		<Message ID="MesenUpToDate">Ви використовуєте останню версію Mesen</Message>
+		<Message ID="MesenUpToDate">Ви використовуєте останню версію Mesen-M</Message>
 		<Message ID="PatchAndReset">Пропатчити і скинути поточну гру?</Message>
 		<Message ID="SelectRomIps">Будь ласка, оберіть ROM відповідний IPS/UPS.</Message>
 		<Message ID="UnableToDownload">Неможливо завантажити файл. Перевірте ваше з'єднання з інтернетом і спробуйте ще раз.&#xA;&#xA;Детально:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">Mesen не вдалося запустити оскільки вiн не змiг завантажити MesenCore.dll через відсутність залежностей.</Message>
-		<Message ID="UnableToStartMissingFiles">Mesen не може запуститися через відсутні файли.&#xA;&#xA;Помилка: MesenCore.dll не знайдений.</Message>
+		<Message ID="UnableToStartMissingDependencies">Mesen-M не вдалося запустити оскільки вiн не змiг завантажити Mesen-MCore.dll через відсутність залежностей.</Message>
+		<Message ID="UnableToStartMissingFiles">Mesen-M не може запуститися через відсутні файли.&#xA;&#xA;Помилка: Mesen-MCore.dll не знайдений.</Message>
 		<Message ID="UnexpectedError">Невідома помилка.&#xA;&#xA;Детально:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">Завантаження не вдалася - файл пошкоджений. Будь ласка відвідайте сайт Mesen і завантажте останню версію вручну.</Message>
+		<Message ID="UpdateDownloadFailed">Завантаження не вдалася - файл пошкоджений. Будь ласка відвідайте сайт Mesen-M і завантажте останню версію вручну.</Message>
 		<Message ID="UpgradeSuccess">Оновлення пройшло успішно.</Message>
 		<Message ID="UpdaterNotFound">Оновлення не може бути розпочато через відсутніх файлів</Message>
 		<Message ID="Net45NotFound">Microsoft .NET Framework 4.5 не знайдений. Будь ласка завантажте і встановіть останню версію .NET Framework з сайту Microsoft і спробуйте знову.</Message>
 
-		<Message ID="GoogleDriveIntegrationError">Mesen не зміг підключитися до вашого аккаунту Google Drive - спробуйте ще раз.</Message>
+		<Message ID="GoogleDriveIntegrationError">Mesen-M не зміг підключитися до вашого аккаунту Google Drive - спробуйте ще раз.</Message>
 
 		<Message ID="InvalidCheatFile">Обраний Cheat файл ({0}) не є коректним.</Message>
 		<Message ID="InvalidXmlFile">Обраний XML файл ({0}) не є коректним.</Message>

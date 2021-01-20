@@ -99,7 +99,6 @@
 #include "Malee.h"
 #include "MagicKidGooGoo.h"
 #include "Mapper15.h"
-#include "Mapper35.h"
 #include "Mapper39.h"
 #include "Mapper40.h"
 #include "Mapper42.h"
@@ -353,7 +352,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 				case 1: return new Nina01();
 				case 2: return new BnRom();
 			}
-		case 35: return new Mapper35();
+		case 35: return new JyCompany();
 		case 36: return new Txc22000();
 		case 37: return new MMC3_37();
 		case 38: return new UnlPci556();
@@ -568,6 +567,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//272-273
 		case 274: return new Bmc80013B();
 		//275-282
+		case 281: return new JyCompany();
+		case 282: return new JyCompany();
 		case 283: return new Gs2004();
 		case 284: return new UnlDripGame();
 		case 285: return new A65AS();

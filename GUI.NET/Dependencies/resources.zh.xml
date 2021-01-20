@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Resources>
 	<Forms>
-		<Form ID="frmMain" Title="Mesen">
+		<Form ID="frmMain" Title="Mesen-M">
 			<Control ID="mnuFile">文件</Control>
 			<Control ID="mnuOpen">打开</Control>
 			<Control ID="mnuSaveState">保存进度</Control>
@@ -396,15 +396,15 @@
 			<Control ID="chkAutoLoadIps">自动打 IPS/BPS 补丁</Control>
 			<Control ID="chkHidePauseOverlay">暂停不变暗</Control>
 			<Control ID="chkDisplayMovieIcons">显示影片状态图标</Control>
-			<Control ID="btnOpenMesenFolder">打开 Mesen 文件夹</Control>
+			<Control ID="btnOpenMesenFolder">打开 Mesen-M 文件夹</Control>
 			<Control ID="btnResetSettings">重置所有设置</Control>
 
 			<Control ID="tpgFiles">文件 (夹)</Control>
 			<Control ID="grpFileAssociations">关联文件</Control>
 			<Control ID="chkNesFormat">.NES (Famicom 卡带)</Control>
 			<Control ID="chkFdsFormat">.FDS (磁碟)</Control>
-			<Control ID="chkMmoFormat">.MMO (Mesen 影片)</Control>
-			<Control ID="chkMstFormat">.MST (Mesen 保存数据)</Control>
+			<Control ID="chkMmoFormat">.MMO (Mesen-M 影片)</Control>
+			<Control ID="chkMstFormat">.MST (Mesen-M 保存数据)</Control>
 			<Control ID="chkNsfFormat">.NSF (NES 音乐格式)</Control>
 			<Control ID="chkNsfeFormat">.NSFe (NES 扩展音乐格式)</Control>
 
@@ -448,7 +448,7 @@
 			<Control ID="chkAllowMismatchingSaveStates">允许带补丁载入进度</Control>
 
 			<Control ID="grpCloudSaves">云保存</Control>
-			<Control ID="lblGoogleDriveIntegration">Mesen 可通过 Google Drive 将您的进度保存在云端，即使在其他计算机上，或者本地进度文件丢失，也依然可以同步访问.</Control>
+			<Control ID="lblGoogleDriveIntegration">Mesen-M 可通过 Google Drive 将您的进度保存在云端，即使在其他计算机上，或者本地进度文件丢失，也依然可以同步访问.</Control>
 			<Control ID="lblIntegrationOK">已启用 Google Drive</Control>
 			<Control ID="btnDisableIntegration">禁用 Google Drive</Control>
 			<Control ID="btnEnableIntegration">启用 Google Drive</Control>
@@ -572,11 +572,11 @@
 			<Control ID="btnOK">确定</Control>
 			<Control ID="btnCancel">取消</Control>
 		</Form>
-		<Form ID="frmAbout" Title="关于 Mesen">
-			<Control ID="labelProductName">Mesen</Control>
-			<Control ID="labelCopyright">© 2020 M. Bibaud (又名 Sour)</Control>
-			<Control ID="lblWebsite">网站:</Control>
-			<Control ID="lblLink">www.mesen.ca</Control>
+		<Form ID="frmAbout" Title="关于 Mesen-M">
+			<Control ID="labelProductName">Mesen-M</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
+			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (又名 Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">版本:</Control>
 			<Control ID="lblBuildDateLabel">构建日期:</Control>
 
@@ -589,18 +589,18 @@
 			<Control ID="lblCheats">作弊:</Control>
 			<Control ID="lblSpecialThanks">衷心感谢每一个捐赠、反馈、测试、分享或对本模拟器做出贡献的人！</Control>
 
-			<Control ID="lblDonate">如果您喜欢 Mesen 模拟器，请通过捐赠来支持我们！&#13;感谢你的支持！&#13;&#13;汉化：Licardo（albert.abdilim@foxmail.com） owomomo（ikyokyo@163.com）&#13;</Control>
+			<Control ID="lblDonate">如果您喜欢 Mesen-M 模拟器，请通过捐赠来支持我们！&#13;感谢你的支持！&#13;&#13;汉化：Licardo（albert.abdilim@foxmail.com） owomomo（ikyokyo@163.com）&#13;</Control>
 			<Control ID="okButton">确定</Control>
 		</Form>
 		<Form ID="frmGameConfig" Title="游戏配置">
 			<Control ID="grpDipSwitches">DIP 开关</Control>
 			<Control ID="btnReset">重置</Control>
 		</Form>
-		<Form ID="frmUpdatePrompt" Title="Mesen 有新版本">
+		<Form ID="frmUpdatePrompt" Title="Mesen-M 有新版本">
 			<Control ID="lblLatestVersion">最新版本:</Control>
 			<Control ID="lblCurrentVersion">当前版本:</Control>
 			<Control ID="lblChangeLog">更新日志</Control>
-			<Control ID="lblDonate">如果您喜欢 Mesen 模拟器，请通过捐赠来支持我们！谢谢！</Control>
+			<Control ID="lblDonate">如果您喜欢 Mesen-M 模拟器，请通过捐赠来支持我们！谢谢！</Control>
 			<Control ID="btnUpdate">更新</Control>
 			<Control ID="btnCancel">取消</Control>
 		</Form>
@@ -673,17 +673,17 @@
 			<Control ID="tpgVideoOptions">视频选项</Control>
 			<Control ID="tpgAudioOptions">音频选项</Control>
 			<Control ID="tpgEmulationOptions">模拟选项</Control>
-			<Control ID="lblExplanation">使用上面的命令行，Mesen 会以全屏模式启动、加载 "MyGame.nes"、使用 NTSC 滤镜、画面扩大到 2 倍，并且改变过扫描设置. "DoNotSaveSettings" 用于阻止命令行选项替代 Mesen 原本的设置.</Control>
+			<Control ID="lblExplanation">使用上面的命令行，Mesen-M 会以全屏模式启动、加载 "MyGame.nes"、使用 NTSC 滤镜、画面扩大到 2 倍，并且改变过扫描设置. "DoNotSaveSettings" 用于阻止命令行选项替代 Mesen-M 原本的设置.</Control>
 		</Form>
 		<Form ID="frmCopyFiles" Title="正在复制，请稍候...">
 			<Control ID="lblCopying">复制中:</Control>
 		</Form>
-		<Form ID="frmConfigWizard" Title="Mesen 设置">
-			<Control ID="lblMesen">Mesen - 红白机模拟器</Control>
+		<Form ID="frmConfigWizard" Title="Mesen-M 设置">
+			<Control ID="lblMesen">Mesen-M - 红白机模拟器</Control>
 			<Control ID="lblConfigWizard">设置向导</Control>
-			<Control ID="lblInitialSetup">稍微占用您一点时间进行 Mesen 初始化设置.</Control>
+			<Control ID="lblInitialSetup">稍微占用您一点时间进行 Mesen-M 初始化设置.</Control>
 			<Control ID="lblStorageLocation">数据保存位置</Control>
-			<Control ID="lblStorageHint">请选择 Mesen 保存数据的位置:</Control>
+			<Control ID="lblStorageHint">请选择 Mesen-M 保存数据的位置:</Control>
 			<Control ID="radStorageDocuments">用户文件夹</Control>
 			<Control ID="radStoragePortable">程序文件夹</Control>
 			<Control ID="lblDataLocation">文件夹:</Control>
@@ -804,7 +804,7 @@
 		<Message ID="FilterRomIps">所有支持的格式 (*.nes, *.zip, *.7z, *.fds, *.nsf, *.nsfe, *.unf, *.unif, *.studybox, *.ips, *.bps, *.ups)|*.NES;*.ZIP;*.7z;*.IPS;*.BPS;*.UPS;*.FDS;*.NSF;*.NSFE;*.UNF;*.UNIF;*.STUDYBOX|NES ROM (*.nes, *.unf, *.unif)|*.NES;*.UNF;*.UNIF|Famicom 磁盘 (*.fds)|*.FDS|NSF 音乐 (*.nsf, *.nsfe)|*.nsf;*.nsfe|ZIP 档案 (*.zip)|*.ZIP|7-Zip 档案 (*.7z)|*.7z|IPS/UPS/BPS 补丁 (*.ips, *.bps, *.ups)|*.IPS;*.BPS;*.UPS|所有文件 (*.*)|*.*</Message>
 		<Message ID="FilterTest">测试文件 (*.mtp)|*.mtp|所有文件 (*.*)|*.*</Message>
 		<Message ID="FilterCheat">所有支持的格式 (*.cht, *.xml)|*.cht;*.xml</Message>
-		<Message ID="FilterSavestate">Mesen 进度 (*.mst)|*.mst|所有文件 (*.*)|*.*</Message>
+		<Message ID="FilterSavestate">Mesen-M 进度 (*.mst)|*.mst|所有文件 (*.*)|*.*</Message>
 		<Message ID="FilterTapeFiles">Family Basic 磁带文件 (*.fbt)|*.fbt|所有文件 (*.*)|*.*</Message>
 
 		<Message ID="LastSession">续玩</Message>
@@ -835,8 +835,8 @@
 		<Message ID="BandaiMicrophone">Bandai 麦克风</Message>
 		<Message ID="DatachBarcodeReader">附加条码机</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen - 全屏模式启动 Mesen</Message>
-		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - 阻止命令行的选项替代 Mesen 原本的设置 (防止命令行选项成为默认设置).</Message>
+		<Message ID="HelpFullscreen">/fullscreen - 全屏模式启动 Mesen-M</Message>
+		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - 阻止命令行的选项替代 Mesen-M 原本的设置 (防止命令行选项成为默认设置).</Message>
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - 载入指定游戏后开始录制电影。</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession - 从上次中断的位置继续。</Message>
 
@@ -855,10 +855,10 @@
 		<Message ID="RomsFound">已找到 {0} 个 ROM</Message>
 		<Message ID="RiskyOptionHint">(不推荐)</Message>
 		<Message ID="ResetSettingsConfirmation">警告：这将重置所有设置，无法撤消！&#xA;&#xA;继续？</Message>
-		<Message ID="RandomGameNoGameFound">Mesen 找不到任何可以加载的游戏.</Message>
+		<Message ID="RandomGameNoGameFound">Mesen-M 找不到任何可以加载的游戏.</Message>
 		<Message ID="CannotWriteToFolder">无法写入所选文件夹 - 请选择其他文件夹然后重试。&#xA;&#xA;详细信息：&#xA; {0}</Message>
 		<Message ID="InvalidPaths">以下路径覆盖无效：&#xA;&#xA;{0}&#xA;&#xA;请使用有效和可写的文件夹，然后重试.</Message>
-		<Message ID="CopyMesenDataPrompt">所有文件都将从：&#xA;&#xA;{0}&#xA;复制到&#xA;{1}&#xA;&#xA;复制完成后，Mesen 将重新启动.&#xA;继续？</Message>
+		<Message ID="CopyMesenDataPrompt">所有文件都将从：&#xA;&#xA;{0}&#xA;复制到&#xA;{1}&#xA;&#xA;复制完成后，Mesen-M 将重新启动.&#xA;继续？</Message>
 
 		<Message ID="CheatsFound">数据库中有 {0} 个游戏和 {1} 条作弊</Message>
 		<Message ID="CheatsImported">已给 {1} 导入 {0} 条作弊.</Message>
@@ -870,7 +870,7 @@
 		<Message ID="CouldNotInstallRuntime">Visual Studio 运行库未正确安装.</Message>
 		<Message ID="EmptyState">&lt;空&gt;</Message>
 		<Message ID="ErrorWhileCheckingUpdates">检查更新时出错，请确认网络通畅然后再试.&#xA;&#xA;详情:&#xA;{0}</Message>
-		<Message ID="AutoUpdateDisabledMessage">此编译版未启用自动更新，要想获得最新版 Mesen，请下载最新版源码来编译.</Message>
+		<Message ID="AutoUpdateDisabledMessage">此编译版未启用自动更新，要想获得最新版 Mesen-M，请下载最新版源码来编译.</Message>
 		<Message ID="BiosNotFound">缺少 FDS 游戏所需 BIOS.&#xA;&#xA;  文件名: {0}&#xA;  大小: {1} 字节&#xA;&#xA;是否要立即手动指定？</Message>
 		<Message ID="BiosMismatch">所选文件不适用于此游戏。&#xA;&#xA;期望 SHA-256:&#xA;{0}&#xA;&#xA;所选文件 SHA-256:&#xA;{1}&#xA;&#xA;是否仍要使用此文件？</Message>
 		<Message ID="FdsDiskSide">磁盘 {0} 的 {1} 面</Message>
@@ -890,19 +890,19 @@
 		<Message ID="InstallHdPackConfirmOverwrite">目标文件夹“{0}”已存在，是否覆盖？</Message>
 		<Message ID="InstallHdPackConfirmReset">HD 包成功安装，是否立即重设游戏并加载？</Message>
 
-		<Message ID="MesenUpToDate">您的 Mesen 已是最新版本.</Message>
+		<Message ID="MesenUpToDate">您的 Mesen-M 已是最新版本.</Message>
 		<Message ID="PatchAndReset">打补丁需要重设游戏，是否继续？</Message>
 		<Message ID="SelectRomIps">请选择补丁对应 ROM.</Message>
 		<Message ID="UnableToDownload">无法载入文件.请检查您的网络连接后再试.&#xA;&#xA;详情:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">Mesen 因无法加载依赖项 MesenCore.dll 而无法启动.</Message>
-		<Message ID="UnableToStartMissingFiles">Mesen 因缺少文件而无法启动.&#xA;&#xA;错误: 缺少 MesenCore.dll.</Message>
+		<Message ID="UnableToStartMissingDependencies">Mesen-M 因无法加载依赖项 MesenCore.dll 而无法启动.</Message>
+		<Message ID="UnableToStartMissingFiles">Mesen-M 因缺少文件而无法启动.&#xA;&#xA;错误: 缺少 MesenCore.dll.</Message>
 		<Message ID="UnexpectedError">发生意外错误.&#xA;&#xA;详情:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">下载失败 - 文件损坏.请自行访问 Mesen 官网下载最近版本.</Message>
+		<Message ID="UpdateDownloadFailed">下载失败 - 文件损坏.请自行访问 Mesen-M 官网下载最近版本.</Message>
 		<Message ID="UpdaterNotFound">因文件丢失无法升级.</Message>
 		<Message ID="UpgradeSuccess">升级成功.</Message>
 		<Message ID="Net45NotFound">找不到 Microsoft .NET Framework 4.5，请访问 Microsoft 官网下载之后再试.</Message>
 
-		<Message ID="GoogleDriveIntegrationError">Mesen 无法连接您的 Google Drive 账户 - 请稍后再试.</Message>
+		<Message ID="GoogleDriveIntegrationError">Mesen-M 无法连接您的 Google Drive 账户 - 请稍后再试.</Message>
 		<Message ID="InvalidCheatFile">{0} 不是有效作弊文件.</Message>
 		<Message ID="InvalidXmlFile">{0} 不是有效 XML 文件.</Message>
 		<Message ID="NoMatchingCheats">{0} 没有对应该游戏的作弊.</Message>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Resources>
 	<Forms>
-		<Form ID="frmMain" Title="Mesen">
+		<Form ID="frmMain" Title="Mesen-M">
 			<Control ID="mnuFile">ファイル</Control>
 			<Control ID="mnuOpen">開く</Control>
 			<Control ID="mnuSaveState">クイックセーブ</Control>
@@ -105,7 +105,7 @@
 			<Control ID="mnuCheckForUpdates">アップデートの確認</Control>
 			<Control ID="mnuReportBug">バグレポート</Control>
 			<Control ID="mnuHelpWindow">コマンドラインオプション</Control>
-			<Control ID="mnuAbout">Mesenとは</Control>
+			<Control ID="mnuAbout">Mesen-Mとは</Control>
 
 			<!-- Archive Load Message -->
 			<Control ID="lblExtractingFile">ファイルを抽出中です。しばらく待ってください。</Control>
@@ -147,8 +147,8 @@
 			<Control ID="chkReverbEnabled">残響を有効にする</Control>
 			<Control ID="lblReverbDelay">ディレイ:</Control>
 			<Control ID="lblReverbStrength">強度:</Control>
-			<Control ID="chkMuteSoundInBackground">Mesenが最前面ではない時、音声をミュートにする</Control>
-			<Control ID="chkReduceSoundInBackground">Mesenが最前面ではない時、音量を軽減する</Control>
+			<Control ID="chkMuteSoundInBackground">Mesen-Mが最前面ではない時、音声をミュートにする</Control>
+			<Control ID="chkReduceSoundInBackground">Mesen-Mが最前面ではない時、音量を軽減する</Control>
 			<Control ID="chkReduceSoundInFastForward">早送りや巻き戻しする時、音量を軽減する</Control>
 			<Control ID="trkVolumeReduction">音量の軽減度（％）</Control>
 			<Control ID="lblVolumeReductionSettings">音量軽減設定</Control>
@@ -353,7 +353,7 @@
 		<Form ID="frmPreferences" Title="設定">
 			<Control ID="tpgGeneral">全般</Control>
 			<Control ID="lblDisplayLanguage">言語:</Control>
-			<Control ID="chkSingleInstance">Mesenを単一インスタンスモードにする</Control>
+			<Control ID="chkSingleInstance">Mesen-Mを単一インスタンスモードにする</Control>
 			<Control ID="chkAutomaticallyCheckForUpdates">自動的にアップデートを確認</Control>
 
 			<Control ID="lblPauseBackgroundSettings">ポーズ・バックグラウンド設定</Control>
@@ -361,9 +361,9 @@
 			<Control ID="chkAutoHideMenu">自動的にメニューバーを隠す</Control>
 			<Control ID="chkDisplayTitleBarInfo">タイトルバーに追加情報を表す</Control>
 
-			<Control ID="chkConfirmExitResetPower">リセットと再起度とMesenを終了する前に確認する</Control>
+			<Control ID="chkConfirmExitResetPower">リセットと再起度とMesen-Mを終了する前に確認する</Control>
 			<Control ID="chkPauseOnMovieEnd">動画が終わると自動的にポーズする</Control>
-			<Control ID="chkAllowBackgroundInput">Mesenが最前面ではない時でも、コントローラの入力を受け付ける</Control>
+			<Control ID="chkAllowBackgroundInput">Mesen-Mが最前面ではない時でも、コントローラの入力を受け付ける</Control>
 
 			<Control ID="lblPauseIn">自動ポーズ条件：</Control>
 			<Control ID="chkPauseWhenInBackground">最前面ではない時</Control>
@@ -373,19 +373,19 @@
 			<Control ID="chkAutoLoadIps">自動的にパッチファイル（IPS・BPS）をロードする</Control>
 			<Control ID="chkHidePauseOverlay">ポーズ画面を隠す</Control>
 			<Control ID="chkDisplayMovieIcons">動画の録画や再生の際、アイコンを表示する</Control>
-			<Control ID="btnOpenMesenFolder">Mesenのフォルダを開く</Control>
+			<Control ID="btnOpenMesenFolder">Mesen-Mのフォルダを開く</Control>
 			<Control ID="btnResetSettings">初期化</Control>
 
 			<Control ID="tpgFiles">ファイル・フォルダ</Control>
 			<Control ID="grpFileAssociations">ファイルの関連付け</Control>
 			<Control ID="chkNesFormat">.NES (ファミコン)</Control>
 			<Control ID="chkFdsFormat">.FDS (ファミコンディスクシステム)</Control>
-			<Control ID="chkMmoFormat">.MMO (Mesenの動画)</Control>
-			<Control ID="chkMstFormat">.MST (Mesenのクイックセーブ)</Control>
+			<Control ID="chkMmoFormat">.MMO (Mesen-Mの動画)</Control>
+			<Control ID="chkMstFormat">.MST (Mesen-Mのクイックセーブ)</Control>
 
 			<Control ID="grpDataStorageLocation">データの保存先</Control>
 			<Control ID="radStorageDocuments">プロファイルフォルダに保存する</Control>
-			<Control ID="radStoragePortable">Mesenのフォルダに保存する</Control>
+			<Control ID="radStoragePortable">Mesen-Mのフォルダに保存する</Control>
 			<Control ID="lblDataLocation">保存先:</Control>
 
 			<Control ID="grpPathOverrides">デフォルトフォルダの変更</Control>
@@ -424,7 +424,7 @@
 			<Control ID="chkAllowMismatchingSaveStates">違うROMで作られたクイックセーブをロード可能にする</Control>
 
 			<Control ID="grpCloudSaves">クラウドバックアップ</Control>
-			<Control ID="lblGoogleDriveIntegration">MesenはGoogle Driveを利用することでクラウドバックアップが出来ます。　Google Drive同期を有効にすれば、ゲームのセーブデータはGoogle Driveにバックアップされ、どんなパソコンからでもアクセスが可能になります。</Control>
+			<Control ID="lblGoogleDriveIntegration">Mesen-MはGoogle Driveを利用することでクラウドバックアップが出来ます。　Google Drive同期を有効にすれば、ゲームのセーブデータはGoogle Driveにバックアップされ、どんなパソコンからでもアクセスが可能になります。</Control>
 			<Control ID="lblIntegrationOK">Google Drive同期は有効です。</Control>
 			<Control ID="btnDisableIntegration">Google Drive同期を無効にする</Control>
 			<Control ID="btnEnableIntegration">Google Drive同期を有効にする</Control>
@@ -505,7 +505,7 @@
 			<Control ID="colCheatName">コード名</Control>
 			<Control ID="colCode">コード</Control>
 			<Control ID="btnImport">インポート</Control>
-			<Control ID="btnImportCheatDB">Mesenのチートコードリストから</Control>
+			<Control ID="btnImportCheatDB">Mesen-Mのチートコードリストから</Control>
 			<Control ID="btnImportFromFile">ファイルから</Control>
 			<Control ID="btnExport">エクスポート</Control>
 			<Control ID="btnExportAllCheats">全てのコードをエクスポートする</Control>
@@ -548,11 +548,11 @@
 			<Control ID="btnOK">OK</Control>
 			<Control ID="btnCancel">キャンセル</Control>
 		</Form>
-		<Form ID="frmAbout" Title="Mesenとは">
-			<Control ID="labelProductName">Mesen</Control>
-			<Control ID="labelCopyright">© 2020 M. Bibaud (aka Sour)</Control>
-			<Control ID="lblWebsite">サイト:</Control>
-			<Control ID="lblLink">www.mesen.ca</Control>
+		<Form ID="frmAbout" Title="Mesen-Mとは">
+			<Control ID="labelProductName">Mesen-M</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
+			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (aka Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">バージョン:</Control>
 			<Control ID="lblBuildDateLabel">ビルド日時:</Control>
 
@@ -571,7 +571,7 @@
 		<Form ID="frmGameConfig" Title="ゲーム設定">
 			<Control ID="grpDipSwitches">ディップスイッチ</Control>
 		</Form>
-		<Form ID="frmUpdatePrompt" Title="Mesen ー アップデート可能">
+		<Form ID="frmUpdatePrompt" Title="Mesen-M ー アップデート可能">
 			<Control ID="lblLatestVersion">最新バージョン： </Control>
 			<Control ID="lblCurrentVersion">現在のバージョン： </Control>
 			<Control ID="lblChangeLog">更新歴</Control>
@@ -648,19 +648,19 @@
 			<Control ID="tpgVideoOptions">映像</Control>
 			<Control ID="tpgAudioOptions">音声</Control>
 			<Control ID="tpgEmulationOptions">エミュレーション</Control>
-			<Control ID="lblExplanation">Mesenを全画面表示の状態で"MyGame.nes"を起動する. 画面エフェクトをNTSCにして、映像サイズを2xにして、オーバースキャン設定を変更する。</Control>
+			<Control ID="lblExplanation">Mesen-Mを全画面表示の状態で"MyGame.nes"を起動する. 画面エフェクトをNTSCにして、映像サイズを2xにして、オーバースキャン設定を変更する。</Control>
 		</Form>
 		<Form ID="frmCopyFiles" Title="しばらくお待ちください">
 			<Control ID="lblCopying">ファイル：</Control>
 		</Form>
-		<Form ID="frmConfigWizard" Title="Mesen - 設定">
-			<Control ID="lblMesen">Mesen - ファミコンエミュレータ</Control>
+		<Form ID="frmConfigWizard" Title="Mesen-M - 設定">
+			<Control ID="lblMesen">Mesen-M - ファミコンエミュレータ</Control>
 			<Control ID="lblConfigWizard">セットアップウィザード</Control>
-			<Control ID="lblInitialSetup">Mesenの初期設定を行います。</Control>
+			<Control ID="lblInitialSetup">Mesen-Mの初期設定を行います。</Control>
 			<Control ID="lblStorageLocation">データの保存先</Control>
-			<Control ID="lblStorageHint">Mesenのデータの保存先を選んでください：</Control>
+			<Control ID="lblStorageHint">Mesen-Mのデータの保存先を選んでください：</Control>
 			<Control ID="radStorageDocuments">プロファイルフォルダに保存する</Control>
-			<Control ID="radStoragePortable">Mesenのフォルダに保存する</Control>
+			<Control ID="radStoragePortable">Mesen-Mのフォルダに保存する</Control>
 			<Control ID="lblDataLocation">保存先 :</Control>
 			<Control ID="lblInputMappings">コントローラ設定</Control>
 			<Control ID="lblInputHint">使いたいコントローラを選んでください：</Control>
@@ -779,7 +779,7 @@
 		<Message ID="FilterRomIps">対応するすべてのファイル (*.nes, *.zip, *.7z, *.fds, *.nsf, *.nsfe, *.unf, *.unif, *.studybox, *.ips, *.bps, *.ups)|*.NES;*.ZIP;*.7z;*.IPS;*.BPS;*.UPS;*.FDS;*.NSF;*.NSFE;*.UNF;*.UNIF;*.STUDYBOX|ファミコンゲーム (*.nes, *.unf, *.unif)|*.NES;*.UNF;*.UNIF|ファミコンディスクシステムのゲーム (*.fds)|*.FDS|NSFファイル (*.nsf, *.nsfe)|*.NSF;*.NSFE|ZIPファイル (*.zip)|*.ZIP|7-Zipファイル (*.7z)|*.7z|パッチファイル (*.ips, *.bps, *.ups)|*.IPS;*.BPS;*.UPS|すべてのファイル (*.*)|*.*</Message>
 		<Message ID="FilterTest">テストファイル (*.mtp)|*.mtp|すべてのファイル (*.*)|*.*</Message>
 		<Message ID="FilterCheat">対応するすべてのファイル (*.cht, *.xml)|*.cht;*.xml</Message>
-		<Message ID="FilterSavestate">Mesenのクイックセーブデータ (*.mst)|*.mst|すべてのファイル (*.*)|*.*</Message>
+		<Message ID="FilterSavestate">Mesen-Mのクイックセーブデータ (*.mst)|*.mst|すべてのファイル (*.*)|*.*</Message>
 		<Message ID="FilterTapeFiles">Family Basicテープファイル (*.fbt)|*.fbt|すべてのファイル (*.*)|*.*</Message>
 
 		<Message ID="LastSession">前セッション</Message>
@@ -826,11 +826,11 @@
 
 		<Message ID="ResetSettingsConfirmation">注意：全ての設定が初期化されます。&#xA;&#xA;よろしいですか？</Message>
 
-		<Message ID="RandomGameNoGameFound">Mesenはゲームファイルを見つかりませんでした。</Message>
+		<Message ID="RandomGameNoGameFound">Mesen-Mはゲームファイルを見つかりませんでした。</Message>
 
 		<Message ID="CannotWriteToFolder">指定されたフォルダに書き込むことは出来ません。他のフォルダを選択してください。&#xA;&#xA;エラーの詳細:&#xA;{0}</Message>
 		<Message ID="InvalidPaths">次のフォルダには書き込むことが出来ません：&#xA;&#xA;{0}&#xA;&#xA;書き込むことが出来るフォルダを選択してください。</Message>
-		<Message ID="CopyMesenDataPrompt">全てのファイルが&#xA;{0}&#xA;から&#xA;{1}&#xA;にコピーされます。&#xA;&#xA;コピーが終わったら、Mesenが再起動します.&#xA;よろしいですか？</Message>
+		<Message ID="CopyMesenDataPrompt">全てのファイルが&#xA;{0}&#xA;から&#xA;{1}&#xA;にコピーされます。&#xA;&#xA;コピーが終わったら、Mesen-Mが再起動します.&#xA;よろしいですか？</Message>
 
 		<Message ID="CheatsFound">ゲーム{0}個とチートコード{1}個を見つけました</Message>
 		<Message ID="CheatsImported">{1}用のチートコード{0}個がインポートされました。.</Message>
@@ -848,7 +848,7 @@
 		<Message ID="FdsDiskSide">ディスク{0} {1}面</Message>
 		<Message ID="FileNotFound">ファイルが見つかりません: {0}</Message>
 
-		<Message ID="HDNesTooltip">このオプションを有効にすれば、MesenはHDNesのようにHDパックをロード出来るようになります。&#xA;&#xA;HDパックはMesenのフォルダの中にある「HdPacks」のフォルダにゲームと同じ名前のサブフォルダに置くと自動的にロードされます。&#xA;例）ゲームファイルは「MyRom.nes」なら、「HdPacks\MyRom」にHDパックを置くとロードされます。</Message>
+		<Message ID="HDNesTooltip">このオプションを有効にすれば、Mesen-MはHDNesのようにHDパックをロード出来るようになります。&#xA;&#xA;HDパックはMesen-Mのフォルダの中にある「HdPacks」のフォルダにゲームと同じ名前のサブフォルダに置くと自動的にロードされます。&#xA;例）ゲームファイルは「MyRom.nes」なら、「HdPacks\MyRom」にHDパックを置くとロードされます。</Message>
 		<Message ID="HdPackBuilderScaleHelp">Selects the scale and video filter to use when generating the PNG files&#xA;for the HD Pack. Use the "Prescale" filters to generate the tiles&#xA;at a larger scale without applying any transformation to the pixels.</Message>
 		<Message ID="HdPackBuilderBankSizeHelp">This option is only available for CHR RAM games.  CHR RAM games have no&#xA;fixed "banks" - they are dynamically created by the game's code.&#xA;This option alters the HD Pack Builder's behavior when grouping the tiles into &#xA;the PNG files - a smaller bank size will usually result in less PNG &#xA;files (but depending on the game's code, larger values may produce &#xA;better results).</Message>
 		<Message ID="HdPackBuilderFrequencyHelp">When this option is enabled, the tiles in PNG files are sorted by the&#xA;frequency at which they are shown on the screen while recording (more &#xA;common palettes will be grouped together in the first PNG for a specific bank &#xA;number. If this option is unchecked, the PNGs will be sorted by palette - &#xA;each PNG will only contain up to 4 different colors in this case.</Message>
@@ -863,19 +863,19 @@
 		<Message ID="InstallHdPackConfirmOverwrite">インストール先のフォルダ({0})はすでに存在しています。　上書きしますか？</Message>
 		<Message ID="InstallHdPackConfirmReset">HD Packのインストールは成功しました。　ゲームを再起動して、HD Packをロードしますか？</Message>
 
-		<Message ID="MesenUpToDate">既にMesenの最新のバージョンを使っています。</Message>
+		<Message ID="MesenUpToDate">既にMesen-Mの最新のバージョンを使っています。</Message>
 		<Message ID="PatchAndReset">パッチファイルを当てて、ゲームをリセットしますか？</Message>
 		<Message ID="SelectRomIps">パッチファイルに合うゲームファイルを選んでください。</Message>
 		<Message ID="UnableToDownload">ファイルをダウンロードできませんでした。ネット接続を確認してから、再試行してください。&#xA;&#xA;エラーの詳細:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">MesenはMesenCore.dllをロード出来なかったため、起動できませんでした。</Message>
-		<Message ID="UnableToStartMissingFiles">必要なファイルはロード出来なかったため、Mesenは起動できません。&#xA;&#xA;エラー: MesenCore.dllはロードできません。</Message>
+		<Message ID="UnableToStartMissingDependencies">Mesen-MはMesenCore.dllをロード出来なかったため、起動できませんでした。</Message>
+		<Message ID="UnableToStartMissingFiles">必要なファイルはロード出来なかったため、Mesen-Mは起動できません。&#xA;&#xA;エラー: MesenCore.dllはロードできません。</Message>
 		<Message ID="UnexpectedError">予期しないエラーが発生しました。&#xA;&#xA;エラーの詳細:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">ダウンロードは失敗しました。　Mesenのサイトに行って、新しいバージョンをダウンロードしてください。</Message>
+		<Message ID="UpdateDownloadFailed">ダウンロードは失敗しました。　Mesen-Mのサイトに行って、新しいバージョンをダウンロードしてください。</Message>
 		<Message ID="UpdaterNotFound">必要不可欠なファイルがないため、アップデートは出来なかった。</Message>
 		<Message ID="UpgradeSuccess">アップデートは完了しました。</Message>
-		<Message ID="Net45NotFound">Microsoft .NET Framework 4.5はインストールされていないため、Mesenは起動できません。Microsoft .NET Frameworkの最新版をMicrosoftのサイトからダウンロードして、インストールしてください。</Message>
+		<Message ID="Net45NotFound">Microsoft .NET Framework 4.5はインストールされていないため、Mesen-Mは起動できません。Microsoft .NET Frameworkの最新版をMicrosoftのサイトからダウンロードして、インストールしてください。</Message>
 
-		<Message ID="GoogleDriveIntegrationError">MesenはGoogle Driveにアクセス出来ませんでした。</Message>
+		<Message ID="GoogleDriveIntegrationError">Mesen-MはGoogle Driveにアクセス出来ませんでした。</Message>
 
 		<Message ID="InvalidCheatFile">このファイル（{0}）にはチートコードを見つかりませんでした。</Message>
 		<Message ID="InvalidXmlFile">このファイル（{0}）はXMLファイルではないため読めませんでした.</Message>
@@ -883,7 +883,7 @@
 
 		<Message ID="ConfirmReset">ゲームをリセットします。よろしいですか？</Message>
 		<Message ID="ConfirmPowerCycle">ゲームを停止して再起動します。よろしいですか？</Message>
-		<Message ID="ConfirmExit">Mesenを終了します。よろしいですか？</Message>
+		<Message ID="ConfirmExit">Mesen-Mを終了します。よろしいですか？</Message>
 
 		<Message ID="EmulatorShortcutMappings_FastForward">早送り（押し続ける間だけ）</Message>
 		<Message ID="EmulatorShortcutMappings_ToggleFastForward">早送りをオン・オフにする</Message>

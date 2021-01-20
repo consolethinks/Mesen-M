@@ -10,9 +10,14 @@ private:
 protected:
 	virtual uint16_t GetPRGPageSize() override { return 0x4000; }
 	virtual uint16_t GetCHRPageSize() override { return 0x2000; }
+	uint16_t RegisterStartAddress() override { return 0x6000; }
+	bool AllowRegisterRead() override { return true; }
+	uint32_t GetDipSwitchCount() override { return 1; }
 
 	void InitMapper() override
 	{
+		RemoveRegisterRange(0x6000, 0x7fff, MemoryOperation::Write);
+		RemoveRegisterRange(0x7000, 0xffff, MemoryOperation::Read);
 		_registers[0] = 0;
 		_registers[1] = 0;
 
@@ -40,6 +45,11 @@ protected:
 		}
 	}
 
+	uint8_t ReadRegister(uint16_t addr) override
+	{
+		return GetDipSwitches();
+	}
+
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		switch(addr & 0x8800) {
@@ -48,5 +58,12 @@ protected:
 		}
 
 		UpdateState();
+	}
+
+	void Reset(bool softReset) override {
+		if(softReset) {
+			memset(_registers, 0, 2);
+			UpdateState();
+		}
 	}
 };

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Resources>
 	<Forms>
-		<Form ID="frmMain" Title="Mesen">
+		<Form ID="frmMain" Title="Mesen-M">
 			<Control ID="mnuFile">Fitxer</Control>
 			<Control ID="mnuOpen">Obre</Control>
 			<Control ID="mnuSaveState">Desa</Control>
@@ -148,8 +148,8 @@
 			<Control ID="chkReverbEnabled">Activa la reverberació</Control>
 			<Control ID="lblReverbDelay">Retard:</Control>
 			<Control ID="lblReverbStrength">Força:</Control>
-			<Control ID="chkMuteSoundInBackground">Atura el so quan Mesen es trobi en segon pla</Control>
-			<Control ID="chkReduceSoundInBackground">Abaixa el volum quan Mesen es trobi en segon pla</Control>
+			<Control ID="chkMuteSoundInBackground">Atura el so quan Mesen-M es trobi en segon pla</Control>
+			<Control ID="chkReduceSoundInBackground">Abaixa el volum quan Mesen-M es trobi en segon pla</Control>
 			<Control ID="chkReduceSoundInFastForward">Reduce volume during fast forward/rewind</Control>
 			<Control ID="trkVolumeReduction">Volume Reduction (%)</Control>
 			<Control ID="lblVolumeReductionSettings">Volume Reduction Settings</Control>
@@ -354,7 +354,7 @@
 		<Form ID="frmPreferences" Title="Preferencias">
 			<Control ID="tpgGeneral">General</Control>
 			<Control ID="lblDisplayLanguage">Idioma de pantalla:</Control>
-			<Control ID="chkSingleInstance">Permet només una sola instància de Mesen alhora</Control>
+			<Control ID="chkSingleInstance">Permet només una sola instància de Mesen-M alhora</Control>
 			<Control ID="chkAutomaticallyCheckForUpdates">Cerca actualitzacions automàticament</Control>
 
 			<Control ID="lblPauseBackgroundSettings">Comportament en segon pla</Control>
@@ -362,9 +362,9 @@
 			<Control ID="chkAutoHideMenu">Amaga la barra de menú automàticament</Control>
 			<Control ID="chkDisplayTitleBarInfo">Mostra informació addicional a la barra de títol</Control>
 
-			<Control ID="chkConfirmExitResetPower">Confirma abans d'un reinici/aturada o abans de sortir de Mesen</Control>
+			<Control ID="chkConfirmExitResetPower">Confirma abans d'un reinici/aturada o abans de sortir de Mesen-M</Control>
 			<Control ID="chkPauseOnMovieEnd">Pausa l'emulació en acabar una pel·lícula</Control>
-			<Control ID="chkAllowBackgroundInput">Permet l'entrada d'ordres encara que Mesen es trobi en segon pla</Control>
+			<Control ID="chkAllowBackgroundInput">Permet l'entrada d'ordres encara que Mesen-M es trobi en segon pla</Control>
 
 			<Control ID="lblPauseIn">Pause when in:</Control>
 			<Control ID="chkPauseWhenInBackground">Background</Control>
@@ -374,19 +374,19 @@
 			<Control ID="chkAutoLoadIps">Carrega els pedaços IPS/BPS automàticament</Control>
 			<Control ID="chkHidePauseOverlay">Amaga la pantalla de pausa</Control>
 			<Control ID="chkDisplayMovieIcons">Mostra una icona d'iniciar/gravar al reproduir o gravar una pel·lícula</Control>
-			<Control ID="btnOpenMesenFolder">Obre la carpeta de Mesen</Control>
+			<Control ID="btnOpenMesenFolder">Obre la carpeta de Mesen-M</Control>
 			<Control ID="btnResetSettings">Restableix tot</Control>
 
 			<Control ID="tpgFiles">Fitxers/Carpetes</Control>
 			<Control ID="grpFileAssociations">Associació de fitxers</Control>
 			<Control ID="chkNesFormat">.NES</Control>
 			<Control ID="chkFdsFormat">.FDS (Famicom Disk System)</Control>
-			<Control ID="chkMmoFormat">.MMO (Pel·lícules de Mesen)</Control>
-			<Control ID="chkMstFormat">.MST (Partides guardades de Mesen)</Control>
+			<Control ID="chkMmoFormat">.MMO (Pel·lícules de Mesen-M)</Control>
+			<Control ID="chkMstFormat">.MST (Partides guardades de Mesen-M)</Control>
 
 			<Control ID="grpDataStorageLocation">Carpeta d'emmagatzematge</Control>
-			<Control ID="radStorageDocuments">Desa les dades de Mesen al meu perfil d'usuari</Control>
-			<Control ID="radStoragePortable">Desa les dades de Mesen a la mateixa carpeta que l'aplicació</Control>
+			<Control ID="radStorageDocuments">Desa les dades de Mesen-M al meu perfil d'usuari</Control>
+			<Control ID="radStoragePortable">Desa les dades de Mesen-M a la mateixa carpeta que l'aplicació</Control>
 			<Control ID="lblDataLocation">Carpeta:</Control>
 
 			<Control ID="grpPathOverrides">Localització de les carpetes d'emmagatzematge</Control>
@@ -427,7 +427,7 @@
 			<Control ID="lblRewindMinutes">minuts (ús de memòria ≈1MB/min)</Control>
 
 			<Control ID="tpgCloudSave">Desa al núvol</Control>
-			<Control ID="lblGoogleDriveIntegration">Mesen pot utilitzar Google Drive per a emmagatzemar les vostres partides guardades al núvol. Quan s'activa aquesta integració, totes les partides guardades són fàcilment accessibles des de qualsevol ordinador, ja que se sincronitzen entre ells. A més, les partides guardades a Google Drive es poden recuperar en cas que s'esborrin del vostre ordinador.</Control>
+			<Control ID="lblGoogleDriveIntegration">Mesen-M pot utilitzar Google Drive per a emmagatzemar les vostres partides guardades al núvol. Quan s'activa aquesta integració, totes les partides guardades són fàcilment accessibles des de qualsevol ordinador, ja que se sincronitzen entre ells. A més, les partides guardades a Google Drive es poden recuperar en cas que s'esborrin del vostre ordinador.</Control>
 			<Control ID="lblIntegrationOK">La integració amb Google Drive es troba activa.</Control>
 			<Control ID="btnDisableIntegration">Desactiva la integració amb Google Drive</Control>
 			<Control ID="btnEnableIntegration">Activa la integració amb Google Drive</Control>
@@ -551,10 +551,10 @@
 			<Control ID="btnCancel">Cancel·la</Control>
 		</Form>
 		<Form ID="frmAbout" Title="Quant a...">
-			<Control ID="labelProductName">Mesen</Control>
-			<Control ID="labelCopyright">© 2020 M. Bibaud (aka Sour)</Control>
-			<Control ID="lblWebsite">Lloc web:</Control>
-			<Control ID="lblLink">www.mesen.ca</Control>
+			<Control ID="labelProductName">Mesen-M</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
+			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (aka Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">Versió:</Control>
 			<Control ID="lblBuildDateLabel">Build Date:</Control>
 
@@ -567,17 +567,17 @@
 			<Control ID="lblCheats">Cheats:</Control>
 			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (donations, bug reports, testing, sharing information, etc.)</Control>
 
-			<Control ID="lblDonate">Si desitgeu col·laborar amb Mesen, si us plau, considereu fer un donatiu.&#xA;Gràcies pel vostre suport.</Control>
+			<Control ID="lblDonate">Si desitgeu col·laborar amb Mesen-M, si us plau, considereu fer un donatiu.&#xA;Gràcies pel vostre suport.</Control>
 			<Control ID="okButton">&amp;D'acord</Control>
 		</Form>
 		<Form ID="frmGameConfig" Title="Configuració de joc">
 			<Control ID="grpDipSwitches">Interruptors DIP</Control>
 		</Form>
-		<Form ID="frmUpdatePrompt" Title="Mesen - Actualització disponible">
+		<Form ID="frmUpdatePrompt" Title="Mesen-M - Actualització disponible">
 			<Control ID="lblLatestVersion">Darrera versió: </Control>
 			<Control ID="lblCurrentVersion">Versió actual: </Control>
 			<Control ID="lblChangeLog">Llista de canvis</Control>
-			<Control ID="lblDonate">Si desitgeu col·laborar amb Mesen, si us plau, considereu fer un donatiu. Gràcies!</Control>
+			<Control ID="lblDonate">Si desitgeu col·laborar amb Mesen-M, si us plau, considereu fer un donatiu. Gràcies!</Control>
 			<Control ID="btnUpdate">Actualitza</Control>
 			<Control ID="btnCancel">Cancel·la</Control>
 		</Form>
@@ -650,7 +650,7 @@
 			<Control ID="tpgVideoOptions">Opcions de vídeo</Control>
 			<Control ID="tpgAudioOptions">Opcions de so</Control>
 			<Control ID="tpgEmulationOptions">Opcions de l'emulació</Control>
-			<Control ID="lblExplanation">Això iniciarà Mesen en mode de pantalla completa i amb la rom "MyGame.nes" carregada. A més, farà servir el filtre NTSC ajustat a una escala de 2x i configurarà les opcions de sobreescaneig. El paràmetre "DoNotSaveSettings" s'utilitza per evitar que els canvis efectuats des de la línia d'ordres es desin permanentment a la configuració de Mesen.</Control>
+			<Control ID="lblExplanation">Això iniciarà Mesen-M en mode de pantalla completa i amb la rom "MyGame.nes" carregada. A més, farà servir el filtre NTSC ajustat a una escala de 2x i configurarà les opcions de sobreescaneig. El paràmetre "DoNotSaveSettings" s'utilitza per evitar que els canvis efectuats des de la línia d'ordres es desin permanentment a la configuració de Mesen-M.</Control>
 		</Form>
 		<Form ID="frmRecordMovie" Title="Movie Recording Options">
 			<Control ID="lblSaveTo">Save to:</Control>
@@ -761,7 +761,7 @@
 		<Message ID="FilterRomIps">Tots els formats suportats (*.nes, *.zip, *.7z, *.fds, *.nsf, *.nsfe, *.unf, *.unif, *.studybox, *.ips, *.bps, *.ups)|*.NES;*.ZIP;*.7z;*.IPS;*.BPS;*.UPS;*.FDS;*.NSF;*.NSFE;*.UNF;*.UNIF;*.STUDYBOX|Roms de NES(*.nes, *.unf, *.unif)|*.NES;*.UNF;*.UNIF|Roms de Famicom Disk System (*.fds)|*.FDS|Fitxers NSF (*.nsf, *.nsfe)|*.NSF;*.NSFE|Arxius comprimits (*.zip)|*.ZIP|Arxius 7-Zip (*.7z)|*.7z|Pedaços IPS/UPS/BPS (*.ips, *.bps, *.ups)|*.IPS;*.BPS;*.UPS|Tots els fitxers (*.*)|*.*</Message>
 		<Message ID="FilterTest">Fitxers de proves (*.mtp)|*.mtp|Tots els fitxers (*.*)|*.*</Message>
 		<Message ID="FilterCheat">Tots els formats suportats (*.cht, *.xml)|*.cht;*.xml</Message>
-		<Message ID="FilterSavestate">Partides guardades de Mesen (*.mst)|*.mst|Tots els fitxers (*.*)|*.*</Message>
+		<Message ID="FilterSavestate">Partides guardades de Mesen-M (*.mst)|*.mst|Tots els fitxers (*.*)|*.*</Message>
 		<Message ID="FilterTapeFiles">Fitxers de cassets Family Basic (*.fbt)|*.fbt|Tots els fitxers (*.*)|*.*</Message>
 
 		<Message ID="LastSession">Last Session</Message>
@@ -786,7 +786,7 @@
 		<Message ID="BandaiMicrophone">Bandai Microphone</Message>
 		<Message ID="DatachBarcodeReader">Datach Barcode Reader</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen - Inicia Mesen en pantalla completa</Message>
+		<Message ID="HelpFullscreen">/fullscreen - Inicia Mesen-M en pantalla completa</Message>
 		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - Evita que els canvis es desin (útil per a evitar que les opcions de la línia d'ordres es converteixin en la configuració per defecte)</Message>
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - Start recording a movie after the specified game is loaded.</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession - Resumes the game in the state it was left in when it was last played.</Message>
@@ -811,11 +811,11 @@
 
 		<Message ID="ResetSettingsConfirmation">ADVERTÈNCIA: Esteu a punt de restablir la configuració SENCERA, fet que no es podrà revertir!&#xA;&#xA;Esteu segurs que voleu continuar?</Message>
 
-		<Message ID="RandomGameNoGameFound">Mesen ha sigut incapaç de trobar cap joc.</Message>
+		<Message ID="RandomGameNoGameFound">Mesen-M ha sigut incapaç de trobar cap joc.</Message>
 
 		<Message ID="CannotWriteToFolder">Incapaç d'escriure a la carpeta escollida - si us plau trieu una altra carpeta i torneu-ho a provar.&#xA;&#xA;Detalls:&#xA;{0}</Message>
 		<Message ID="InvalidPaths">Les carpetes següents són invàlides:&#xA;&#xA;{0}&#xA;&#xA;Si us plau, introduïu carpetes vàlides i torneu-ho a provar.</Message>
-		<Message ID="CopyMesenDataPrompt">Tots els fitxers es copiaran des de:&#xA;&#xA;{0}&#xA;a la carpeta&#xA;{1}&#xA;&#xA;Un cop s'hagi finalitzat la còpia, Mesen es reiniciarà.&#xA;Voleu continuar?</Message>
+		<Message ID="CopyMesenDataPrompt">Tots els fitxers es copiaran des de:&#xA;&#xA;{0}&#xA;a la carpeta&#xA;{1}&#xA;&#xA;Un cop s'hagi finalitzat la còpia, Mesen-M es reiniciarà.&#xA;Voleu continuar?</Message>
 
 		<Message ID="NsfNextTrack">Pista següent (Manteniu per avançar ràpidament)</Message>
 		<Message ID="NsfUnnamedTrack">[sense nom]</Message>
@@ -823,13 +823,13 @@
 		<Message ID="CouldNotInstallRuntime">El paquet Visual C++ Redistributable per a Visual Studio 2015 no s'ha pogut instal·lar correctament.</Message>
 		<Message ID="EmptyState">&lt;No hi ha còpia de seguretat&gt;</Message>
 		<Message ID="ErrorWhileCheckingUpdates">S'ha produït un error durant la cerca d'actualitzacions. Comproveu la vostra connexió a la xarxa i proveu-ho de nou.&#xA;&#xA;Detalls de l'error:&#xA;{0}</Message>
-		<Message ID="AutoUpdateDisabledMessage">Les actualitzacions automàtiques no estan activades en aquesta compilació - si us plau, descarregueu-vos la darrera versió del codi font i torneu a compilar Mesen per a obtenir les darreres actualitzacions.</Message>
+		<Message ID="AutoUpdateDisabledMessage">Les actualitzacions automàtiques no estan activades en aquesta compilació - si us plau, descarregueu-vos la darrera versió del codi font i torneu a compilar Mesen-M per a obtenir les darreres actualitzacions.</Message>
 		<Message ID="BiosNotFound">A bios file is required to run this game.&#xA;&#xA;  Filename: {0}&#xA;  Size: {1} bytes&#xA;&#xA;Select bios file now?</Message>
 		<Message ID="BiosMismatch">The selected file does not match the bios required for this game.&#xA;&#xA;Expected SHA-256:&#xA;{0}&#xA;&#xA;Selected file's SHA-256:&#xA;{1}&#xA;&#xA;Would you like to use this file anyway?</Message>
 		<Message ID="FdsDiskSide">Disc {0} Cara {1}</Message>
 		<Message ID="FileNotFound">Fitxer no trobat: {0}</Message>
 		
-		<Message ID="HDNesTooltip">Aquesta opció permet a Mesen carregar els paquets d'alta resolució d'HDNes que trobi.&#xA;&#xA;Els paquets d'alta resolució han d'estar a la carpeta "HdPacks" dins d'una altra carpeta amb el mateix nom que la ROM.&#xA;Exemple: Posem per cas que tenim una rom anomenada "LaMevaRom.nes", el seu paquet hauria d'estar a "HdPacks\LaMevaRom\hires.txt".</Message>
+		<Message ID="HDNesTooltip">Aquesta opció permet a Mesen-M carregar els paquets d'alta resolució d'HDNes que trobi.&#xA;&#xA;Els paquets d'alta resolució han d'estar a la carpeta "HdPacks" dins d'una altra carpeta amb el mateix nom que la ROM.&#xA;Exemple: Posem per cas que tenim una rom anomenada "LaMevaRom.nes", el seu paquet hauria d'estar a "HdPacks\LaMevaRom\hires.txt".</Message>
 		<Message ID="HdPackBuilderScaleHelp">Tria el tipus d'escalat i filtre de vídeo que s'utilitzaran quan es generin els fitxers PNG&#xA;per al paquet d'alta resolució. Fes servir els filtres de preescalat per a generar les tiles&#xA;a una escala major sense aplicar cap transformació als píxels.</Message>
 		<Message ID="HdPackBuilderBankSizeHelp">Aquesta opció només està disponible per a jocs de RAM de tipus CHR. Els jocs de RAM de tipus CHR no tenen&#xA;"bancs" fixos - van sent creats dinàmicament pel codi del joc.&#xA;Aquesta opció altera el funcionament a l'hora d'agrupar les tiles&#xA;als fitxers PNG - un banc petit normalment donarà a lloc a menys fitxers &#xA;PNG (tot i que depenent en el codi del joc, valors més alts poden produir millors resultats).</Message>
 		<Message ID="HdPackBuilderFrequencyHelp">Quan aquesta opció està activada, les tiles als fitxers PNG s'ordenen per la&#xA;freqüència amb les que es mostren a la pantalla mentre s'estigui gravant (les paletes &#xA;més comunes s'agruparan conjuntament al primer fitxer per a un nombre de banc &#xA;específic. Si aquesta casella està desmarcada, els fitxers PNG s'ordenaran per paleta - &#xA;en aquest cas, cada fitxer PNG contindrà només 4 colors diferents.</Message>
@@ -844,19 +844,19 @@
 		<Message ID="InstallHdPackConfirmOverwrite">The destination folder ({0}) already exists - are you sure you want to overwrite it?</Message>
 		<Message ID="InstallHdPackConfirmReset">The HD Pack has been installed successfully. Do you want to reset the game and load the HD Pack now?</Message>
 
-		<Message ID="MesenUpToDate">Ja feu servir la versió més recent de Mesen.</Message>
+		<Message ID="MesenUpToDate">Ja feu servir la versió més recent de Mesen-M.</Message>
 		<Message ID="PatchAndReset">Voleu aplicar el pedaç i reiniciar el joc?</Message>
 		<Message ID="SelectRomIps">Si us plau, seleccioni la ROM corresponent al pedaç IPS/UPS/BPS.</Message>
 		<Message ID="UnableToDownload">No es pot descarregar el fitxer. Comproveu la vostra connexió a la xarxa i proveu-ho de nou.&#xA;&#xA;Detalls de l'error:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">Mesen no s'ha pogut obrir perquè ha sigut incapaç de carregar la llibreria MesenCore.dll a causa de manca de dependències.</Message>
-		<Message ID="UnableToStartMissingFiles">Mesen ha estat incapaç d'obrir-se perquè falten fitxers.&#xA;&#xA;Error: No s'ha trobat la llibreria MesenCore.dll.</Message>
+		<Message ID="UnableToStartMissingDependencies">Mesen-M no s'ha pogut obrir perquè ha sigut incapaç de carregar la llibreria MesenCore.dll a causa de manca de dependències.</Message>
+		<Message ID="UnableToStartMissingFiles">Mesen-M ha estat incapaç d'obrir-se perquè falten fitxers.&#xA;&#xA;Error: No s'ha trobat la llibreria MesenCore.dll.</Message>
 		<Message ID="UnexpectedError">S'ha produït un error inesperat.&#xA;&#xA;Detalls de l'error:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">Descàrrega fallida - el fitxer sembla estar corromput. Si us plau, visiteu el lloc web de Mesen per a descarregar-vos la darrera versió manualment.</Message>
+		<Message ID="UpdateDownloadFailed">Descàrrega fallida - el fitxer sembla estar corromput. Si us plau, visiteu el lloc web de Mesen-M per a descarregar-vos la darrera versió manualment.</Message>
 		<Message ID="UpgradeSuccess">L'actualització s'ha realitzat amb èxit.</Message>
 		<Message ID="UpdaterNotFound">El procés d'actualització no pot començar perquè falten fitxers.</Message>
 		<Message ID="Net45NotFound">Microsoft .NET Framework 4.5 no ha sigut trobat. Si us plau, descarregueu-vos la darrera versió de .NET Framework des del lloc web de Microsoft i torneu-ho a provar.</Message>
 
-		<Message ID="GoogleDriveIntegrationError">Mesen ha estat incapaç de connectar-se al vostre compte de Google Drive, si us plau, torneu-ho a provar.</Message>
+		<Message ID="GoogleDriveIntegrationError">Mesen-M ha estat incapaç de connectar-se al vostre compte de Google Drive, si us plau, torneu-ho a provar.</Message>
 
 		<Message ID="InvalidCheatFile">El fitxer seleccionat ({0}) no és un fitxer de trucs vàlid.</Message>
 		<Message ID="InvalidXmlFile">El fitxer seleccionat ({0}) no és un fitxer XML vàlid.</Message>

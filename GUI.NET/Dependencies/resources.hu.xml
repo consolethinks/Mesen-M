@@ -66,7 +66,7 @@
 			<Control ID="mnuNetPlay">Hálózati játék</Control>
 			<Control ID="mnuStartServer">Szerever indítása</Control>
 			<Control ID="mnuConnect">Csatlakozás szerverhez</Control>
-			<Control ID="mnuNetPlaySelectController">Válszd ki a kontrollert!</Control>
+			<Control ID="mnuNetPlaySelectController">Kontroller választás:</Control>
 			<Control ID="mnuNetPlayPlayer1">1-es játékos</Control>
 			<Control ID="mnuNetPlayPlayer2">2-es játékos</Control>
 			<Control ID="mnuNetPlayPlayer3">3-as játékos</Control>
@@ -95,7 +95,7 @@
 			<Control ID="mnuTestRecordTest">Teszt</Control>
 			<Control ID="mnuTestStopRecording">Felvétel leállítása</Control>
 			<Control ID="mnuRunAllTests">Összes teszt futtatása</Control>
-			<Control ID="mnuDebugger">Nyomkövető</Control>
+			<Control ID="mnuDebugger">Debugger</Control>
 			<Control ID="mnuLogWindow">Log ablak</Control>
 			<Control ID="mnuInstallHdPack">HD Pakk telepítése</Control>
 			<Control ID="mnuHdPackEditor">HD Pakk készítő</Control>
@@ -214,19 +214,19 @@
 			<Control ID="chkAutoConfigureInput">Konfigurálja automatikusan a kontrollereket játékbetöltéskor</Control>
 
 			<Control ID="tpgAdvanced">Haladó</Control>
-			<Control ID="grpDisplayInput">Kontroller bemenetet mutatása</Control>
+			<Control ID="grpDisplayInput">Kontroller bemenetek megjelenítése</Control>
 			<Control ID="chkDisplayPort1">Port 1</Control>
 			<Control ID="chkDisplayPort2">Port 2</Control>
 			<Control ID="chkDisplayPort3">Port 3</Control>
 			<Control ID="chkDisplayPort4">Port 4</Control>
-			<Control ID="lblDisplayPosition">Pozíció Megjelenítése:</Control>
-			<Control ID="chkDisplayInputHorizontally">Függőleges Megjelenítés</Control>
+			<Control ID="lblDisplayPosition">Megjelenítési pozíció:</Control>
+			<Control ID="chkDisplayInputHorizontally">Függőleges megjelenítés</Control>
 
 			<Control ID="lblSmall">Kicsi</Control>
 			<Control ID="lblLarge">Nagy</Control>
 			<Control ID="lblDeadzone">Kontroller tengely holttérméret:</Control>
 
-			<Control ID="chkHideMousePointerForZapper">Egér elrejtése fénypisztolyos játék használata alatt</Control>
+			<Control ID="chkHideMousePointerForZapper">Egér elrejtése fénypisztolyos játéknál</Control>
 
 			<Control ID="lblKeyBinding">Warning: Your current configuration contains conflicting key bindings - some physical buttons on your keyboard or gamepad are mapped to multiple buttons on the NES controller. If this is not intentional, please review and correct your key bindings.</Control>
 		</Form>
@@ -818,21 +818,21 @@
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - Start recording a movie after the specified game is loaded.</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession - Resumes the game in the state it was left in when it was last played.</Message>
 
-		<Message ID="Resume">Resume</Message>
-		<Message ID="Pause">Pause</Message>
-		<Message ID="StartServer">Start Server</Message>
-		<Message ID="StopServer">Stop Server</Message>
-		<Message ID="ConnectToServer">Connect to Server</Message>
-		<Message ID="Disconnect">Disconnect</Message>
-		<Message ID="PlayerNumber">Player {0}</Message>
-		<Message ID="ExpansionDevice">Expansion Device</Message>
+		<Message ID="Resume">Folytatás</Message>
+		<Message ID="Pause">Szünet</Message>
+		<Message ID="StartServer">Szerver indítása</Message>
+		<Message ID="StopServer">Szerver leállítása</Message>
+		<Message ID="ConnectToServer">Csatlakozás a szerverhez</Message>
+		<Message ID="Disconnect">Lekapcsolódás</Message>
+		<Message ID="PlayerNumber">{0}. játékos</Message>
+		<Message ID="ExpansionDevice">Kiegészítő eszköz</Message>
 
-		<Message ID="PressToExitFullscreen">Press {0} to exit fullscreen</Message>
-		<Message ID="DefaultResolution">Default</Message>
+		<Message ID="PressToExitFullscreen">Teljes képernyőből való kilépéshez a {0}-t nyomja meg</Message>
+		<Message ID="DefaultResolution">Alapvető</Message>
 
-		<Message ID="RomsFound">{0} roms found</Message>
+		<Message ID="RomsFound">{0} rom(ok) találva</Message>
 
-		<Message ID="RiskyOptionHint">(not recommended)</Message>
+		<Message ID="RiskyOptionHint">(nem ajánlott)</Message>
 
 		<Message ID="ResetSettingsConfirmation">Warning: This will reset ALL of settings and cannot be undone!&#xA;&#xA;Continue?</Message>
 

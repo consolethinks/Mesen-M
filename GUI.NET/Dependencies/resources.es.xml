@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Resources>
 	<Forms>
-		<Form ID="frmMain" Title="Mesen">
+		<Form ID="frmMain" Title="Mesen-M">
 			<Control ID="mnuFile">Archivo</Control>
 			<Control ID="mnuOpen">Abrir</Control>
 			<Control ID="mnuSaveState">Guardar</Control>
@@ -147,8 +147,8 @@
 			<Control ID="chkReverbEnabled">Activar la reverberación</Control>
 			<Control ID="lblReverbDelay">Retraso:</Control>
 			<Control ID="lblReverbStrength">Fuerza:</Control>
-			<Control ID="chkMuteSoundInBackground">Detener el sonido cuando Mesen esté en segundo plano</Control>
-			<Control ID="chkReduceSoundInBackground">Bajar el volumen cuando Mesen esté en segundo plano</Control>
+			<Control ID="chkMuteSoundInBackground">Detener el sonido cuando Mesen-M esté en segundo plano</Control>
+			<Control ID="chkReduceSoundInBackground">Bajar el volumen cuando Mesen-M esté en segundo plano</Control>
 			<Control ID="chkReduceSoundInFastForward">Reducir volumen durante el avance rápido/rebobinado</Control>
 			<Control ID="trkVolumeReduction">Reducción de volumen (%)</Control>
 			<Control ID="lblVolumeReductionSettings">Ajustes de reducción de volumen</Control>
@@ -353,7 +353,7 @@
 		<Form ID="frmPreferences" Title="Preferencias">
 			<Control ID="tpgGeneral">General</Control>
 			<Control ID="lblDisplayLanguage">Idioma de pantalla:</Control>
-			<Control ID="chkSingleInstance">Permitir una sola copia de Mesen a la vez</Control>
+			<Control ID="chkSingleInstance">Permitir una sola copia de Mesen-M a la vez</Control>
 			<Control ID="chkAutomaticallyCheckForUpdates">Buscar actualizaciones automáticamente</Control>
 
 			<Control ID="lblPauseBackgroundSettings">Pausa/Configuración en segundo plano</Control>
@@ -363,7 +363,7 @@
 
 			<Control ID="chkConfirmExitResetPower">Mostrar mensaje de confirmación antes de reiniciar/detener o salir</Control>
 			<Control ID="chkPauseOnMovieEnd">Pausar la emulación al finalizar el video</Control>
-			<Control ID="chkAllowBackgroundInput">Permitir entradas aunque Mesen esté en segundo plano</Control>
+			<Control ID="chkAllowBackgroundInput">Permitir entradas aunque Mesen-M esté en segundo plano</Control>
 
 			<Control ID="lblPauseIn">Pausar en:</Control>
 			<Control ID="chkPauseWhenInBackground">Fondo</Control>
@@ -373,19 +373,19 @@
 			<Control ID="chkAutoLoadIps">Cargar los parches IPS/BPS automáticamente</Control>
 			<Control ID="chkHidePauseOverlay">Ocultar la pantalla de pausa</Control>
 			<Control ID="chkDisplayMovieIcons">Mostrar icono de iniciar/grabar al reproducir o grabar un video</Control>
-			<Control ID="btnOpenMesenFolder">Abrir el directorio de Mesen</Control>
+			<Control ID="btnOpenMesenFolder">Abrir el directorio de Mesen-M</Control>
 			<Control ID="btnResetSettings">Restablecer todo</Control>
 
 			<Control ID="tpgFiles">Archivos/Carpetas</Control>
 			<Control ID="grpFileAssociations">Asociación de archivos</Control>
 			<Control ID="chkNesFormat">.NES</Control>
 			<Control ID="chkFdsFormat">.FDS (Famicom Disk System)</Control>
-			<Control ID="chkMmoFormat">.MMO (Videos de Mesen)</Control>
-			<Control ID="chkMstFormat">.MST (Partidas guardadas de Mesen)</Control>
+			<Control ID="chkMmoFormat">.MMO (Videos de Mesen-M)</Control>
+			<Control ID="chkMstFormat">.MST (Partidas guardadas de Mesen-M)</Control>
 
 			<Control ID="grpDataStorageLocation">Carpeta de almacenamiento</Control>
-			<Control ID="radStorageDocuments">Guardar datos de Mesen en mi perfil de usuario</Control>
-			<Control ID="radStoragePortable">Guardar datos de Mesen en la misma carpeta que la aplicación</Control>
+			<Control ID="radStorageDocuments">Guardar datos de Mesen-M en mi perfil de usuario</Control>
+			<Control ID="radStoragePortable">Guardar datos de Mesen-M en la misma carpeta que la aplicación</Control>
 			<Control ID="lblDataLocation">Carpeta:</Control>
 
 			<Control ID="grpPathOverrides">Carpetas predeterminadas</Control>
@@ -425,7 +425,7 @@
 			<Control ID="lblRewindMinutes">minutos (Uso de memoria ≈1MB/min)</Control>
 
 			<Control ID="tpgCloudSave">Guardar online</Control>
-			<Control ID="lblGoogleDriveIntegration">Mesen puede utilizar Google Drive para almacenar las partidas guardadas en su cuenta de Google Drive. Cuando se habilita la integración, todos los datos de copia de seguridad de sus juegos (archivos .sav y partidas guardadas rápidas) son fácilmente accesibles desde cualquier ordenador.</Control>
+			<Control ID="lblGoogleDriveIntegration">Mesen-M puede utilizar Google Drive para almacenar las partidas guardadas en su cuenta de Google Drive. Cuando se habilita la integración, todos los datos de copia de seguridad de sus juegos (archivos .sav y partidas guardadas rápidas) son fácilmente accesibles desde cualquier ordenador.</Control>
 			<Control ID="lblIntegrationOK">La integración con Google Drive está activa.</Control>
 			<Control ID="btnDisableIntegration">Desactivar la integración con Google Drive</Control>
 			<Control ID="btnEnableIntegration">Activar la integración con Google Drive</Control>
@@ -506,7 +506,7 @@
 			<Control ID="colGameName">Juego</Control>
 			<Control ID="colCheatName">Nombre del truco</Control>
 			<Control ID="colCode">Truco</Control>
-			<Control ID="btnImportCheatDB">Del listado de trucos de Mesen</Control>
+			<Control ID="btnImportCheatDB">Del listado de trucos de Mesen-M</Control>
 			<Control ID="btnImportFromFile">De un archivo</Control>
 			<Control ID="btnImport">Importar</Control>
 			<Control ID="btnExport">Exportar</Control>
@@ -549,10 +549,10 @@
 			<Control ID="btnCancel">Cancelar</Control>
 		</Form>
 		<Form ID="frmAbout" Title="Acerca de...">
-			<Control ID="labelProductName">Mesen</Control>
-			<Control ID="labelCopyright">© 2020 M. Bibaud (aka Sour)</Control>
-			<Control ID="lblWebsite">Sitio web:</Control>
-			<Control ID="lblLink">www.mesen.ca</Control>
+			<Control ID="labelProductName">Mesen-M</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
+			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (aka Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">Versión:</Control>
 			<Control ID="lblBuildDateLabel">Fecha de creación:</Control>
 
@@ -565,17 +565,17 @@
 			<Control ID="lblCheats">Trucos:</Control>
 			<Control ID="lblSpecialThanks">¡Y gracias a todos los que han contribuido de alguna manera! (donaciones, informes de errores, pruebas, compartir información, etc.)</Control>
 
-			<Control ID="lblDonate">Si deseas colaborar con Mesen, por favor considera hacer una donación.&#xA;¡Gracias por tu colaboración!</Control>
+			<Control ID="lblDonate">Si deseas colaborar con Mesen-M, por favor considera hacer una donación.&#xA;¡Gracias por tu colaboración!</Control>
 			<Control ID="okButton">&amp;OK</Control>
 		</Form>
 		<Form ID="frmGameConfig" Title="Configuración de juego">
 			<Control ID="grpDipSwitches">Conmutadores DIP</Control>
 		</Form>
-		<Form ID="frmUpdatePrompt" Title="Mesen - Actualización disponible">
+		<Form ID="frmUpdatePrompt" Title="Mesen-M - Actualización disponible">
 			<Control ID="lblLatestVersion">Última versión: </Control>
 			<Control ID="lblCurrentVersion">Versión actual: </Control>
 			<Control ID="lblChangeLog">Historial de cambios</Control>
-			<Control ID="lblDonate">Si deseas colaborar con Mesen, por favor considera hacer una donación. ¡Gracias!</Control>
+			<Control ID="lblDonate">Si deseas colaborar con Mesen-M, por favor considera hacer una donación. ¡Gracias!</Control>
 			<Control ID="btnUpdate">Actualizar</Control>
 			<Control ID="btnCancel">Cancelar</Control>
 		</Form>
@@ -648,17 +648,17 @@
 			<Control ID="tpgVideoOptions">Opciones de video</Control>
 			<Control ID="tpgAudioOptions">Opciones de audio</Control>
 			<Control ID="tpgEmulationOptions">Opciones de emulación</Control>
-			<Control ID="lblExplanation">Esto iniciará Mesen en modo de pantalla completa con la rom "MyGame.nes" cargada. También usa el filtro NTSC, ajuste a escala 2x y establece la configuración de Overscan. El parámetro "DoNotSaveSettings" se usa para prevenir que las opciones dadas desde la línea de comandos alteren la configuración de Mesen.</Control>
+			<Control ID="lblExplanation">Esto iniciará Mesen-M en modo de pantalla completa con la rom "MyGame.nes" cargada. También usa el filtro NTSC, ajuste a escala 2x y establece la configuración de Overscan. El parámetro "DoNotSaveSettings" se usa para prevenir que las opciones dadas desde la línea de comandos alteren la configuración de Mesen-M.</Control>
 		</Form>
 		<Form ID="frmCopyFiles" Title="Por favor espere...">
 			<Control ID="lblCopying">Copiando:</Control>
 		</Form>
-		<Form ID="frmConfigWizard" Title="Mesen - Configuración">
-			<Control ID="lblMesen">Mesen - Emulador de NES</Control>
+		<Form ID="frmConfigWizard" Title="Mesen-M - Configuración">
+			<Control ID="lblMesen">Mesen-M - Emulador de NES</Control>
 			<Control ID="lblConfigWizard">Asistente de Configuración</Control>
-			<Control ID="lblInitialSetup">Tómese un momento para realizar la configuración inicial de Mesen.</Control>
+			<Control ID="lblInitialSetup">Tómese un momento para realizar la configuración inicial de Mesen-M.</Control>
 			<Control ID="lblStorageLocation">Ubicación de Almacenamiento de Datos</Control>
-			<Control ID="lblStorageHint">Elija donde quiere guardar los datos de Mesen:</Control>
+			<Control ID="lblStorageHint">Elija donde quiere guardar los datos de Mesen-M:</Control>
 			<Control ID="radStorageDocuments">Guardar datos en mi perfil de usuario</Control>
 			<Control ID="radStoragePortable">Guardar datos en la misma carpeta que la aplicación</Control>
 			<Control ID="lblDataLocation">Carpeta:</Control>
@@ -778,7 +778,7 @@
 		<Message ID="FilterRomIps">Todos los formatos soportados (*.nes, *.zip, *.7z, *.fds, *.nsf, *.nsfe, *.unf, *.unif, *.studybox, *.ips, *.bps, *.ups)|*.NES;*.ZIP;*.7z;*.IPS;*.BPS;*.UPS;*.FDS;*.NSF;*.NSFE;*.UNF;*.UNIF;*.STUDYBOX|Roms de NES(*.nes, *.unf, *.unif)|*.NES;*.UNF;*.UNIF|Roms de Famicom Disk System (*.fds)|*.FDS|Archivos NSF (*.nsf, *.nsfe)|*.NSF;*.NSFE|Archivos ZIP (*.zip)|*.ZIP|Archivos 7-Zip (*.7z)|*.7z|Archivos IPS/UPS/BPS (*.ips, *.bps, *.ups)|*.IPS;*.BPS;*.UPS|Todos los archivos (*.*)|*.*</Message>
 		<Message ID="FilterTest">Archivos de test (*.mtp)|*.mtp|Todos los archivos (*.*)|*.*</Message>
 		<Message ID="FilterCheat">Todos los formatos soportados (*.cht, *.xml)|*.cht;*.xml</Message>
-		<Message ID="FilterSavestate">Partidas de juegos de Mesen (*.mst)|*.mst|Todos los archivos (*.*)|*.*</Message>
+		<Message ID="FilterSavestate">Partidas de juegos de Mesen-M (*.mst)|*.mst|Todos los archivos (*.*)|*.*</Message>
 		<Message ID="FilterTapeFiles">Archivos Family Basic Tape (*.fbt)|*.fbt|Todos los archivos (*.*)|*.*</Message>
 
 		<Message ID="LastSession">Última sesión</Message>
@@ -803,7 +803,7 @@
 		<Message ID="BandaiMicrophone">Micrófono Bandai</Message>
 		<Message ID="DatachBarcodeReader">Lector de código de barras Datach</Message>
 
-		<Message ID="HelpFullscreen">/fullscreen - Inicia Mesen en pantalla completa</Message>
+		<Message ID="HelpFullscreen">/fullscreen - Inicia Mesen-M en pantalla completa</Message>
 		<Message ID="HelpDoNotSaveSettings">/DoNotSaveSettings - Previene que las opciones se graben en disco (útil para evitar que las opciones de la línea de comandos se conviertan en la configuración predeterminada)</Message>
 		<Message ID="HelpRecordMovie">/RecordMovie="filename.mmo" - Inicia la grabación de una película después de que el juego especificado se ha cargado.</Message>
 		<Message ID="HelpLoadLastSession">/LoadLastSession - Reanuda el juego en el estado en que se dejó la última vez que se jugó.</Message>
@@ -828,11 +828,11 @@
 
 		<Message ID="ResetSettingsConfirmation">ATENCIÓN: ¡Estás a punto restablecer TODA la configuración y no se podrá revertir!&#xA;&#xA;Continuar?</Message>
 
-		<Message ID="RandomGameNoGameFound">Mesen no puede encontrar ningún juego para cargar.</Message>
+		<Message ID="RandomGameNoGameFound">Mesen-M no puede encontrar ningún juego para cargar.</Message>
 
 		<Message ID="CannotWriteToFolder">La carpeta seleccionada no se puede escribir en - por favor elija otra carpeta y prueb de nuevo.&#xA;&#xA;Detalles:&#xA;{0}</Message>
 		<Message ID="InvalidPaths">La siguiente ruta es inválida:&#xA;&#xA;{0}&#xA;&#xA;Por favor use carpetas válidas y con permiso de escritura y pruebe de nuevo.</Message>
-		<Message ID="CopyMesenDataPrompt">Todos los archivos se copiarán de:&#xA;&#xA;{0}&#xA;to&#xA;{1}&#xA;&#xA;Un vez se complete la copia, Mesen se reiniciará.&#xA;¿Continuar?</Message>
+		<Message ID="CopyMesenDataPrompt">Todos los archivos se copiarán de:&#xA;&#xA;{0}&#xA;to&#xA;{1}&#xA;&#xA;Un vez se complete la copia, Mesen-M se reiniciará.&#xA;¿Continuar?</Message>
 
 		<Message ID="NsfNextTrack">Pista siguiente (Espera para jugar más rápido)</Message>
 		<Message ID="NsfUnnamedTrack">[sin nombre]</Message>
@@ -840,13 +840,13 @@
 		<Message ID="CouldNotInstallRuntime">El paquete Visual C++ Redistributable para Visual Studio 2015 no se ha instalado correctamente.</Message>
 		<Message ID="EmptyState">&lt;No hay copia de seguridad&gt;</Message>
 		<Message ID="ErrorWhileCheckingUpdates">Se ha producido un error en la búsqueda de actualizaciones. Compruebe su conexión a Internet e inténtelo de nuevo.&#xA;&#xA;Detalles del error:&#xA;{0}</Message>
-		<Message ID="AutoUpdateDisabledMessage">Las actualizaciones automáticas no están habilitadas en esta compilación - por favor descarga la última versión del código y vuelve a compilar Mesen para obtener las últimas actualizaciones.</Message>
+		<Message ID="AutoUpdateDisabledMessage">Las actualizaciones automáticas no están habilitadas en esta compilación - por favor descarga la última versión del código y vuelve a compilar Mesen-M para obtener las últimas actualizaciones.</Message>
 		<Message ID="BiosNotFound">Se requiere un archivo bios para ejecutar el juego.&#xA;&#xA;  Nombre de archivo: {0}&#xA;  Tamaño: {1} bytes&#xA;&#xA;¿Elegir archivo de bios ahora?</Message>
 		<Message ID="BiosMismatch">El archivo seleccionado no coincide con la bios requerida para este juego.&#xA;&#xA;Esperado SHA-256:&#xA;{0}&#xA;&#xA;Archivo seleccionado con SHA-256:&#xA;{1}&#xA;&#xA;¿Desea utilizar este archivo de todas formas?</Message>
 		<Message ID="FdsDiskSide">Disco {0} Cara {1}</Message>
 		<Message ID="FileNotFound">Archivo no encontrado: {0}</Message>
 
-		<Message ID="HDNesTooltip">Esta opción permite los paquetes de gráficos en alta resolución de carga Mesen en el mismo formato que los del emulador HDNes.&#xA;&#xA;Los paquetes de alta resolución deberán ser colocados en los "HdPacks" en una subcarpeta con el nombre de la ROM.&#xA;Ejemplo: Un paquete para "MiRom.nes" debe estar colocado en "HdPacks\MiRom\hires.txt".</Message>
+		<Message ID="HDNesTooltip">Esta opción permite los paquetes de gráficos en alta resolución de carga Mesen-M en el mismo formato que los del emulador HDNes.&#xA;&#xA;Los paquetes de alta resolución deberán ser colocados en los "HdPacks" en una subcarpeta con el nombre de la ROM.&#xA;Ejemplo: Un paquete para "MiRom.nes" debe estar colocado en "HdPacks\MiRom\hires.txt".</Message>
 		<Message ID="HdPackBuilderScaleHelp">Escoge el tipo de escalado y filtro de vídeo a usar cuando se generen los ficheros PNG&#xA;para el paquete de alta resolución. Usa los filtros "Prescale" para generar las tiles&#xA;a una escala mayor sin aplicar ninguna transformación a los píxeles.</Message>
 		<Message ID="HdPackBuilderBankSizeHelp">Esta opción solo está disponible para juegos de RAM tipo CHR. Los juegos de RAM tipo CHR no tienen&#xA;"bancos" fijos - van siendo creados dinámicamente por el código del juego.&#xA;Esta opción altera el funcionamiento a la hora de agrupar tiles en &#xA;los ficheros PNG - un banco pequeño normalmente dará lugar a menos archivos &#xA;PNG (aunque dependiendo en el código del juego, valores más altos pueden producir &#xA;mejores resultados).</Message>
 		<Message ID="HdPackBuilderFrequencyHelp">Cuando esta opción está habilitada, las tiles en los ficheros PNG se ordenan por la&#xA;frecuencia en que se muestren en la pantalla mientras se esté grabando (paletas &#xA;más comunes se agruparan conjuntamente en el primer archivo para un número de banco &#xA;específico. Si esta casilla está desmarcada, los archivos PNG se ordenarán por paleta - &#xA;en ese caso, cada archivo PNG contendrá solamente 4 colores diferentes.</Message>
@@ -861,19 +861,19 @@
 		<Message ID="InstallHdPackConfirmOverwrite">El directorio destino ({0}) ya existe - ¿Seguro que desea sobreescribirlo?</Message>
 		<Message ID="InstallHdPackConfirmReset">El Pack HD se ha instalado con éxito. ¿Desea reiniciar el juego y cargar el Pack HD ahora?</Message>
 
-		<Message ID="MesenUpToDate">Ya utiliza la versión mas reciente de Mesen.</Message>
+		<Message ID="MesenUpToDate">Ya utiliza la versión mas reciente de Mesen-M.</Message>
 		<Message ID="PatchAndReset">¿Aplicar el parche y reiniciar el juego?</Message>
 		<Message ID="SelectRomIps">Elija la ROM que corresponde al archivo IPS/UPS/BPS seleccionado.</Message>
 		<Message ID="UnableToDownload">No se puede descargar el archivo. Compruebe su conexión a Internet e inténtelo de nuevo.&#xA;&#xA;Detalles del error:&#xA;{0}</Message>
-		<Message ID="UnableToStartMissingDependencies">Mesen no puede inciarse porque porque no puede cargar MesenCore.dll debido a dependencias no encontradas.</Message>
-		<Message ID="UnableToStartMissingFiles">Mesen no puede iniciarse debido a que faltan archivos.&#xA;&#xA;Error: No se encuentra el archivo MesenCore.dll.</Message>
+		<Message ID="UnableToStartMissingDependencies">Mesen-M no puede inciarse porque porque no puede cargar MesenCore.dll debido a dependencias no encontradas.</Message>
+		<Message ID="UnableToStartMissingFiles">Mesen-M no puede iniciarse debido a que faltan archivos.&#xA;&#xA;Error: No se encuentra el archivo MesenCore.dll.</Message>
 		<Message ID="UnexpectedError">Se ha producido un error inesperado.&#xA;&#xA;Detalles del error:&#xA;{0}</Message>
-		<Message ID="UpdateDownloadFailed">Error en la descarga - el archivo parece estar dañado. Por favor, visite el sitio web de Mesen para descargar manualmente la versión más reciente.</Message>
+		<Message ID="UpdateDownloadFailed">Error en la descarga - el archivo parece estar dañado. Por favor, visite el sitio web de Mesen-M para descargar manualmente la versión más reciente.</Message>
 		<Message ID="UpgradeSuccess">La actualización se ha realizado con éxito.</Message>
 		<Message ID="UpdaterNotFound">El proceso de actualización no se puede iniciar porque faltan algunos archivos.</Message>
 		<Message ID="Net45NotFound">Microsoft .NET Framework 4.5 no se ha encontrado. Por favor, descargue la versión más reciente de .NET Framework desde el sitio de Microsoft y vuelva a intentarlo.</Message>
 
-		<Message ID="GoogleDriveIntegrationError">Mesen no fue capaz de conectarse a su cuenta de Google Drive, por favor inténtelo de nuevo.</Message>
+		<Message ID="GoogleDriveIntegrationError">Mesen-M no fue capaz de conectarse a su cuenta de Google Drive, por favor inténtelo de nuevo.</Message>
 
 		<Message ID="InvalidCheatFile">El archivo seleccionado ({0}) no es un archivo de trucos válido.</Message>
 		<Message ID="InvalidXmlFile">El archivo seleccionado ({0}) no es un archivo XML válido.</Message>

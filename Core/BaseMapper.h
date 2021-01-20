@@ -106,18 +106,24 @@ protected:
 	virtual void WriteRegister(uint16_t addr, uint8_t value);
 	virtual uint8_t ReadRegister(uint16_t addr);
 
-	void SelectPrgPage4x(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom);
-	void SelectPrgPage2x(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom);
-	virtual void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom);
+	
+	void SelectPrgPage4x(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom, MemoryAccessType accessType = MemoryAccessType::Unspecified);
+	void SelectPrgPage2x(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom, MemoryAccessType accessType = MemoryAccessType::Unspecified);
+	virtual void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType, MemoryAccessType accessType);
+	virtual void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) { SelectPRGPage(slot, page, memoryType, MemoryAccessType::Unspecified); };
 	void SetCpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, int16_t pageNumber, PrgMemoryType type, int8_t accessType = -1);
 	void SetCpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, PrgMemoryType type, uint32_t sourceOffset, int8_t accessType);
 	void SetCpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, uint8_t *source, int8_t accessType = -1);
 	void RemoveCpuMemoryMapping(uint16_t startAddr, uint16_t endAddr);
 
-	virtual void SelectChrPage8x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default);
-	virtual void SelectChrPage4x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default);
-	virtual void SelectChrPage2x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default);
-	virtual void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default);
+	virtual void SelectChrPage8x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType);
+	virtual void SelectChrPage4x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType);
+	virtual void SelectChrPage2x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType);
+	virtual void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType);
+	virtual void SelectChrPage8x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) { SelectChrPage8x(slot, page, memoryType, MemoryAccessType::Unspecified); }
+	virtual void SelectChrPage4x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) { SelectChrPage4x(slot, page, memoryType, MemoryAccessType::Unspecified); }
+	virtual void SelectChrPage2x(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) { SelectChrPage2x(slot, page, memoryType, MemoryAccessType::Unspecified); }
+	virtual void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) { SelectCHRPage(slot, page, memoryType, MemoryAccessType::Unspecified); }
 	void SetPpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, uint16_t pageNumber, ChrMemoryType type = ChrMemoryType::Default, int8_t accessType = -1);
 	void SetPpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, ChrMemoryType type, uint32_t sourceOffset, int8_t accessType);
 	void SetPpuMemoryMapping(uint16_t startAddr, uint16_t endAddr, uint8_t* sourceMemory, int8_t accessType = -1);

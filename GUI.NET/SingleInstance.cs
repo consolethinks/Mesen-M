@@ -30,19 +30,19 @@ namespace Mesen.GUI
 		{
 			if(Program.IsMono) {
 				try {
-					_fileStream = System.IO.File.Open("mesen.lock", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+					_fileStream = System.IO.File.Open("mesen-m.lock", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
 					_fileStream.Lock(0, 0);
 					_firstInstance = true;
 				} catch {
 					_firstInstance = false;
 				}
 				try {
-					if(File.Exists("mesen.arguments")) {
-						File.Delete("mesen.arguments");
+					if(File.Exists("mesen-m.arguments")) {
+						File.Delete("mesen-m.arguments");
 					}
 				} catch { }
 			} else {
-				this._identifier = new Guid("{A46606B7-2D1C-4CC5-A52F-43BCAF094AED}");
+				this._identifier = new Guid("{0A14B5A0-8E07-46B4-B63C-0AEB7C4D8EA4}");
 				this._mutex = new Mutex(true, _identifier.ToString(), out _firstInstance);
 			}
 		}
@@ -61,7 +61,7 @@ namespace Mesen.GUI
 		{
 			if(Program.IsMono) {
 				try {
-					File.WriteAllText("mesen.arguments", string.Join(Environment.NewLine, arguments));
+					File.WriteAllText("mesen-m.arguments", string.Join(Environment.NewLine, arguments));
 				} catch { }
 
 				return true;
@@ -98,11 +98,11 @@ namespace Mesen.GUI
 		{
 			if(Program.IsMono) {
 				while(true) {
-					if(File.Exists("mesen.arguments")) {
+					if(File.Exists("mesen-m.arguments")) {
 						try {
-							string[] arguments = File.ReadAllLines("mesen.arguments");
+							string[] arguments = File.ReadAllLines("mesen-m.arguments");
 							ThreadPool.QueueUserWorkItem(new WaitCallback(CallOnArgumentsReceived), arguments);							
-							File.Delete("mesen.arguments");
+							File.Delete("mesen-m.arguments");
 						} catch { }
 					}
 					System.Threading.Thread.Sleep(200);

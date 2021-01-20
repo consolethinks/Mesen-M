@@ -24,15 +24,14 @@ private:
 	bool _enablePrgAt6000;
 	
 	uint8_t _chrMode;
-	bool _chrBlockMode;
-	uint8_t _chrBlock;
-	bool _mirrorChr;
+	bool _autoChrSwitching;
 
 	uint8_t _mirroringReg;
-	bool _advancedNtControl;
+	bool _romNametable;
+	bool _extendedMirroring; // $D001.3 controls the same thing
 	bool _disableNtRam;
 
-	uint8_t _ntRamSelectBit;
+	uint8_t _ppuAddressSpaceConfig;
 	uint8_t _ntLowRegs[4];
 	uint8_t _ntHighRegs[4];
 
@@ -48,16 +47,43 @@ private:
 
 	uint8_t _multiplyValue1;
 	uint8_t _multiplyValue2;
+	uint16_t _multiplyResult;
+	uint8_t _accumulator;
 	uint8_t _regRamValue;
 
 	uint16_t _lastPpuAddr;
 
 protected:
-	virtual uint16_t GetPRGPageSize() override { return 0x2000; }
-	virtual uint16_t GetCHRPageSize() override { return 0x0400; }
-	virtual bool AllowRegisterRead() override { return true; }
+	uint16_t _prgMask;
+	uint8_t _prgShift;
+	uint8_t _outerPrgReg;
 
-	void InitMapper() override
+	uint16_t _chrMask;
+	uint8_t _chrShift;
+	uint8_t _outerChrReg;
+
+	uint16_t GetPRGPageSize() override { return 0x2000; }
+	uint16_t GetCHRPageSize() override { return 0x0400; }
+	virtual uint32_t GetWorkRamSize() override {
+		if(_romInfo.MapperID == 35) {
+			return 0x2000; // 8K WRAM
+		} else {
+			return 0;
+		}
+	}
+	virtual bool ForceWorkRamSize() override {
+		if(_romInfo.MapperID == 35) { return true; }
+		else { return false; }
+	}
+	bool AllowRegisterRead() override { return true; }
+	uint32_t GetDipSwitchCount() override { return 2; }
+
+	virtual uint8_t PrgMaskDefault() { return 0x3F; } // 35/90/209/211 (PRG 512K, CHR 256K)
+	virtual uint8_t PrgShiftDefault() { return 6; }
+	virtual uint16_t ChrMaskDefault() { return 0x00FF; }
+	virtual uint8_t ChrShiftDefault() { return 8; }
+
+	virtual void InitMapper() override
 	{
 		RemoveRegisterRange(0x8000, 0xFFFF, MemoryOperation::Read);
 		AddRegisterRange(0x5000, 0x5FFF, MemoryOperation::Any);
@@ -70,18 +96,23 @@ protected:
 		memset(_chrHighRegs, 0, sizeof(_chrHighRegs));
 
 		_prgMode = 0;
+		_prgMask = PrgMaskDefault();
+		_prgShift = PrgShiftDefault();
+		_outerPrgReg = 0;
 		_enablePrgAt6000 = false;
 
 		_chrMode = 0;
-		_chrBlockMode = false;
-		_chrBlock = 0;
-		_mirrorChr = false;
+		_chrMask = ChrMaskDefault();
+		_chrShift = ChrShiftDefault();
+		_outerChrReg = 0;
+		_autoChrSwitching = false;
 
 		_mirroringReg = 0;
-		_advancedNtControl = false;
+		_romNametable = false;
+		_extendedMirroring = false;
 		_disableNtRam = false;
 
-		_ntRamSelectBit = 0;
+		_ppuAddressSpaceConfig = 0;
 		memset(_ntLowRegs, 0, sizeof(_ntLowRegs));
 		memset(_ntHighRegs, 0, sizeof(_ntHighRegs));
 
@@ -98,6 +129,8 @@ protected:
 
 		_multiplyValue1 = 0;
 		_multiplyValue2 = 0;
+		_multiplyResult = 0;
+		_accumulator = 0;
 		_regRamValue = 0;
 
 		UpdateState();
@@ -113,9 +146,9 @@ protected:
 		ArrayInfo<uint8_t> ntLowRegs{ _ntLowRegs, 4 };
 		ArrayInfo<uint8_t> ntHighRegs{ _ntHighRegs, 4 };
 
-		Stream(_chrLatch[0], _chrLatch[1], _prgMode, _enablePrgAt6000, _chrMode, _chrBlockMode, _chrBlock, _mirrorChr, _mirroringReg, _advancedNtControl,
-			_disableNtRam, _ntRamSelectBit, _irqEnabled, _irqSource, _lastPpuAddr, _irqCountDirection, _irqFunkyMode, _irqFunkyModeReg, _irqSmallPrescaler,
-			_irqPrescaler, _irqCounter, _irqXorReg, _multiplyValue1, _multiplyValue2, _regRamValue, prgRegs, chrLowRegs, chrHighRegs, ntLowRegs, ntHighRegs);
+		Stream(_chrLatch[0], _chrLatch[1], _prgMode, _outerPrgReg, _enablePrgAt6000, _chrMode, _chrMask, _chrShift, _outerChrReg, _autoChrSwitching, _mirroringReg, _romNametable, _extendedMirroring,
+			_disableNtRam, _ppuAddressSpaceConfig, _irqEnabled, _irqSource, _lastPpuAddr, _irqCountDirection, _irqFunkyMode, _irqFunkyModeReg, _irqSmallPrescaler,
+			_irqPrescaler, _irqCounter, _irqXorReg, _multiplyValue1, _multiplyValue2, _multiplyResult, _accumulator, _regRamValue, prgRegs, chrLowRegs, chrHighRegs, ntLowRegs, ntHighRegs);
 
 		if(!saving) {
 			UpdateState();
@@ -129,109 +162,100 @@ protected:
 		UpdateMirroringState();
 	}
 
-	uint8_t InvertPrgBits(uint8_t prgReg, bool needInvert)
+	uint8_t InvertPrgBits(uint8_t prgReg)
 	{
-		if(needInvert) {
-			return (prgReg & 0x01) << 6 | (prgReg & 0x02) << 4 | (prgReg & 0x04) << 2 | (prgReg & 0x10) >> 2 | (prgReg & 0x20) >> 4 | (prgReg & 0x40) >> 6;
-		} else {
-			return prgReg;
-		}
+		return (prgReg & 0x01) << 6 | (prgReg & 0x02) << 4 | (prgReg & 0x04) << 2 | (prgReg & 0x10) >> 2 | (prgReg & 0x20) >> 4 | (prgReg & 0x40) >> 6;
 	}
 
+#define PrgMapped(reg, shift) (((_outerPrgReg << _prgShift) & ~_prgMask) | ((reg << shift) & _prgMask))
 	void UpdatePrgState()
 	{
-		bool invertBits = (_prgMode & 0x03) == 0x03;
-		int prgRegs[4] = { InvertPrgBits(_prgRegs[0], invertBits), InvertPrgBits(_prgRegs[1], invertBits),
-								 InvertPrgBits(_prgRegs[2], invertBits), InvertPrgBits(_prgRegs[3], invertBits) };
-
+		uint8_t prgLastBank = (_prgMode & 0x04) ? _prgRegs[3] : 0x3F;
 		switch(_prgMode & 0x03) {
 			case 0:
-				SelectPrgPage4x(0, (_prgMode & 0x04) ? prgRegs[3] : 0x3C);
+				SelectPrgPage4x(0, PrgMapped(prgLastBank, 2));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, prgRegs[3] * 4 + 3, PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, (_prgRegs[3] << 2) | 3, PrgMemoryType::PrgRom);
 				}
 				break;
 
 			case 1:
-				SelectPrgPage2x(0, prgRegs[1] << 1);
-				SelectPrgPage2x(1, (_prgMode & 0x04) ? prgRegs[3] : 0x3E);
+				SelectPrgPage2x(0, PrgMapped(_prgRegs[1], 1));
+				SelectPrgPage2x(1, PrgMapped(prgLastBank, 1));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, prgRegs[3] * 2 + 1, PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, (_prgRegs[3] << 1) | 1, PrgMemoryType::PrgRom);
 				}
 				break;
 
 			case 2:
-			case 3:
-				SelectPRGPage(0, prgRegs[0]);
-				SelectPRGPage(1, prgRegs[1]);
-				SelectPRGPage(2, prgRegs[2]);
-				SelectPRGPage(3, (_prgMode & 0x04) ? prgRegs[3] : 0x3F);
+				SelectPRGPage(0, PrgMapped(_prgRegs[0], 0));
+				SelectPRGPage(1, PrgMapped(_prgRegs[1], 0));
+				SelectPRGPage(2, PrgMapped(_prgRegs[2], 0));
+				SelectPRGPage(3, PrgMapped(prgLastBank, 0));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, prgRegs[3], PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, _prgRegs[3], PrgMemoryType::PrgRom);
+				}
+				break;
+			case 3:
+				SelectPRGPage(0, PrgMapped(InvertPrgBits(_prgRegs[0]), 0));
+				SelectPRGPage(1, PrgMapped(InvertPrgBits(_prgRegs[1]), 0));
+				SelectPRGPage(2, PrgMapped(InvertPrgBits(_prgRegs[2]), 0));
+				SelectPRGPage(3, PrgMapped(InvertPrgBits(prgLastBank), 0));
+				if(_enablePrgAt6000) {
+					SetCpuMemoryMapping(0x6000, 0x7FFF, InvertPrgBits(_prgRegs[3]), PrgMemoryType::PrgRom);
 				}
 				break;
 		}
 
 		if(!_enablePrgAt6000) {
-			RemoveCpuMemoryMapping(0x6000, 0x7FFF);
-		}
-	}
-
-	uint16_t GetChrReg(int index)
-	{
-		if(_chrMode >= 2 && _mirrorChr && (index == 2 || index == 3)) {
-			index -= 2;
-		}
-
-		if(_chrBlockMode) {
-			uint8_t mask = 0;
-			uint8_t shift = 0;
-			switch(_chrMode) {
-				default:
-				case 0: mask = 0x1F; shift = 5; break;
-				case 1: mask = 0x3F; shift = 6; break;
-				case 2: mask = 0x7F; shift = 7; break;
-				case 3: mask = 0xFF; shift = 8; break;
+			if(_workRamSize > 0) {
+				SetCpuMemoryMapping(0x6000, 0x7FFF, 0, PrgMemoryType::WorkRam, MemoryAccessType::ReadWrite);
+			} else {
+				RemoveCpuMemoryMapping(0x6000, 0x7FFF);
 			}
-			return (_chrLowRegs[index] & mask) | (_chrBlock << shift);
-		} else {
-			return _chrLowRegs[index] | (_chrHighRegs[index] << 8);
 		}
 	}
+#undef PrgMapped
 
+#define ChrMapped(chrNum, shift) (((_outerChrReg << _chrShift) & ~_chrMask) | ((((_chrHighRegs[chrNum] << 8) | _chrLowRegs[chrNum]) << shift) & _chrMask))
 	void UpdateChrState()
 	{
-		int chrRegs[8] = { GetChrReg(0), GetChrReg(1), GetChrReg(2), GetChrReg(3), GetChrReg(4), GetChrReg(5), GetChrReg(6), GetChrReg(7) };
-
+		MemoryAccessType chrAccess = ((_ppuAddressSpaceConfig & 0x40) && !(_chrRomSize > 0) && (_chrRamSize > 0)) ? MemoryAccessType::ReadWrite : MemoryAccessType::Read;
 		switch(_chrMode) {
 			case 0: 
-				SelectChrPage8x(0, chrRegs[0] << 3);
+				SelectChrPage8x(0, ChrMapped(0, 3), ChrMemoryType::Default, chrAccess);
 				break;
 
 			case 1: 
-				SelectChrPage4x(0, chrRegs[_chrLatch[0]] << 2);
-				SelectChrPage4x(1, chrRegs[_chrLatch[1]] << 2);
+				if(_autoChrSwitching) {
+					SelectChrPage4x(0, ChrMapped(_chrLatch[0], 2), ChrMemoryType::Default, chrAccess);
+					SelectChrPage4x(1, ChrMapped(_chrLatch[1], 2), ChrMemoryType::Default, chrAccess);
+				} else {
+					SelectChrPage4x(0, ChrMapped(0, 2), ChrMemoryType::Default, chrAccess);
+					SelectChrPage4x(1, ChrMapped(4, 2), ChrMemoryType::Default, chrAccess);
+				}
+				
 				break;
 
-			case 2: 
-				SelectChrPage2x(0, chrRegs[0] << 1);
-				SelectChrPage2x(1, chrRegs[2] << 1);
-				SelectChrPage2x(2, chrRegs[4] << 1);
-				SelectChrPage2x(3, chrRegs[6] << 1);
+			case 2:
+				for(int i = 0; i < 4; ++i) {
+					SelectChrPage2x(i, ChrMapped(i*2, 1), ChrMemoryType::Default, chrAccess);
+				}
 				break;
 
 			case 3:
 				for(int i = 0; i < 8; i++) {
-					SelectCHRPage(i, chrRegs[i]);
+					SelectCHRPage(i, ChrMapped(i, 0));
 				}
 				break;
 		}
 	}
+#undef ChrMapped
 
 	void UpdateMirroringState()
 	{
 		//"Mapper 211 behaves as though N were always set (1), and mapper 090 behaves as though N were always clear(0)."
-		if((_advancedNtControl || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
+		if((_romNametable || _extendedMirroring || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
 			for(int i = 0; i < 4; i++) {
 				SetNametable(i, _ntLowRegs[i] & 0x01);
 			}
@@ -247,14 +271,25 @@ protected:
 
 	uint8_t ReadRegister(uint16_t addr) override
 	{
+		if (addr == 0x5000 || addr == 0x5400 || addr == 0x5C00) {
+			return (GetDipSwitches() << 6); //Dip switches
+		}
 		switch(addr & 0xF803) {
-			case 0x5000: return 0; //Dip switches
-			case 0x5800: return (_multiplyValue1 * _multiplyValue2) & 0xFF;
-			case 0x5801: return ((_multiplyValue1 * _multiplyValue2) >> 8) & 0xFF;
+			case 0x5800: return _multiplyResult & 0xFF;
+			case 0x5801: return (_multiplyResult >> 8) & 0xFF;
+			case 0x5802: return _accumulator;
 			case 0x5803: return _regRamValue;
 		}
 
 		return _console->GetMemoryManager()->GetOpenBus();
+	}
+
+	virtual void D003Write(uint8_t value) // Mapper 35/90/209/211
+	{
+		_autoChrSwitching = (value & 0x80) == 0x80;
+		_chrMask = (value & 0x20) ? 0x01FF : 0x00FF;
+		_outerChrReg = ((value & 0x18) >> 2) | (value & 0x01);
+		_outerPrgReg = ((value & 0x06) >> 1);
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
@@ -262,76 +297,82 @@ protected:
 		if(addr < 0x8000) {
 			switch(addr & 0xF803) {
 				case 0x5800: _multiplyValue1 = value; break;
-				case 0x5801: _multiplyValue2 = value; break;
-				case 0x5803: _regRamValue = value; break;
+				case 0x5801: 
+					_multiplyValue2 = value; 
+					_multiplyResult = _multiplyValue1 * _multiplyValue2; // this is supposed to be available after 8 cycles but whatever
+					break;
+				case 0x5802: _accumulator += value; break;
+				case 0x5803: 
+					_accumulator = 0;
+					_regRamValue = value; 
+					break;
 			}
 		} else {
-			switch(addr & 0xF007) {
-				case 0x8000: case 0x8001: case 0x8002: case 0x8003:
-				case 0x8004: case 0x8005: case 0x8006: case 0x8007:
+			switch(addr & 0xF800) {
+				case 0x8000:
 					_prgRegs[addr & 0x03] = value & 0x7F;
 					break;
 
-				case 0x9000: case 0x9001: case 0x9002: case 0x9003:
-				case 0x9004: case 0x9005: case 0x9006: case 0x9007:
+				case 0x9000:
 					_chrLowRegs[addr & 0x07] = value;
 					break;
 
-				case 0xA000: case 0xA001: case 0xA002: case 0xA003:
-				case 0xA004: case 0xA005: case 0xA006: case 0xA007:
+				case 0xA000:
 					_chrHighRegs[addr & 0x07] = value;
 					break;
 
-				case 0xB000: case 0xB001: case 0xB002: case 0xB003:
-					_ntLowRegs[addr & 0x03] = value;
-					break;
-				
-				case 0xB004: case 0xB005: case 0xB006: case 0xB007:
-					_ntHighRegs[addr & 0x03] = value;
-					break;
-
-				case 0xC000:
-					if(value & 0x01) {
-						_irqEnabled = true;
+				case 0xB000:
+					if(addr & 0x04) {
+						_ntHighRegs[addr & 0x03] = value;
 					} else {
-						_irqEnabled = false;
-						_console->GetCpu()->ClearIrqSource(IRQSource::External);
+						_ntLowRegs[addr & 0x03] = value;
 					}
 					break;
 
-				case 0xC001:
-					_irqCountDirection = (value >> 6) & 0x03;
-					_irqFunkyMode = (value & 0x08) == 0x08;
-					_irqSmallPrescaler = ((value >> 2) & 0x01) == 0x01;
-					_irqSource = (JyIrqSource)(value & 0x03);
+				case 0xC000: case 0xC800: // mask is $F007
+					switch(addr & 0x07) {
+						case 0x00: 												// $C000
+							if(value & 0x01) {
+								_irqEnabled = true;
+							} else {
+								_irqEnabled = false;
+								_console->GetCpu()->ClearIrqSource(IRQSource::External);
+							}
+							break;
+						case 0x01: 												// $C001
+							_irqCountDirection = (value >> 6) & 0x03;
+							_irqFunkyMode = (value & 0x08) == 0x08;
+							_irqSmallPrescaler = ((value >> 2) & 0x01) == 0x01;
+							_irqSource = (JyIrqSource)(value & 0x03);
+							break;
+						case 0x02: 												// $C002
+							_irqEnabled = false;
+							_console->GetCpu()->ClearIrqSource(IRQSource::External);
+							break;
+						case 0x03: _irqEnabled = true; break; 					// $C003
+						case 0x04: _irqPrescaler = value ^ _irqXorReg; break; 	// $C004
+						case 0x05: _irqCounter = value ^ _irqXorReg; break; 	// $C005
+						case 0x06: _irqXorReg = value; break; 					// $C006
+						case 0x07: _irqFunkyModeReg = value; break; 			// $C007
+					}
 					break;
-
-				case 0xC002:
-					_irqEnabled = false;
-					_console->GetCpu()->ClearIrqSource(IRQSource::External);
-					break;
-
-				case 0xC003: _irqEnabled = true; break;
-				case 0xC004: _irqPrescaler = value ^ _irqXorReg; break;
-				case 0xC005: _irqCounter = value ^ _irqXorReg; break;
-				case 0xC006: _irqXorReg = value; break;
-				case 0xC007: _irqFunkyModeReg = value; break;
 
 				case 0xD000:
-					_prgMode = value & 0x07;
-					_chrMode = (value >> 3) & 0x03;
-					_advancedNtControl = (value & 0x20) == 0x20;
-					_disableNtRam = (value & 0x40) == 0x40;
-					_enablePrgAt6000 = (value & 0x80) == 0x80;
-					break;
-
-				case 0xD001: _mirroringReg = value & 0x03; break;
-				case 0xD002: _ntRamSelectBit = value & 0x80; break;
-
-				case 0xD003:
-					_mirrorChr = (value & 0x80) == 0x80;
-					_chrBlockMode = (value & 0x20) == 0x00;
-					_chrBlock = ((value & 0x18) >> 2) | (value & 0x01);
+					switch(addr & 0x03) {
+						case 0x00: 												// $D000
+							_prgMode = value & 0x07;
+							_chrMode = (value >> 3) & 0x03;
+							_romNametable = (value & 0x20) == 0x20;
+							_disableNtRam = (value & 0x40) == 0x40;
+							_enablePrgAt6000 = (value & 0x80) == 0x80;
+							break;
+						case 0x01: 												// $D001
+							_mirroringReg = value & 0x03; 
+							_extendedMirroring = (value & 0x08) == 0x08;
+							break;
+						case 0x02: _ppuAddressSpaceConfig = value & 0xC0; break;// $D002
+						case 0x03: D003Write(value); break; 					// $D003
+					}
 					break;
 
 			}
@@ -347,6 +388,7 @@ protected:
 		}
 	}
 
+#define NtMapped(ntNum) (((_outerChrReg << _chrShift) & ~_chrMask) | ((((_ntHighRegs[ntNum] << 8) | _ntLowRegs[ntNum])) & _chrMask))
 	uint8_t MapperReadVRAM(uint16_t addr, MemoryOperationType type) override
 	{
 		if(_irqSource == JyIrqSource::PpuRead && type == MemoryOperationType::PpuRenderingRead) {
@@ -356,15 +398,15 @@ protected:
 		if(addr >= 0x2000) {
 			//This behavior only affects reads, not writes.
 			//Additional info: https://forums.nesdev.com/viewtopic.php?f=3&t=17198
-			if((_advancedNtControl || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
+			if((_romNametable || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
 				uint8_t ntIndex = ((addr & 0x2FFF) - 0x2000) / 0x400;
-				if(_disableNtRam || (_ntLowRegs[ntIndex] & 0x80) != (_ntRamSelectBit & 0x80)) {
-					uint16_t chrPage = _ntLowRegs[ntIndex] | (_ntHighRegs[ntIndex] << 8);
-					uint32_t chrOffset = chrPage * 0x400 + (addr & 0x3FF);
-					if(_chrRomSize > chrOffset) {
-						return _chrRom[chrOffset];
+				if(_disableNtRam || (_ntLowRegs[ntIndex] & 0x80) != (_ppuAddressSpaceConfig & 0x80)) {
+					uint16_t chrPage = NtMapped(ntIndex);
+					uint32_t chrOffset = (chrPage << 10) | (addr & 0x3FF);
+					if(_chrRomSize != 0) {
+						return _chrRom[chrOffset % _chrRomSize];
 					} else {
-						return 0;
+						return _chrRam[chrOffset % _chrRamSize];
 					}
 				}
 			}
@@ -372,6 +414,7 @@ protected:
 
 		return BaseMapper::MapperReadVRAM(addr, type);
 	}
+#undef NtMapped
 
 	void NotifyVRAMAddressChange(uint16_t addr) override
 	{
@@ -380,7 +423,7 @@ protected:
 		}
 		_lastPpuAddr = addr;
 
-		if(_romInfo.MapperID == 209) {
+		if(_autoChrSwitching) {
 			switch(addr & 0x2FF8) {
 				case 0x0FD8:
 				case 0x0FE8:

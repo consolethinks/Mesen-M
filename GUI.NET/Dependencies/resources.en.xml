@@ -562,8 +562,9 @@
 		</Form>
 		<Form ID="frmAbout" Title="About - Mesen-M">
 			<Control ID="labelProductName">Mesen-M</Control>
-			<Control ID="labelCopyright">© 2020 Consolethinks</Control>
+			<Control ID="labelCopyright">© 2020-2021 Consolethinks</Control>
 			<Control ID="lblWebsite">© 2014-2020 M. Bibaud (aka Sour)</Control>
+			<Control ID="lblLink">[No site yet]</Control>
 			<Control ID="labelVersion">Version:</Control>
 			<Control ID="lblBuildDateLabel">Build Date:</Control>
 			
@@ -574,7 +575,7 @@
 			<Control ID="lblAudio">Audio:</Control>
 			<Control ID="lblEmulation">Emulation:</Control>
 			<Control ID="lblCheats">Cheats:</Control>
-			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (donations, bug reports, testing, sharing information, etc.)</Control>
+			<Control ID="lblSpecialThanks">And thank you to everybody who has contributed in any way! (bug reports, testing, sharing information, etc.)</Control>
 
 			<Control ID="okButton">&amp;OK</Control>
 		</Form>

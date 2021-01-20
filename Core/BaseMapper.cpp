@@ -310,19 +310,19 @@ uint8_t BaseMapper::InternalReadRam(uint16_t addr)
 	return _prgPages[addr >> 8] ? _prgPages[addr >> 8][(uint8_t)addr] : 0;
 }
 
-void BaseMapper::SelectPrgPage4x(uint16_t slot, uint16_t page, PrgMemoryType memoryType)
+void BaseMapper::SelectPrgPage4x(uint16_t slot, uint16_t page, PrgMemoryType memoryType, MemoryAccessType accessType)
 {
-	BaseMapper::SelectPrgPage2x(slot*2, page, memoryType);
-	BaseMapper::SelectPrgPage2x(slot*2+1, page+2, memoryType);
+	BaseMapper::SelectPrgPage2x(slot*2, page, memoryType, accessType);
+	BaseMapper::SelectPrgPage2x(slot*2+1, page+2, memoryType, accessType);
 }
 
-void BaseMapper::SelectPrgPage2x(uint16_t slot, uint16_t page, PrgMemoryType memoryType)
+void BaseMapper::SelectPrgPage2x(uint16_t slot, uint16_t page, PrgMemoryType memoryType, MemoryAccessType accessType)
 {
-	BaseMapper::SelectPRGPage(slot*2, page, memoryType);
-	BaseMapper::SelectPRGPage(slot*2+1, page+1, memoryType);
+	BaseMapper::SelectPRGPage(slot*2, page, memoryType, accessType);
+	BaseMapper::SelectPRGPage(slot*2+1, page+1, memoryType, accessType);
 }
 
-void BaseMapper::SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType)
+void BaseMapper::SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType, MemoryAccessType accessType)
 {
 	if(_prgSize < 0x8000 && GetPRGPageSize() > _prgSize) {
 		//Total PRG size is smaller than available memory range, map the entire PRG to all slots
@@ -335,34 +335,36 @@ void BaseMapper::SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memor
 		for(slot = 0; slot < 0x8000 / _prgSize; slot++) {
 			uint16_t startAddr = 0x8000 + slot * _prgSize;
 			uint16_t endAddr = startAddr + _prgSize - 1;
-			SetCpuMemoryMapping(startAddr, endAddr, 0, memoryType);
+			SetCpuMemoryMapping(startAddr, endAddr, 0, memoryType, accessType);
+			
 		}
 	} else {
 		uint16_t startAddr = 0x8000 + slot * InternalGetPrgPageSize();
 		uint16_t endAddr = startAddr + InternalGetPrgPageSize() - 1;
-		SetCpuMemoryMapping(startAddr, endAddr, page, memoryType);
+		SetCpuMemoryMapping(startAddr, endAddr, page, memoryType, accessType);
+
 	}
 }
 
-void BaseMapper::SelectChrPage8x(uint16_t slot, uint16_t page, ChrMemoryType memoryType)
+void BaseMapper::SelectChrPage8x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType)
 {
-	BaseMapper::SelectChrPage4x(slot, page, memoryType);
-	BaseMapper::SelectChrPage4x(slot*2+1, page+4, memoryType);
+	BaseMapper::SelectChrPage4x(slot, page, memoryType, accessType);
+	BaseMapper::SelectChrPage4x(slot*2+1, page+4, memoryType, accessType);
 }
 
-void BaseMapper::SelectChrPage4x(uint16_t slot, uint16_t page, ChrMemoryType memoryType)
+void BaseMapper::SelectChrPage4x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType)
 {
-	BaseMapper::SelectChrPage2x(slot*2, page, memoryType);
-	BaseMapper::SelectChrPage2x(slot*2+1, page+2, memoryType);
+	BaseMapper::SelectChrPage2x(slot*2, page, memoryType, accessType);
+	BaseMapper::SelectChrPage2x(slot*2+1, page+2, memoryType, accessType);
 }
 
-void BaseMapper::SelectChrPage2x(uint16_t slot, uint16_t page, ChrMemoryType memoryType)
+void BaseMapper::SelectChrPage2x(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType)
 {
-	BaseMapper::SelectCHRPage(slot*2, page, memoryType);
-	BaseMapper::SelectCHRPage(slot*2+1, page+1, memoryType);
+	BaseMapper::SelectCHRPage(slot*2, page, memoryType, accessType);
+	BaseMapper::SelectCHRPage(slot*2+1, page+1, memoryType, accessType);
 }
 
-void BaseMapper::SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType)
+void BaseMapper::SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType, MemoryAccessType accessType)
 {
 	uint16_t pageSize;
 	if(memoryType == ChrMemoryType::NametableRam) {
@@ -373,7 +375,8 @@ void BaseMapper::SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memor
 
 	uint16_t startAddr = slot * pageSize;
 	uint16_t endAddr = startAddr + pageSize - 1;
-	SetPpuMemoryMapping(startAddr, endAddr, page, memoryType);
+	SetPpuMemoryMapping(startAddr, endAddr, page, memoryType, accessType);
+	
 }
 
 uint8_t BaseMapper::GetPowerOnByte(uint8_t defaultValue)
