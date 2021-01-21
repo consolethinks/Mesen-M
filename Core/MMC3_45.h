@@ -9,12 +9,15 @@ private:
 	uint8_t _reg[4];
 
 protected:
-	virtual uint16_t RegisterStartAddress() override { return 0x8000; }
-	virtual uint16_t RegisterEndAddress() override { return 0xFFFF; }
+	bool AllowRegisterRead() override { return true; }
+	uint32_t GetDipSwitchCount() override { return 3; }
 
 	virtual void InitMapper() override
 	{
 		MMC3::InitMapper();
+		RemoveRegisterRange(0x8000, 0xFFFF, MemoryOperation::Read);
+		AddRegisterRange(0x5000, 0x5FFF, MemoryOperation::Read);
+		AddRegisterRange(0x6000, 0x7FFF, MemoryOperation::Write);
 
 		//Needed by Famicom Yarou Vol 1 - Game apparently writes to CHR RAM before initializing the registers
 		_registers[0] = 0;
@@ -31,18 +34,15 @@ protected:
 		MMC3::StreamState(saving);
 		ArrayInfo<uint8_t> reg = { _reg, 4 };
 		Stream(_regIndex, reg);
-
-		if(_reg[3] & 0x40) {
-			RemoveRegisterRange(0x6000, 0x7FFF);
-		}
 	}
 
 	virtual void Reset(bool softReset) override
 	{
-		AddRegisterRange(0x6000, 0x7FFF);
 		_regIndex = 0;
 		memset(_reg, 0, sizeof(_reg));
 		_reg[2] = 0x0F;
+		ResetMmc3();
+
 		UpdateState();
 	}
 
@@ -65,17 +65,29 @@ protected:
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		if(addr < 0x8000) {
-			if(!(_reg[3] & 0x40)) {
-				_reg[_regIndex] = value;
-				_regIndex = (_regIndex + 1) & 0x03;
+			switch(addr & 0xF001) {
+				case 0x6000:
+					if(!(_reg[3] & 0x40)) {
+						_reg[_regIndex] = value;
+						_regIndex = (_regIndex + 1) & 0x03;
+					}
+					UpdateState();
+					break;
+				case 0x6001:
+					Reset(true);
+					break;
 			}
-			
-			if(_reg[3] & 0x40) {
-				RemoveRegisterRange(0x6000, 0x7FFF);
-			}
-			UpdateState();
 		} else {
 			MMC3::WriteRegister(addr, value);
+		}
+	}
+
+	uint8_t ReadRegister(uint16_t addr) override
+	{
+		if(addr == (0x5000 | (0x0010 << GetDipSwitches()))) {
+			return 0x00;
+		} else {
+			return 0x01;
 		}
 	}
 };
