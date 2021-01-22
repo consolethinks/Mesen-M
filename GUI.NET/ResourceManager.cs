@@ -128,7 +128,7 @@ namespace Mesen.GUI
 				if(entry.Name.StartsWith("MesenCore") && !Program.IsMono && entry.Name.Contains(suffix)) {
 					string outputFilename = Path.Combine(ConfigManager.HomeFolder, entry.Name.Replace(suffix, ""));
 					ExtractFile(entry, outputFilename);					
-				} else if(entry.Name.StartsWith("libMesenCore") && Program.IsMono && entry.Name.Contains(suffix)) {
+				} else if(entry.Name.StartsWith("libMesen-MCore") && Program.IsMono && entry.Name.Contains(suffix)) {
 					string outputFilename = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), entry.Name.Replace(suffix, ""));
 					ExtractFile(entry, outputFilename);
 				} else if(entry.Name == "MesenUpdater.exe" || entry.Name == "MesenDB.txt") {

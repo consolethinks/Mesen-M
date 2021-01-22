@@ -23,9 +23,9 @@ namespace Mesen.GUI
 			
 			bool dllExists;
 			if(Program.IsMono) {
-				dllExists = File.Exists(Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location), "libMesenCore.dll"));
+				dllExists = File.Exists(Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location), "libMesenMCore.dll"));
 			} else {
-				dllExists = File.Exists("MesenCore.dll");
+				dllExists = File.Exists("Mesen-MCore.dll");
 			}
 
 			if(!dllExists) {

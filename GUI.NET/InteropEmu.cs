@@ -15,7 +15,7 @@ namespace Mesen.GUI
 {
 	public class InteropEmu
 	{
-		private const string DLLPath = "MesenCore.dll";
+		private const string DLLPath = "Mesen-MCore.dll";
 		[DllImport(DLLPath)] [return: MarshalAs(UnmanagedType.I1)] public static extern bool TestDll();
 		[DllImport(DLLPath)] public static extern void InitDll();
 

@@ -12,6 +12,6 @@ if [ "$1" = libretro ]; then
 else
 	MESENPLATFORM=x64 BUILDTARGET=core ./buildPGO.sh
 	MESENPLATFORM=x86 BUILDTARGET=core ./buildPGO.sh
-	cp ./InteropDLL/obj.x64/libMesenCore.x64.dll ./bin/Any\ CPU/PGO\ Profile/Dependencies
-	cp ./InteropDLL/obj.x86/libMesenCore.x86.dll ./bin/Any\ CPU/PGO\ Profile/Dependencies
+	cp ./InteropDLL/obj.x64/libMesen-MCore.x64.dll ./bin/Any\ CPU/PGO\ Profile/Dependencies
+	cp ./InteropDLL/obj.x86/libMesen-MCore.x86.dll ./bin/Any\ CPU/PGO\ Profile/Dependencies
 fi

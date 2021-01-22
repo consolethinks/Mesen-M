@@ -66,8 +66,8 @@ ifeq ($(STATICLINK),true)
 endif
 
 OBJFOLDER=obj.$(MESENPLATFORM)
-SHAREDLIB=libMesenCore.$(MESENPLATFORM).dll
-LIBRETROLIB=mesen_libretro.$(MESENPLATFORM).so
+SHAREDLIB=libMesen-MCore.$(MESENPLATFORM).dll
+LIBRETROLIB=mesen-m_libretro.$(MESENPLATFORM).so
 RELEASEFOLDER=bin/$(MESENPLATFORM)/Release
 
 COREOBJ=$(patsubst Core/%.cpp,Core/$(OBJFOLDER)/%.o,$(wildcard Core/*.cpp))

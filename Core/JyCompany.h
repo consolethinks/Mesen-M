@@ -24,7 +24,6 @@ private:
 	bool _enablePrgAt6000;
 	
 	uint8_t _chrMode;
-	bool _autoChrSwitching;
 
 	uint8_t _mirroringReg;
 	bool _romNametable;
@@ -54,6 +53,8 @@ private:
 	uint16_t _lastPpuAddr;
 
 protected:
+	bool _autoChrSwitching;
+
 	uint16_t _prgMask;
 	uint8_t _prgShift;
 	uint8_t _outerPrgReg;
@@ -336,6 +337,7 @@ protected:
 								_irqEnabled = true;
 							} else {
 								_irqEnabled = false;
+								_irqPrescaler = 0;
 								_console->GetCpu()->ClearIrqSource(IRQSource::External);
 							}
 							break;
@@ -347,6 +349,7 @@ protected:
 							break;
 						case 0x02: 												// $C002
 							_irqEnabled = false;
+							_irqPrescaler = 0;
 							_console->GetCpu()->ClearIrqSource(IRQSource::External);
 							break;
 						case 0x03: _irqEnabled = true; break; 					// $C003
@@ -383,7 +386,7 @@ protected:
 
 	void ProcessCpuClock() override
 	{
-		if(_irqSource == JyIrqSource::CpuClock || (_irqSource == JyIrqSource::CpuWrite && _console->GetCpu()->IsCpuWrite())) {
+		if(_irqEnabled && (_irqSource == JyIrqSource::CpuClock || (_irqSource == JyIrqSource::CpuWrite && _console->GetCpu()->IsCpuWrite()))) {
 			TickIrqCounter();
 		}
 	}
@@ -391,7 +394,7 @@ protected:
 #define NtMapped(ntNum) (((_outerChrReg << _chrShift) & ~_chrMask) | ((((_ntHighRegs[ntNum] << 8) | _ntLowRegs[ntNum])) & _chrMask))
 	uint8_t MapperReadVRAM(uint16_t addr, MemoryOperationType type) override
 	{
-		if(_irqSource == JyIrqSource::PpuRead && type == MemoryOperationType::PpuRenderingRead) {
+		if(_irqEnabled && _irqSource == JyIrqSource::PpuRead && type == MemoryOperationType::PpuRenderingRead) {
 			TickIrqCounter();
 		}
 
@@ -418,7 +421,7 @@ protected:
 
 	void NotifyVRAMAddressChange(uint16_t addr) override
 	{
-		if(_irqSource == JyIrqSource::PpuA12Rise && (addr & 0x1000) && !(_lastPpuAddr & 0x1000)) {
+		if(_irqEnabled && (_irqSource == JyIrqSource::PpuA12Rise) && (addr & 0x1000) && !(_lastPpuAddr & 0x1000)) {
 			TickIrqCounter();
 		}
 		_lastPpuAddr = addr;
@@ -445,7 +448,8 @@ protected:
 				clockIrqCounter = true;
 			}
 		} else if(_irqCountDirection == 0x02) {
-			if(--prescaler == 0) {
+			prescaler--;
+			if((prescaler & mask) == mask) {
 				clockIrqCounter = true;
 			}
 		}
@@ -454,12 +458,12 @@ protected:
 		if(clockIrqCounter) {
 			if(_irqCountDirection == 0x01) {
 				_irqCounter++;
-				if(_irqCounter == 0 && _irqEnabled) {
+				if(_irqCounter == 0) { // _irqEnabled is true when this function is called now
 					_console->GetCpu()->SetIrqSource(IRQSource::External);
 				}
 			} else if(_irqCountDirection == 0x02) {
 				_irqCounter--;
-				if(_irqCounter == 0xFF && _irqEnabled) {
+				if(_irqCounter == 0xFF) { // _irqEnabled is true when this function is called now
 					_console->GetCpu()->SetIrqSource(IRQSource::External);
 				}
 			}

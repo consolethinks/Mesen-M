@@ -27,7 +27,7 @@ namespace Mesen.GUI.Config
 					"\t\t<glob-deleteall/>" + Environment.NewLine +
 					"\t\t<glob pattern=\"*." + extension + "\"/>" + Environment.NewLine +
 					"\t\t<comment>" + description + "</comment>" + Environment.NewLine +
-					"\t\t<icon>MesenIcon</icon>" + Environment.NewLine +
+					"\t\t<icon>Mesen-MIcon</icon>" + Environment.NewLine +
 					"\t</mime-type>" + Environment.NewLine +
 					"</mime-info>" + Environment.NewLine);
 
@@ -61,10 +61,10 @@ namespace Mesen.GUI.Config
 
 			//Use a GUID to get a unique filename and then delete old files to force a reset of file associations
 			//Otherwise they are sometimes not refreshed properly
-			string desktopFilename = "mesen." + Guid.NewGuid().ToString() + ".desktop";
+			string desktopFilename = "mesen-m." + Guid.NewGuid().ToString() + ".desktop";
 			string desktopFile = Path.Combine(desktopFolder, desktopFilename);
 
-			foreach(string file in Directory.GetFiles(desktopFolder, "mesen.*.desktop")) {
+			foreach(string file in Directory.GetFiles(desktopFolder, "mesen-m.*.desktop")) {
 				if(File.Exists(file)) {
 					try {
 						File.Delete(file);
@@ -73,14 +73,14 @@ namespace Mesen.GUI.Config
 			}
 
 			List<string> mimeTypes = new List<string>();
-			CreateMimeType("x-mesen-nes", "nes", "NES ROM", mimeTypes, preferenceInfo.AssociateNesFiles);
-			CreateMimeType("x-mesen-fds", "fds", "FDS ROM", mimeTypes, preferenceInfo.AssociateFdsFiles);
-			CreateMimeType("x-mesen-nsf", "nsf", "Nintendo Sound File", mimeTypes, preferenceInfo.AssociateNsfFiles);
-			CreateMimeType("x-mesen-nsfe", "nsfe", "Nintendo Sound File (extended)", mimeTypes, preferenceInfo.AssociateNsfFiles);
-			CreateMimeType("x-mesen-mst", "mst", "Mesen Save State", mimeTypes, preferenceInfo.AssociateMstFiles);
-			CreateMimeType("x-mesen-mmo", "mmo", "Mesen Movie File", mimeTypes, preferenceInfo.AssociateMmoFiles);
-			CreateMimeType("x-mesen-unif", "unf", "NES ROM (UNIF)", mimeTypes, preferenceInfo.AssociateUnfFiles);
-			CreateMimeType("x-mesen-studybox", "studybox", "Studybox ROM (Famicom)", mimeTypes, preferenceInfo.AssociateStudyBoxFiles);
+			CreateMimeType("x-mesen-m-nes", "nes", "NES ROM", mimeTypes, preferenceInfo.AssociateNesFiles);
+			CreateMimeType("x-mesen-m-fds", "fds", "FDS ROM", mimeTypes, preferenceInfo.AssociateFdsFiles);
+			CreateMimeType("x-mesen-m-nsf", "nsf", "Nintendo Sound File", mimeTypes, preferenceInfo.AssociateNsfFiles);
+			CreateMimeType("x-mesen-m-nsfe", "nsfe", "Nintendo Sound File (extended)", mimeTypes, preferenceInfo.AssociateNsfFiles);
+			CreateMimeType("x-mesen-m-mst", "mst", "Mesen Save State", mimeTypes, preferenceInfo.AssociateMstFiles);
+			CreateMimeType("x-mesen-m-mmo", "mmo", "Mesen Movie File", mimeTypes, preferenceInfo.AssociateMmoFiles);
+			CreateMimeType("x-mesen-m-unif", "unf", "NES ROM (UNIF)", mimeTypes, preferenceInfo.AssociateUnfFiles);
+			CreateMimeType("x-mesen-m-studybox", "studybox", "Studybox ROM (Famicom)", mimeTypes, preferenceInfo.AssociateStudyBoxFiles);
 
 			//Icon used for shortcuts
 			Mesen.GUI.Properties.Resources.MesenLogo.Save(Path.Combine(iconFolder, "MesenIcon.png"), ImageFormat.Png);
@@ -106,7 +106,7 @@ namespace Mesen.GUI.Config
 			string content = 
 				"[Desktop Entry]" + Environment.NewLine +
 				"Type=Application" + Environment.NewLine +
-				"Name=Mesen" + Environment.NewLine +
+				"Name=Mesen-M" + Environment.NewLine +
 				"Comment=NES/Famicom Emulator" + Environment.NewLine +
 				"Keywords=game;nes;famicom;emulator;emu;ファミコン;nintendo" + Environment.NewLine +
 				"Categories=GNOME;GTK;Game;Emulator;" + Environment.NewLine;
@@ -131,7 +131,7 @@ namespace Mesen.GUI.Config
 			} else {
 				//Unregister Mesen if Mesen was registered for .nes files
 				object regKey = Registry.GetValue(key, null, "");
-				if(regKey != null && regKey.Equals("Mesen")) {
+				if(regKey != null && regKey.Equals("Mesen-M")) {
 					Registry.SetValue(key, null, "");
 				}
 			}

@@ -147,6 +147,8 @@
 #include "Mapper244.h"
 #include "Mapper246.h"
 #include "Mapper253.h"
+#include "Mapper281.h"
+#include "Mapper282.h"
 #include "McAcc.h"
 #include "MMC1.h"
 #include "MMC1_105.h"
@@ -567,8 +569,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//272-273
 		case 274: return new Bmc80013B();
 		//275-282
-		case 281: return new JyCompany();
-		case 282: return new JyCompany();
+		case 281: return new Mapper281();
+		case 282: return new Mapper282();
 		case 283: return new Gs2004();
 		case 284: return new UnlDripGame();
 		case 285: return new A65AS();
