@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2057,14 +2057,14 @@ if "x86" == "$(PlatformName)" copy "C:\Program Files (x86)\Microsoft Visual Stud
 if "x64" == "$(PlatformName)" copy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\pgort140.dll" "pgort140.dll"
 
 if "PGO Optimize" == "$(ConfigurationName)" (
-copy "$(SolutionDir)bin\x86\PGO Profile\MesenCore.dll" "Dependencies\MesenCore.x86.dll"
+copy "$(SolutionDir)bin\x86\PGO Profile\Mesen-MCore.dll" "Dependencies\Mesen-MCore.x86.dll"
 
-copy "$(SolutionDir)bin\x64\PGO Profile\MesenCore.dll" "Dependencies\MesenCore.x64.dll"
+copy "$(SolutionDir)bin\x64\PGO Profile\Mesen-MCore.dll" "Dependencies\Mesen-MCore.x64.dll"
 )
 if NOT "PGO Optimize" == "$(ConfigurationName)" (
-copy "$(SolutionDir)bin\x86\$(ConfigurationName)\MesenCore.dll" "Dependencies\MesenCore.x86.dll"
+copy "$(SolutionDir)bin\x86\$(ConfigurationName)\Mesen-MCore.dll" "Dependencies\Mesen-MCore.x86.dll"
 
-copy "$(SolutionDir)bin\x64\$(ConfigurationName)\MesenCore.dll" "Dependencies\MesenCore.x64.dll"
+copy "$(SolutionDir)bin\x64\$(ConfigurationName)\Mesen-MCore.dll" "Dependencies\Mesen-MCore.x64.dll"
 )
 copy "MesenUpdater.exe" "Dependencies\MesenUpdater.exe"
 call DependencyPacker.exe

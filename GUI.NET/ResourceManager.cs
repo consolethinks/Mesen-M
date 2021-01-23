@@ -125,7 +125,7 @@ namespace Mesen.GUI
 			//Extract all needed files
 			string suffix = IntPtr.Size == 4 ? ".x86" : ".x64";
 			foreach(ZipArchiveEntry entry in zip.Entries) {
-				if(entry.Name.StartsWith("MesenCore") && !Program.IsMono && entry.Name.Contains(suffix)) {
+				if(entry.Name.StartsWith("Mesen-MCore") && !Program.IsMono && entry.Name.Contains(suffix)) {
 					string outputFilename = Path.Combine(ConfigManager.HomeFolder, entry.Name.Replace(suffix, ""));
 					ExtractFile(entry, outputFilename);					
 				} else if(entry.Name.StartsWith("libMesen-MCore") && Program.IsMono && entry.Name.Contains(suffix)) {
