@@ -126,7 +126,6 @@
 #include "Mapper203.h"
 #include "Mapper204.h"
 #include "Mapper212.h"
-#include "Mapper213.h"
 #include "Mapper214.h"
 #include "Mapper216.h"
 #include "Mapper217.h"
@@ -512,7 +511,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 210: return new Namco163();
 		case 211: return new JyCompany();
 		case 212: return new Mapper212();
-		case 213: return new Mapper213();
+		case 213: return new Mapper58(); // Mapper 213 is a duplicate of Mapper 58
 		case 214: return new Mapper214();
 		case 215: return new MMC3_215();
 		case 216: return new Mapper216();
