@@ -4,7 +4,7 @@
 #include "MessageManager.h"
 #include "Debugger.h"
 #include "Console.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "Disassembler.h"
 #include "VideoDecoder.h"
 #include "APU.h"

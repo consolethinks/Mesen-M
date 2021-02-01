@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "SystemActionManager.h"
 #include "MessageManager.h"
-#include "FDS.h"
+#include "Mappers/FDS.h"
 
 class FdsSystemActionManager : public SystemActionManager
 {

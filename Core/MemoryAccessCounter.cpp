@@ -6,7 +6,7 @@
 #include "Debugger.h"
 #include "MemoryDumper.h"
 #include "PPU.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 
 MemoryAccessCounter::MemoryAccessCounter(Debugger* debugger)
 {

@@ -2,7 +2,7 @@
 #include <algorithm>
 #include "Disassembler.h"
 #include "DisassemblyInfo.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "MemoryManager.h"
 #include "CPU.h"
 #include "LabelManager.h"

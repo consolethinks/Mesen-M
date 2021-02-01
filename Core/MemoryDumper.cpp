@@ -3,11 +3,11 @@
 #include "MemoryManager.h"
 #include "PPU.h"
 #include "CodeDataLogger.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "MemoryDumper.h"
 #include "VideoDecoder.h"
 #include "Disassembler.h"
-#include "MMC5.h"
+#include "Mappers/MMC5.h"
 #include "DebugBreakHelper.h"
 
 MemoryDumper::MemoryDumper(shared_ptr<PPU> ppu, shared_ptr<MemoryManager> memoryManager, shared_ptr<BaseMapper> mapper, shared_ptr<CodeDataLogger> codeDataLogger, Debugger* debugger, shared_ptr<Disassembler> disassembler)

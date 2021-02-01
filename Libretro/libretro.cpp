@@ -11,7 +11,7 @@
 #include "../Core/VideoDecoder.h"
 #include "../Core/VideoRenderer.h"
 #include "../Core/MemoryManager.h"
-#include "../Core/BaseMapper.h"
+#include "../Core/Mappers/BaseMapper.h"
 #include "../Core/EmulationSettings.h"
 #include "../Core/CheatManager.h"
 #include "../Core/HdData.h"

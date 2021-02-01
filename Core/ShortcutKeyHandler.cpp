@@ -3,7 +3,7 @@
 #include "EmulationSettings.h"
 #include "KeyManager.h"
 #include "VideoDecoder.h"
-#include "FDS.h"
+#include "Mappers/FDS.h"
 #include "SaveStateManager.h"
 #include "RewindManager.h"
 #include "SystemActionManager.h"

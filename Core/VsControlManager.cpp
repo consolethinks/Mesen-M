@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "VsControlManager.h"
-#include "VsSystem.h"
+#include "Mappers/VsSystem.h"
 #include "SystemActionManager.h"
 #include "VsSystemActionManager.h"
 

@@ -341,10 +341,10 @@ else
 endif
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(fpic) -c $< $(OBJOUT)$@
+	$(CC) $(CINC) $(CFLAGS) $(fpic) -c $< $(OBJOUT)$@
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) $(fpic) -c $< $(OBJOUT)$@
+	$(CXX) $(CXXINC) $(CXXFLAGS) $(fpic) -c $< $(OBJOUT)$@
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)

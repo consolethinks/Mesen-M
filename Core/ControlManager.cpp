@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "ControlManager.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "EmulationSettings.h"
 #include "Console.h"
 #include "GameServerConnection.h"

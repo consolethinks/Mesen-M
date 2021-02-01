@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "LabelManager.h"
 #include "Debugger.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 
 LabelManager::LabelManager(shared_ptr<BaseMapper> mapper)
 {

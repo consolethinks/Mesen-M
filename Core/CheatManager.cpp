@@ -2,7 +2,7 @@
 
 #include "CheatManager.h"
 #include "Console.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "MessageManager.h"
 #include "NotificationManager.h"
 

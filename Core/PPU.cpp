@@ -5,7 +5,7 @@
 #include "EmulationSettings.h"
 #include "VideoDecoder.h"
 #include "Debugger.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "RewindManager.h"
 #include "ControlManager.h"
 #include "MemoryManager.h"

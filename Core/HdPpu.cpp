@@ -7,7 +7,7 @@
 #include "RewindManager.h"
 #include "HdPackConditions.h"
 #include "NotificationManager.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "MemoryManager.h"
 
 void HdPpu::DrawPixel()

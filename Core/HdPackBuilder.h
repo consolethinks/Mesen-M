@@ -10,7 +10,7 @@
 #include "Console.h"
 #include "HdPackLoader.h"
 #include "HdNesPack.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 #include "Types.h"
 #include <map>
 

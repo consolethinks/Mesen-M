@@ -148,6 +148,9 @@ protected:
 			case 0:
 			case 1:
 			case 2:
+			case 5:
+			case 6:
+			case 7:
 				if(_extendedMmc3Mode) {
 					// Extended MMC3
 					uint8_t swap = _invertPrgA14 ? 2 : 0;
@@ -289,6 +292,7 @@ protected:
 			if(_cnromChrMode && (addr <= 0x9FFF || addr >= 0xC000)) {
 				_cnromChrReg = value & 0x03;
 				UpdateState();
+				return;
 			}
 
 			switch(addr & 0xE001) {
@@ -305,6 +309,7 @@ protected:
 					break;
 
 				case 0x8001: {
+					if (addr == 0x9FFF) { return; } // weird ignored write on BS-6028 180 in 1 - Dr. Mario
 					uint8_t reg = _currentMmc3Register & (_extendedMmc3Mode ? 0x0F : 0x07);
 					if(reg < 12) {
 						_mmc3Registers[reg] = value;

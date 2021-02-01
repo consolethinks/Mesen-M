@@ -8,7 +8,7 @@
 #include "WaveRecorder.h"
 #include "OggMixer.h"
 #include "Console.h"
-#include "BaseMapper.h"
+#include "Mappers/BaseMapper.h"
 
 SoundMixer::SoundMixer(shared_ptr<Console> console)
 {

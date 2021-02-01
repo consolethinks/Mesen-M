@@ -6,7 +6,7 @@
 #include "APU.h"
 #include "DeltaModulationChannel.h"
 #include "Debugger.h"
-#include "NsfMapper.h"
+#include "Mappers/NsfMapper.h"
 #include "Console.h"
 
 CPU::CPU(shared_ptr<Console> console)
