@@ -7,6 +7,7 @@
 #include "RomData.h"
 #include "VirtualFile.h"
 
+#include "Mappers/820720C.h"
 #include "Mappers/970630C.h"
 #include "Mappers/A65AS.h"
 #include "Mappers/Ac08.h"
@@ -638,6 +639,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 380: return new _970630C();
 
 		case 390: return new Realtec8031();
+
+		case 393: return new _820720C();
 
 		case 513: return new Sachen9602();
 		//514-517

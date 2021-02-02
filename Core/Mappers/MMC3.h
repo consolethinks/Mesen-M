@@ -8,7 +8,7 @@
 
 class MMC3 : public BaseMapper
 {
-	private: 
+	protected:
 		enum class MMC3Registers
 		{
 			Reg8000 = 0x8000,
@@ -36,7 +36,6 @@ class MMC3 : public BaseMapper
 			uint8_t RegA001;
 		} _state;
 
-	protected:
 		uint8_t _irqReloadValue;
 		uint8_t _irqCounter;
 		bool _irqReload;
