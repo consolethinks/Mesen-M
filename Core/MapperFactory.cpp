@@ -149,6 +149,7 @@
 #include "Mappers/Mapper253.h"
 #include "Mappers/Mapper281.h"
 #include "Mappers/Mapper282.h"
+#include "Mappers/Mapper295.h"
 #include "Mappers/McAcc.h"
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
@@ -188,6 +189,7 @@
 #include "Mappers/MMC3_249.h"
 #include "Mappers/MMC3_250.h"
 #include "Mappers/MMC3_254.h"
+#include "Mappers/MMC3_267_377.h"
 #include "Mappers/MMC3_534.h"
 #include "Mappers/MMC3_Bmc411120C.h"
 #include "Mappers/MMC3_BmcF15.h"
@@ -562,7 +564,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 264: return new Yoko();
 		case 265: return new T262();
 		case 266: return new CityFighter();
-		//267
+		case 267: return new MMC3_267_377();
 		case 268: return new MMC3_Coolboy();
 		//269-270
 		case 271: break; //22026
@@ -582,7 +584,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//291
 		case 292: return new DragonFighter();
 		//293-294
-		case 295: break; //13IN1JY110
+		case 295: return new Mapper295(); //13IN1JY110
 		//296-297
 		case 298: return new Tf1201();
 		case 299: return new Bmc11160();
@@ -635,6 +637,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 350: break; //891227
 
 		case 366: return new BmcGn45();
+
+		case 377: return new MMC3_267_377();
 
 		case 380: return new _970630C();
 
