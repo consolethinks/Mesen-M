@@ -207,6 +207,7 @@
 #include "Mappers/Namco108_154.h"
 #include "Mappers/Namco163.h"
 #include "Mappers/Nanjing.h"
+#include "Mappers/Nanjing163.h"
 #include "Mappers/Nina01.h"
 #include "Mappers/Nina03_06.h"
 #include "Mappers/NovelDiamond.h"
@@ -277,6 +278,7 @@
 #include "Mappers/Waixing178.h"
 #include "Mappers/Waixing252.h"
 #include "Mappers/Yoko.h"
+#include "Mappers/YY850437C.h"
 
 /*
 Supported mappers:  
@@ -465,8 +467,10 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 157: return new BandaiFcg();
 		case 158: return new Rambo1_158();
 		case 159: return new BandaiFcg();
+		//case 162: return new Waixing162();
+		//case 163: return new Nanjing();
 		case 162: return new Waixing162();
-		case 163: return new Nanjing();
+		case 163: return new Nanjing163();
 		case 164: return new Waixing164();
 		case 165: return new MMC3_165();
 		case 166: return new Subor166();
@@ -645,6 +649,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 390: return new Realtec8031();
 
 		case 393: return new _820720C();
+
+		case 396: return new YY850437C();
 
 		case 513: return new Sachen9602();
 		//514-517

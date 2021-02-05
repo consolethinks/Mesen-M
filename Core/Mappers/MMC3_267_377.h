@@ -12,22 +12,17 @@ private:
 protected:
     uint16_t RegisterStartAddress() override { return 0x6000; }
 
-    #define shiftedBank (((outerBankReg & 0x20) >> 2) | (outerBankReg & 0x06))
     void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override {
         if(_romInfo.MapperID == 267) {
             BaseMapper::SelectPRGPage(slot, ((outerBankReg & 0x20) << 2) | ((outerBankReg & 0x06) << 4) | (page & 0x1F), memoryType);
-            //BaseMapper::SelectPRGPage(slot, (shiftedBank << 4) | (page & 0x1F), memoryType);
         } else { // As Mapper 377
             BaseMapper::SelectPRGPage(slot, ((outerBankReg & 0x20) << 1) | ((outerBankReg & 0x06) << 3) | (page & 0x0F), memoryType);
-            //BaseMapper::SelectPRGPage(slot, (shiftedBank << 3) | (page & 0x0F), memoryType);
         }
     }
 
     void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::ChrRom) override {
         BaseMapper::SelectCHRPage(slot, ((outerBankReg & 0x20) << 4) | ((outerBankReg & 0x06) << 6) | (page & 0x7F), memoryType);
-        //BaseMapper::SelectCHRPage(slot, (shiftedBank << 6) | (page & 0x7F), memoryType);
     }
-    #undef shiftedBank
 
     void StreamState(bool saving) override
     {
