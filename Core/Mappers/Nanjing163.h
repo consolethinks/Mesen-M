@@ -6,7 +6,7 @@ class Nanjing163 : public Waixing162
 protected:
     void UpdateState() override
     {
-        SelectPRGPage(0, ((regs[2] & 0x03) << 4) | (regs[0] & 0x0F) | (regs[3] & 0x04 ? 0x03 : 0x00));
+        SelectPRGPage(0, ((regs[2] & 0x03) << 4) | (regs[0] & 0x0F) | (regs[3] & 0x04 ? 0x00 : 0x03));
     }
 
     void WriteRegister(uint16_t addr, uint8_t value) override
