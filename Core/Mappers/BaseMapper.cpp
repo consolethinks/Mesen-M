@@ -396,6 +396,11 @@ uint32_t BaseMapper::GetDipSwitches()
 	uint32_t mask = (1 << GetDipSwitchCount()) - 1;
 	return _console->GetSettings()->GetDipSwitches() & mask;
 }
+
+bool BaseMapper::GetBootlegExpAudioSetting()
+{
+	return _console->GetSettings()->GetBootlegExpAudio();
+}
 		
 bool BaseMapper::HasBattery()
 {

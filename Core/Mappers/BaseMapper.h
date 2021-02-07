@@ -138,6 +138,7 @@ protected:
 
 	uint8_t GetPowerOnByte(uint8_t defaultValue = 0);
 	uint32_t GetDipSwitches();
+	bool GetBootlegExpAudioSetting();
 
 	void SetupDefaultWorkRam();
 

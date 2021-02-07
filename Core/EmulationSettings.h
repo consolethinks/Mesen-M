@@ -722,6 +722,8 @@ private:
 	RamPowerOnState _ramPowerOnState = RamPowerOnState::AllZeros;
 	uint32_t _dipSwitches = 0;
 
+	bool _bootlegExpAudio = false;
+
 public:
 	EmulationSettings()
 	{
@@ -1493,6 +1495,16 @@ public:
 	uint32_t GetDipSwitches()
 	{
 		return _dipSwitches;
+	}
+
+	void SetBootlegExpAudio(bool value)
+	{
+		_bootlegExpAudio = value;
+	}
+
+	bool GetBootlegExpAudio()
+	{
+		return _bootlegExpAudio;
 	}
 
 	bool IsKeyboardMode()

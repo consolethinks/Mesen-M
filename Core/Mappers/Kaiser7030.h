@@ -23,4 +23,6 @@ protected:
     void StreamState(bool saving) override;
 
     void ProcessCpuClock() override;
+public:
+    ConsoleFeatures GetAvailableFeatures() override;
 };

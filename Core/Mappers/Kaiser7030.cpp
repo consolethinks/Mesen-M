@@ -35,7 +35,6 @@ void Kaiser7030::WriteRegister(uint16_t addr, uint8_t value)
 uint8_t Kaiser7030::ReadRegister(uint16_t addr)
 {
     return _audio->ReadRegister(addr);
-    return 0;
 }
 
 void Kaiser7030::StreamState(bool saving)
@@ -48,5 +47,12 @@ void Kaiser7030::StreamState(bool saving)
 
 void Kaiser7030::ProcessCpuClock()
 {
-    _audio->Clock();
+    if(GetBootlegExpAudioSetting()) {
+        _audio->Clock();
+    }
+}
+
+ConsoleFeatures Kaiser7030::GetAvailableFeatures()
+{
+    return ConsoleFeatures::BootlegExpAudio;
 }

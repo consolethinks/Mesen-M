@@ -767,6 +767,9 @@ namespace InteropEmu {
 			_settings->SetDipSwitches(dipSwitches);
 		}
 
+		DllExport void SetBootlegExpAudioSetting(bool value) { _settings->SetBootlegExpAudio(value); }
+		// note: the capacity of respecting this setting is in ConsoleFeatures
+
 		DllExport bool __stdcall IsHdPpu() { return _console->IsHdPpu(); }
 
 		DllExport void __stdcall HdBuilderStartRecording(char* saveFolder, ScaleFilterType filterType, uint32_t scale, uint32_t flags, uint32_t chrRamBankSize) { _console->StartRecordingHdPack(saveFolder, filterType, scale, flags, chrRamBankSize); }

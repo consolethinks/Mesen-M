@@ -305,7 +305,8 @@ enum class ConsoleFeatures
 	BarcodeReader = 8,
 	TapeRecorder = 16,
 	BandaiMicrophone = 32,
-	DatachBarcodeReader = 64
+	DatachBarcodeReader = 64,
+	BootlegExpAudio = 128
 };
 
 enum class RecordMovieFrom

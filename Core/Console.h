@@ -170,6 +170,7 @@ public:
 	}
 
 	uint32_t GetDipSwitchCount();
+	bool GetBootlegExpAudioSupported();
 	ConsoleFeatures GetAvailableFeatures();
 	void InputBarcode(uint64_t barcode, uint32_t digitCount);
 
