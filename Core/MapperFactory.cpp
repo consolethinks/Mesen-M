@@ -90,6 +90,7 @@
 #include "Mappers/Kaiser7016.h"
 #include "Mappers/Kaiser7017.h"
 #include "Mappers/Kaiser7022.h"
+#include "Mappers/Kaiser7030.h"
 #include "Mappers/Kaiser7031.h"
 #include "Mappers/Kaiser7037.h"
 #include "Mappers/Kaiser7057.h"
@@ -635,7 +636,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 344: break; //GN26
 		case 345: break; //L6IN1
 		case 346: return new Kaiser7012();
-		//347
+		case 347: return new Kaiser7030();
 		case 348: return new Bmc830118C();
 		case 349: return new BmcG146();
 		case 350: break; //891227
