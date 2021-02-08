@@ -84,6 +84,11 @@
 #include "Mappers/JalecoJfxx.h"
 #include "Mappers/JalecoSs88006.h"
 #include "Mappers/JyCompany.h"
+#include "Mappers/Jy281.h"
+#include "Mappers/Jy282.h"
+#include "Mappers/Jy295.h"
+#include "Mappers/Jy386.h"
+#include "Mappers/Jy387.h"
 #include "Mappers/Kaiser202.h"
 #include "Mappers/Kaiser7012.h"
 #include "Mappers/Kaiser7013B.h"
@@ -148,9 +153,6 @@
 #include "Mappers/Mapper244.h"
 #include "Mappers/Mapper246.h"
 #include "Mappers/Mapper253.h"
-#include "Mappers/Mapper281.h"
-#include "Mappers/Mapper282.h"
-#include "Mappers/Mapper295.h"
 #include "Mappers/McAcc.h"
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
@@ -576,8 +578,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//272-273
 		case 274: return new Bmc80013B();
 		//275-282
-		case 281: return new Mapper281();
-		case 282: return new Mapper282();
+		case 281: return new Jy281();
+		case 282: return new Jy282();
 		case 283: return new Gs2004();
 		case 284: return new UnlDripGame();
 		case 285: return new A65AS();
@@ -589,7 +591,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		//291
 		case 292: return new DragonFighter();
 		//293-294
-		case 295: return new Mapper295(); //13IN1JY110
+		case 295: return new Jy295(); //13IN1JY110
 		//296-297
 		case 298: return new Tf1201();
 		case 299: return new Bmc11160();
@@ -646,6 +648,9 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 377: return new MMC3_267_377();
 
 		case 380: return new _970630C();
+
+		case 386: return new Jy386();
+		case 387: return new Jy387();
 
 		case 390: return new Realtec8031();
 

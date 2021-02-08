@@ -1,7 +1,7 @@
 #pragma once
 #include "JyCompany.h"
 
-class Mapper295 : public JyCompany
+class Jy295 : public JyCompany
 {
 protected:
     uint8_t PrgMaskDefault() override { return 0x0F; } // (PRG 128K, CHR 128K)

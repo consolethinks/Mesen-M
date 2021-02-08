@@ -176,7 +176,7 @@ protected:
 			case 0:
 				SelectPrgPage4x(0, PrgMapped(prgLastBank, 2));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, (_prgRegs[3] << 2) | 3, PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, PrgMapped((_prgRegs[3] << 2) | 3, 0), PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				}
 				break;
 
@@ -184,7 +184,7 @@ protected:
 				SelectPrgPage2x(0, PrgMapped(_prgRegs[1], 1));
 				SelectPrgPage2x(1, PrgMapped(prgLastBank, 1));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, (_prgRegs[3] << 1) | 1, PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, PrgMapped((_prgRegs[3] << 1) | 1, 0), PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				}
 				break;
 
@@ -194,7 +194,7 @@ protected:
 				SelectPRGPage(2, PrgMapped(_prgRegs[2], 0));
 				SelectPRGPage(3, PrgMapped(prgLastBank, 0));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, _prgRegs[3], PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, PrgMapped(_prgRegs[3], 0), PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				}
 				break;
 			case 3:
@@ -203,7 +203,7 @@ protected:
 				SelectPRGPage(2, PrgMapped(InvertPrgBits(_prgRegs[2]), 0));
 				SelectPRGPage(3, PrgMapped(InvertPrgBits(prgLastBank), 0));
 				if(_enablePrgAt6000) {
-					SetCpuMemoryMapping(0x6000, 0x7FFF, InvertPrgBits(_prgRegs[3]), PrgMemoryType::PrgRom);
+					SetCpuMemoryMapping(0x6000, 0x7FFF, PrgMapped(InvertPrgBits(_prgRegs[3]), 0), PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				}
 				break;
 		}
