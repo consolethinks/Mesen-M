@@ -58,7 +58,7 @@ protected:
 	virtual void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
 	{
 		page &= 0x3F ^ (_reg[3] & 0x3F);
-		page |= _reg[1];
+		page |= ((_reg[2] & 0xC0) << 2) | _reg[1];
 		MMC3::SelectPRGPage(slot, page, memoryType);
 	}
 

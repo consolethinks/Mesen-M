@@ -73,6 +73,7 @@
 #include "Mappers/Henggedianzi177.h"
 #include "Mappers/Henggedianzi179.h"
 #include "Mappers/Hp898f.h"
+#include "Mappers/HSK007.h"
 #include "Mappers/IremG101.h"
 #include "Mappers/IremH3001.h"
 #include "Mappers/IremLrog017.h"
@@ -89,6 +90,7 @@
 #include "Mappers/Jy295.h"
 #include "Mappers/Jy386.h"
 #include "Mappers/Jy387.h"
+#include "Mappers/Jy388.h"
 #include "Mappers/Kaiser202.h"
 #include "Mappers/Kaiser7012.h"
 #include "Mappers/Kaiser7013B.h"
@@ -651,10 +653,12 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 
 		case 386: return new Jy386();
 		case 387: return new Jy387();
+		case 388: return new Jy388();
 
 		case 390: return new Realtec8031();
 
 		case 393: return new _820720C();
+		case 394: return new HSK007();
 
 		case 396: return new YY850437C();
 

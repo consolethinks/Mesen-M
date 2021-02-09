@@ -4,7 +4,7 @@
 #include "CPU.h"
 #include "MemoryManager.h"
 
-class JyCompany : public BaseMapper
+class JyCompany : virtual public BaseMapper
 {
 private:
 	enum class JyIrqSource
@@ -52,6 +52,7 @@ private:
 
 	uint16_t _lastPpuAddr;
 
+	bool _inhibitRomNtExtMir; // disable rom nametable and extended mirroring, like mapper 90
 protected:
 	bool _autoChrSwitching;
 
@@ -65,6 +66,7 @@ protected:
 
 	uint16_t GetPRGPageSize() override { return 0x2000; }
 	uint16_t GetCHRPageSize() override { return 0x0400; }
+	uint16_t GetChrRamPageSize() override { return 0x0400; }
 	virtual uint32_t GetWorkRamSize() override {
 		if(_romInfo.MapperID == 35) {
 			return 0x2000; // 8K WRAM
@@ -83,6 +85,14 @@ protected:
 	virtual uint8_t PrgShiftDefault() { return 6; }
 	virtual uint16_t ChrMaskDefault() { return 0x00FF; }
 	virtual uint8_t ChrShiftDefault() { return 8; }
+	virtual bool InhibitRomNtExtMir()
+	{ 
+		if(_romInfo.MapperID == 90) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	virtual void InitMapper() override
 	{
@@ -112,8 +122,9 @@ protected:
 		_romNametable = false;
 		_extendedMirroring = false;
 		_disableNtRam = false;
+		_inhibitRomNtExtMir = InhibitRomNtExtMir();
 
-		_ppuAddressSpaceConfig = 0;
+		_ppuAddressSpaceConfig = 0x00;
 		memset(_ntLowRegs, 0, sizeof(_ntLowRegs));
 		memset(_ntHighRegs, 0, sizeof(_ntHighRegs));
 
@@ -147,8 +158,8 @@ protected:
 		ArrayInfo<uint8_t> ntLowRegs{ _ntLowRegs, 4 };
 		ArrayInfo<uint8_t> ntHighRegs{ _ntHighRegs, 4 };
 
-		Stream(_chrLatch[0], _chrLatch[1], _prgMode, _outerPrgReg, _enablePrgAt6000, _chrMode, _chrMask, _chrShift, _outerChrReg, _autoChrSwitching, _mirroringReg, _romNametable, _extendedMirroring,
-			_disableNtRam, _ppuAddressSpaceConfig, _irqEnabled, _irqSource, _lastPpuAddr, _irqCountDirection, _irqFunkyMode, _irqFunkyModeReg, _irqSmallPrescaler,
+		Stream(_chrLatch[0], _chrLatch[1], _prgMode, _prgMask, _prgShift, _outerPrgReg, _enablePrgAt6000, _chrMode, _chrMask, _chrShift, _outerChrReg, _autoChrSwitching, _mirroringReg, _romNametable, _extendedMirroring,
+			_disableNtRam, _inhibitRomNtExtMir, _ppuAddressSpaceConfig, _irqEnabled, _irqSource, _lastPpuAddr, _irqCountDirection, _irqFunkyMode, _irqFunkyModeReg, _irqSmallPrescaler,
 			_irqPrescaler, _irqCounter, _irqXorReg, _multiplyValue1, _multiplyValue2, _multiplyResult, _accumulator, _regRamValue, prgRegs, chrLowRegs, chrHighRegs, ntLowRegs, ntHighRegs);
 
 		if(!saving) {
@@ -221,7 +232,7 @@ protected:
 #define ChrMapped(chrNum, shift) (((_outerChrReg << _chrShift) & ~_chrMask) | ((((_chrHighRegs[chrNum] << 8) | _chrLowRegs[chrNum]) << shift) & _chrMask))
 	void UpdateChrState()
 	{
-		MemoryAccessType chrAccess = ((_ppuAddressSpaceConfig & 0x40) && !(_chrRomSize > 0) && (_chrRamSize > 0)) ? MemoryAccessType::ReadWrite : MemoryAccessType::Read;
+		MemoryAccessType chrAccess = ((_ppuAddressSpaceConfig & 0x40) && !BaseMapper::HasChrRom()) ? MemoryAccessType::ReadWrite : MemoryAccessType::Read;
 		switch(_chrMode) {
 			case 0: 
 				SelectChrPage8x(0, ChrMapped(0, 3), ChrMemoryType::Default, chrAccess);
@@ -246,7 +257,7 @@ protected:
 
 			case 3:
 				for(int i = 0; i < 8; i++) {
-					SelectCHRPage(i, ChrMapped(i, 0));
+					SelectCHRPage(i, ChrMapped(i, 0), ChrMemoryType::Default, chrAccess);
 				}
 				break;
 		}
@@ -256,7 +267,7 @@ protected:
 	void UpdateMirroringState()
 	{
 		//"Mapper 211 behaves as though N were always set (1), and mapper 090 behaves as though N were always clear(0)."
-		if((_romNametable || _extendedMirroring || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
+		if((_romNametable || _extendedMirroring || _romInfo.MapperID == 211) && !_inhibitRomNtExtMir) {
 			for(int i = 0; i < 4; i++) {
 				SetNametable(i, _ntLowRegs[i] & 0x01);
 			}
@@ -401,12 +412,12 @@ protected:
 		if(addr >= 0x2000) {
 			//This behavior only affects reads, not writes.
 			//Additional info: https://forums.nesdev.com/viewtopic.php?f=3&t=17198
-			if((_romNametable || _romInfo.MapperID == 211) && _romInfo.MapperID != 90) {
+			if((_romNametable || _romInfo.MapperID == 211) && !_inhibitRomNtExtMir) {
 				uint8_t ntIndex = ((addr & 0x2FFF) - 0x2000) / 0x400;
 				if(_disableNtRam || (_ntLowRegs[ntIndex] & 0x80) != (_ppuAddressSpaceConfig & 0x80)) {
 					uint16_t chrPage = NtMapped(ntIndex);
 					uint32_t chrOffset = (chrPage << 10) | (addr & 0x3FF);
-					if(_chrRomSize != 0) {
+					if(BaseMapper::HasChrRom()) {
 						return _chrRom[chrOffset % _chrRomSize];
 					} else {
 						return _chrRam[chrOffset % _chrRamSize];
@@ -418,25 +429,6 @@ protected:
 		return BaseMapper::MapperReadVRAM(addr, type);
 	}
 #undef NtMapped
-
-	void NotifyVRAMAddressChange(uint16_t addr) override
-	{
-		if(_irqEnabled && (_irqSource == JyIrqSource::PpuA12Rise) && (addr & 0x1000) && !(_lastPpuAddr & 0x1000)) {
-			TickIrqCounter();
-		}
-		_lastPpuAddr = addr;
-
-		if(_autoChrSwitching) {
-			switch(addr & 0x2FF8) {
-				case 0x0FD8:
-				case 0x0FE8:
-					_chrLatch[addr >> 12] = addr >> 4 & ((addr >> 10 & 0x04) | 0x02);
-					UpdateChrState();
-					break;
-			}
-		}
-	}
-
 	void TickIrqCounter()
 	{
 		bool clockIrqCounter = false;
@@ -466,6 +458,25 @@ protected:
 				if(_irqCounter == 0xFF) { // _irqEnabled is true when this function is called now
 					_console->GetCpu()->SetIrqSource(IRQSource::External);
 				}
+			}
+		}
+	}
+	
+public:
+	void NotifyVRAMAddressChange(uint16_t addr) override
+	{
+		if(_irqEnabled && (_irqSource == JyIrqSource::PpuA12Rise) && (addr & 0x1000) && !(_lastPpuAddr & 0x1000)) {
+			TickIrqCounter();
+		}
+		_lastPpuAddr = addr;
+
+		if(_autoChrSwitching) {
+			switch(addr & 0x2FF8) {
+				case 0x0FD8:
+				case 0x0FE8:
+					_chrLatch[addr >> 12] = addr >> 4 & ((addr >> 10 & 0x04) | 0x02);
+					UpdateChrState();
+					break;
 			}
 		}
 	}

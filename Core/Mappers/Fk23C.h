@@ -76,7 +76,7 @@ protected:
 
 		//$5003
 		_extendedMmc3Mode = (_romInfo.SubMapperID == 1) ? true : false;
-		_cnromChrMode = false;
+		_cnromChrMode = (_romInfo.SubMapperID == 3) ? true : false;
 
 		//$A000
 		_mirroringReg = 0;
@@ -173,6 +173,7 @@ protected:
 
 			case 3:
 				// NROM-128
+				_cnromChrReg = 0; // no chr switching
 				SelectPrgPage2x(0, _prgBase << 1);
 				SelectPrgPage2x(1, _prgBase << 1);
 				break;
@@ -258,7 +259,7 @@ protected:
 					return;
 				}
 
-				switch(addr & 0x0F) {
+				switch(addr & 0x03) {
 					case 0:
 						_prgBankingMode = value & 0x07;
 						_outerChrBankSize = (value & 0x10) >> 4;
@@ -280,7 +281,6 @@ protected:
 
 					case 3:
 						_extendedMmc3Mode = (value & 0x02) != 0;
-						_cnromChrMode = (value & 0x44) != 0;
 						break;
 				}
 				UpdateState();
@@ -289,10 +289,9 @@ protected:
 				WritePrgRam(addr, value);
 			}
 		} else {
-			if(_cnromChrMode && (addr <= 0x9FFF || addr >= 0xC000)) {
+			if(_cnromChrMode && ((addr <= 0x9FFF || addr >= 0xC000) || ((addr & 0xFFF) != 0))) {
 				_cnromChrReg = value & 0x03;
 				UpdateState();
-				return;
 			}
 
 			switch(addr & 0xE001) {

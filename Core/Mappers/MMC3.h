@@ -6,7 +6,7 @@
 #include "EmulationSettings.h"
 #include "A12Watcher.h"
 
-class MMC3 : public BaseMapper
+class MMC3 : virtual public BaseMapper
 {
 	protected:
 		enum class MMC3Registers
