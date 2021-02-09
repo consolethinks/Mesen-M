@@ -48,35 +48,35 @@ protected:
 
 	virtual void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::Default) override
 	{
-		if(!HasChrRam()) {
-			page &= 0xFF >> (0x0F - (_reg[2] & 0x0F));
+		if(_chrRomSize || _chrRamSize > 8192) {
+			page &= 0xFF >> (~_reg[2] & 0x0F);
 			page |= _reg[0] | ((_reg[2] & 0xF0) << 4);
+			MMC3::SelectCHRPage(slot, page, memoryType);
+		} else {
+			SelectChrPage8x(0, 0);
 		}
-		MMC3::SelectCHRPage(slot, page, memoryType);
 	}
 
 	virtual void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
 	{
-		page &= 0x3F ^ (_reg[3] & 0x3F);
-		page |= ((_reg[2] & 0xC0) << 2) | _reg[1];
-		MMC3::SelectPRGPage(slot, page, memoryType);
+		if(_romInfo.SubMapperID == 1 && ((GetDipSwitches() & 0x01 && (_reg[1] & 0x80)) || ((GetDipSwitches() & 0x02 && (_reg[1] & 0x40))))) {
+			RemoveCpuMemoryMapping(0x8000, 0xFFFF);
+		} else {
+			page &= (~_reg[3] & 0x3F);
+			page |= ((_reg[2] & 0xC0) << 2) | _reg[1];
+			MMC3::SelectPRGPage(slot, page, memoryType);
+		}
 	}
 
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		if(addr < 0x8000) {
-			switch(addr & 0xF001) {
-				case 0x6000:
-					if(!(_reg[3] & 0x40)) {
-						_reg[_regIndex] = value;
-						_regIndex = (_regIndex + 1) & 0x03;
-					}
-					UpdateState();
-					break;
-				case 0x6001:
-					Reset(true);
-					break;
+			WritePrgRam(addr, value);
+			if(!(_reg[3] & 0x40)) {
+				_reg[_regIndex] = value;
+				_regIndex = (_regIndex + 1) & 0x03;
 			}
+			UpdateState();
 		} else {
 			MMC3::WriteRegister(addr, value);
 		}
