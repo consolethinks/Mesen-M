@@ -69,7 +69,7 @@ protected:
 		_nromChrMode = false;
 
 		//$5000 + $5001 + $5002
-		_prgBase = 0;
+		_prgBase = (_romInfo.SubMapperID == 1) ? 0x20 : 0;
 
 		//$5002
 		_chrBase = 0;
@@ -155,19 +155,21 @@ protected:
 					// Extended MMC3
 					uint8_t swap = _invertPrgA14 ? 2 : 0;
 					uint16_t outer = (_prgBase << 1);
-					SelectPRGPage(0 ^ swap, _mmc3Registers[6] | outer);
-					SelectPRGPage(1, _mmc3Registers[7] | outer);
-					SelectPRGPage(2 ^ swap, _mmc3Registers[8] | outer);
-					SelectPRGPage(3, _mmc3Registers[9] | outer);
+					//MessageManager::DisplayMessage("PRG-EXT", std::to_string(_mmc3Registers[6] | outer));
+					SelectPRGPage(0 ^ swap, _mmc3Registers[6] | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(1, _mmc3Registers[7] | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(2 ^ swap, _mmc3Registers[8] | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(3, _mmc3Registers[9] | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				} else {
 					// MMC3
 					uint8_t swap = _invertPrgA14 ? 2 : 0;
 					uint8_t innerMask = 0x3F >> _prgBankingMode;
 					uint16_t outer = (_prgBase << 1) & ~innerMask;
-					SelectPRGPage(0 ^ swap, (_mmc3Registers[6] & innerMask) | outer);
-					SelectPRGPage(1, (_mmc3Registers[7] & innerMask) | outer);
-					SelectPRGPage(2 ^ swap, (0xFE & innerMask) | outer);
-					SelectPRGPage(3, (0xFF & innerMask) | outer);
+					//MessageManager::DisplayMessage("PRG", std::to_string(_mmc3Registers[6] | outer));
+					SelectPRGPage(0 ^ swap, (_mmc3Registers[6] & innerMask) | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(1, (_mmc3Registers[7] & innerMask) | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(2 ^ swap, (0xFE & innerMask) | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
+					SelectPRGPage(3, (0xFF & innerMask) | outer, PrgMemoryType::PrgRom, MemoryAccessType::Read);
 				}
 				break;
 
@@ -252,9 +254,9 @@ protected:
 	void WriteRegister(uint16_t addr, uint8_t value) override
 	{
 		if(addr < 0x8000) {
-			if(_fk23RegistersEnabled || !_wramConfigEnabled) {
-				uint16_t mask = 0x5000 | (0x0010 << GetDipSwitches());
-				if((addr & mask) != mask) {
+			if((_fk23RegistersEnabled || !_wramConfigEnabled) && !(addr & 0x0008)) { // BS-8029 random write has to be ignored
+				uint16_t mask = (0x0010 << GetDipSwitches());
+				if(!(addr & mask)) {
 					//not a register
 					return;
 				}
