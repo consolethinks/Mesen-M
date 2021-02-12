@@ -115,6 +115,7 @@ SOURCES_CXX := $(LIBRETRO_DIR)/libretro.cpp \
                $(CORE_DIR)/VirtualFile.cpp \
                $(CORE_DIR)/VsControlManager.cpp \
                $(CORE_DIR)/WaveRecorder.cpp \
+               $(CORE_DIR)/Mappers/Kaiser7030.cpp \
                $(UTIL_DIR)/ArchiveReader.cpp \
                $(UTIL_DIR)/AutoResetEvent.cpp \
                $(UTIL_DIR)/AviRecorder.cpp \
