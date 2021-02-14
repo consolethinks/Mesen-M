@@ -74,6 +74,7 @@
 #include "Mappers/Henggedianzi179.h"
 #include "Mappers/Hp898f.h"
 #include "Mappers/HSK007.h"
+#include "Mappers/HuangX.h"
 #include "Mappers/IremG101.h"
 #include "Mappers/IremH3001.h"
 #include "Mappers/IremLrog017.h"
@@ -88,9 +89,11 @@
 #include "Mappers/Jy281.h"
 #include "Mappers/Jy282.h"
 #include "Mappers/Jy295.h"
+#include "Mappers/Jy358.h"
 #include "Mappers/Jy386.h"
 #include "Mappers/Jy387.h"
 #include "Mappers/Jy388.h"
+#include "Mappers/Jy397.h"
 #include "Mappers/Kaiser202.h"
 #include "Mappers/Kaiser7012.h"
 #include "Mappers/Kaiser7013B.h"
@@ -155,6 +158,7 @@
 #include "Mappers/Mapper244.h"
 #include "Mappers/Mapper246.h"
 #include "Mappers/Mapper253.h"
+#include "Mappers/Mapper368.h"
 #include "Mappers/McAcc.h"
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
@@ -205,6 +209,7 @@
 #include "Mappers/MMC3_StreetHeroes.h"
 #include "Mappers/MMC4.h"
 #include "Mappers/MMC5.h"
+#include "Mappers/N715021.h"
 #include "Mappers/Namco108.h"
 #include "Mappers/Namco108_76.h"
 #include "Mappers/Namco108_88.h"
@@ -408,6 +413,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 78: return new JalecoJf16();
 		case 79: return new Nina03_06(false);
 		case 80: return new TaitoX1005(false);
+		case 81: return new N715021();
 		case 82: return new TaitoX1017();
 		case 83: return new Mapper83();
 		case 85: return new VRC7();
@@ -436,7 +442,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 113: return new Nina03_06(true);
 		case 114: return new MMC3_114();
 		case 115: return new MMC3_115();
-		case 116: return new Mapper116();
+		case 116: return new HuangX();
 		case 117: return new Mapper117();
 		case 118: return new TxSRom();
 		case 119: return new MMC3_ChrRam(0x40, 0x7F, 8);
@@ -645,7 +651,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 349: return new BmcG146();
 		case 350: break; //891227
 
+		case 358: return new Jy358();
+
 		case 366: return new BmcGn45();
+
+		case 368: return new Mapper368();
 
 		case 377: return new MMC3_267_377();
 
@@ -661,6 +671,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 394: return new HSK007();
 
 		case 396: return new YY850437C();
+		case 397: return new Jy397();
 
 		case 513: return new Sachen9602();
 		//514-517

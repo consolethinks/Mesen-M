@@ -18,7 +18,7 @@ enum class VRCVariant
 	VRC6b
 };
 
-class VRC2_4 : public BaseMapper
+class VRC2_4 : virtual public BaseMapper
 {
 	private:
 		unique_ptr<VrcIrq> _irq;
@@ -105,6 +105,25 @@ class VRC2_4 : public BaseMapper
 			if(!_useHeuristics && _variant <= VRCVariant::VRC2c && _workRamSize == 0 && _saveRamSize == 0) {
 				AddRegisterRange(0x6000, 0x7FFF, MemoryOperation::Any);
 			}
+		}
+
+		// This is only used for the HuangX (Huang-1 and Huang-2) mapper to get a clean VRC2a
+		void InitMapperHuang()
+		{
+			_irq.reset(new VrcIrq(_console));
+			_variant = VRCVariant::VRC2b;
+			_prgMode = 0;
+
+			_prgReg0 = 0x00;
+			_prgReg1 = 0x01;
+			_latch = false;
+
+			for(int i = 0; i < 8; i++) {
+				_loCHRRegs[i] = 0xFF & 0x0F; // init CHR banks to 0xFF
+				_hiCHRRegs[i] = 0xFF & 0x1F;
+			}
+
+			UpdateState();
 		}
 		
 		void ProcessCpuClock() override

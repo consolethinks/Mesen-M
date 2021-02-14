@@ -3,7 +3,7 @@
 #include "CPU.h"
 #include "BaseMapper.h"
 
-class MMC1 : public BaseMapper
+class MMC1 : virtual public BaseMapper
 {
 	private:
 		enum class MMC1Registers
