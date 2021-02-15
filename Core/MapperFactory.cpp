@@ -433,7 +433,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 101: return new JalecoJfxx(true);
 		case 103: return new Mapper103();
 		case 104: return new GoldenFive();
-		case 105: return new MMC1_105(); break;
+		case 105: return new MMC1_105();
 		case 106: return new Mapper106();
 		case 107: return new Mapper107();
 		case 108: return new Bb();
@@ -511,7 +511,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 192: return new MMC3_ChrRam(0x08, 0x0B, 4);
 		case 193: return new NtdecTc112();
 		case 194: return new MMC3_ChrRam(0x00, 0x01, 2);
-		case 195: return new MMC3_ChrRam(0x00, 0x03, 4);
+		case 195: return new MMC3_ChrRam(0x00, 0x03, 4); //FS303(); unsure about the new implementation
 		case 196: return new MMC3_196();
 		case 197: return new MMC3_197();
 		case 198: return new MMC3_198();
@@ -581,9 +581,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 266: return new CityFighter();
 		case 267: return new MMC3_267_377();
 		case 268: return new MMC3_Coolboy();
-		//269-270
+		case 269: break; //
+		case 270: break; //
 		case 271: break; //22026
-		//272-273
+		case 272: break; //
+		case 273: break; //
 		case 274: return new Bmc80013B();
 		//275-282
 		case 281: return new Jy281();
@@ -613,15 +615,16 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 307: return new Kaiser7037();
 		case 308: break; //TH2131-1
 		case 309: return new Lh51();
-		//310-311
+		case 310: return new Lh32(); // duplicate of 125
+		//   311 - Bad Mapper
 		case 312: return new Kaiser7013B();
 		case 313: return new ResetTxrom();
 		case 314: return new Bmc64in1NoRepeat();
 		case 315: break; //830134C
-		//316-318
+		//   316-318 - Reserved Mappers
 		case 319: return new Hp898f();
 		case 320: return new Bmc830425C4391T();
-		//321
+		case 321: return new MMC3_Bmc411120C(); // duplicate of 287
 		case 322: break; //K-3033
 		case 323: return new FaridSlrom();
 		case 324: return new FaridUnrom();
@@ -629,11 +632,11 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 327: break; //10-24-C-A1
 		case 328: return new Rt01();
 		case 329: return new Edu2000();
-		//330
+		case 330: break; // bootleg Sangokushi II: Hao no Tairiku
 		case 331: return new Bmc12in1();
 		case 332: return new Super40in1Ws();
 		case 333: return new Bmc8in1(); // + NEWSTAR-GRM070-8IN1
-		//334
+		case 334: break; // "5/20in1 1993 Copyright" cart
 		case 335: break; //CTC-09
 		case 336: return new BmcK3046();
 		case 337: break; //CTC-12IN1
@@ -642,7 +645,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 340: break; //K-3036
 		case 341: break; //TJ-03
 		case 342: break; //COOLGIRL
-		//343
+		//   343 - "Certain" reset base 4in1
 		case 344: break; //GN26
 		case 345: break; //L6IN1
 		case 346: return new Kaiser7012();
@@ -658,29 +661,76 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 368: return new Mapper368();
 
 		case 377: return new MMC3_267_377();
-
+		case 378: break; //
+		case 379: break; //
 		case 380: return new _970630C();
-
+		case 381: break; // 
+		case 382: break; // 
+		case 383: break; // 
+		case 384: break; // 
+		case 385: break; //
 		case 386: return new Jy386();
 		case 387: return new Jy387();
 		case 388: return new Jy388();
-
+		case 389: break; // CALTRON 9
 		case 390: return new Realtec8031();
-
+		case 391: break; // NC7000M
+		case 392: break; // 00202650
 		case 393: return new _820720C();
 		case 394: return new HSK007();
-
+		case 395: break; // Realtec 8210
 		case 396: return new YY850437C();
 		case 397: return new Jy397();
+		case 398: break; //
+		case 399: break; //
+		case 400: break; //
+		case 401: break; //
+		case 402: break; //
+		case 403: break; //
+		case 404: break; //
+		case 405: break; //
+		case 406: break; //
+		case 407: break; //
+		case 408: break; //
+		case 409: break; //
+		case 410: break; //
+		case 411: break; //
+		case 412: break; //
+		case 413: break; //
+		case 414: break; //
+		case 415: break; //
+		case 416: break; //
+		case 417: break; //
+		case 418: break; //
+		case 419: break; //
+		case 420: break; //
+		case 421: break; //
+		case 422: break; //
+		case 423: break; //
+		case 424: break; //
+		case 425: break; //
+		case 426: break; //
+		case 427: break; //
+		case 428: break; //
+		// 429-430 aren't assigned
+		case 431: break; //
+		case 432: break; //
+		case 433: break; //
+		case 434: break; //
+		// 434-511 aren't assigned
 
+		case 512: break; // Zhongguo Daheng
 		case 513: return new Sachen9602();
-		//514-517
+		case 514: break; //
+		case 515: break; //
+		case 516: break; //
+		case 517: break; //
 		case 518: return new Dance2000();
 		case 519: return new Eh8813A();
-		//520
+		case 520: break; //
 		case 521: return new DreamTech01();
 		case 522: return new Lh10();
-		//523
+		case 523: break; //
 		case 524: break; //900218
 		case 525: break; //KS7021A
 		case 526: break; //BJ56
@@ -688,8 +738,34 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 528: break; //831128C
 		case 529: return new T230();
 		case 530: return new Ax5705();
-		
+		case 531: break; // LittleCom PC-95 (not enough info)
+		case 532: break; // VirtuaNES Ex overlay??? (not sure if this should be implemented)
+		case 533: break; // Sachen 3014
 		case 534: return new MMC3_534();
+		case 535: break; //
+		case 536: break; //
+		case 537: break; //
+		case 538: break; //
+		case 539: break; //
+		case 540: break; //
+		case 541: break; //
+		case 542: break; //
+		case 543: break; //
+		case 544: break; //
+		case 545: break; //
+		case 546: break; //
+		case 547: break; // Konami QTa
+		case 548: break; //
+		case 549: break; //
+		case 550: break; //
+		case 551: break; //
+		case 552: break; //
+		case 553: break; //
+		case 554: break; //
+		case 555: break; //
+		case 556: break; //
+		case 557: break; //
+		case 558: break; //
 
 		case UnifBoards::Ac08: return new Ac08(); //mapper 42?
 		case UnifBoards::Cc21: return new Cc21();
@@ -708,6 +784,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 
 	if(romData.Info.MapperID != UnifBoards::UnknownBoard) {
 		MessageManager::DisplayMessage("Error", "UnsupportedMapper", "iNES #" + std::to_string(romData.Info.MapperID));
+	} else {
+		MessageManager::DisplayMessage("Error", "UnsupportedMapper", "Unknown UNIF board");
 	}
 	return nullptr;
 }
