@@ -160,6 +160,7 @@
 #include "Mappers/Mapper253.h"
 #include "Mappers/Mapper368.h"
 #include "Mappers/Mapper538.h"
+#include "Mappers/Mapper539.h"
 #include "Mappers/McAcc.h"
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
@@ -767,7 +768,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 536: break; //
 		case 537: break; //
 		case 538: return new Mapper538(); // bootleg cart conversion of Super Soccer Champion
-		case 539: break; //
+		case 539: return new Mapper539(); // bootleg cart conversion of Palutena no Kagami
 		case 540: break; //
 		case 541: break; //
 		case 542: break; //

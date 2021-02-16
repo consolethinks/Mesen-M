@@ -4,16 +4,17 @@
 
 class FdsAudio;
 
-class Mapper538 : public BaseMapper // Super Soccer Champion bootleg
+class Mapper539 : public BaseMapper // Palthena no Kagami bootleg
 {
 private:
     unique_ptr<FdsAudio> _audio;
 protected:
     uint16_t GetPRGPageSize() override { return 0x2000; }
     uint16_t GetCHRPageSize() override { return 0x2000; }
-    uint32_t GetWorkRamSize() override { return 0; }
-    uint16_t RegisterStartAddress() override { return 0xC000; }
-    uint16_t RegisterEndAddress() override { return 0xCFFF; }
+    uint32_t GetWorkRamSize() override { return 0x2000; }
+    uint32_t GetWorkRamPageSize() override { return 0x100; }
+    uint16_t RegisterStartAddress() override { return 0xA000; }
+    uint16_t RegisterEndAddress() override { return 0xAFFF; }
     bool AllowRegisterRead() override { return true; }
 
     void InitMapper() override;
