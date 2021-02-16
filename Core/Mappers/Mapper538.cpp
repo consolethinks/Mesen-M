@@ -24,7 +24,7 @@ void Mapper538::WriteRegister(uint16_t addr, uint8_t value)
 {
     if (0x4040 <= addr && addr <= 0x4092) { // $4040-$4092
         _audio->WriteRegister(addr, value);
-    } else { // $8000-$8FFF
+    } else { // $C000-$CFFF (uncertain)
         SetCpuMemoryMapping(0x6000, 0x7FFF, 0x08 + ((value & 0x0F) >> 1), PrgMemoryType::PrgRom, MemoryAccessType::Read);
         SelectPRGPage(0, bankLookupTable[value & 0x0F], PrgMemoryType::PrgRom, MemoryAccessType::Read);
     }
