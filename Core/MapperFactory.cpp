@@ -159,6 +159,7 @@
 #include "Mappers/Mapper246.h"
 #include "Mappers/Mapper253.h"
 #include "Mappers/Mapper368.h"
+#include "Mappers/Mapper538.h"
 #include "Mappers/McAcc.h"
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
@@ -581,13 +582,13 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 266: return new CityFighter();
 		case 267: return new MMC3_267_377();
 		case 268: return new MMC3_Coolboy();
-		case 269: break; //
-		case 270: break; //
-		case 271: break; //22026
-		case 272: break; //
-		case 273: break; //
+		case 269: break; // MMC3 with outer bank
+		case 270: break; // OneBus multicart
+		case 271: break; // 22026
+		case 272: break; // bootleg of Akumajō Special: Boku Dracula-kun
+		case 273: break; // bootleg of Gremlins 2
 		case 274: return new Bmc80013B();
-		//275-282
+		//   275-280 - Reserved mappers
 		case 281: return new Jy281();
 		case 282: return new Jy282();
 		case 283: return new Gs2004();
@@ -598,11 +599,13 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 288: return new Gkcx1();
 		case 289: return new Bmc60311C();
 		case 290: return new BmcNtd03();
-		//291
+		case 291: break; // Kasheng 2in1
 		case 292: return new DragonFighter();
-		//293-294
+		case 293: break; // Newstar12in1, 76in1
+		case 294: break; // T4A54A / WX-KB4K / BS-5652
 		case 295: return new Jy295(); //13IN1JY110
-		//296-297
+		case 296: break; // VT3x hardware
+		case 297: break; // TXC 01-22110-000
 		case 298: return new Tf1201();
 		case 299: return new Bmc11160();
 		case 300: return new Bmc190in1();
@@ -616,12 +619,12 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 308: break; //TH2131-1
 		case 309: return new Lh51();
 		case 310: return new Lh32(); // duplicate of 125
-		//   311 - Bad Mapper
+		//   311 - Bad mapper
 		case 312: return new Kaiser7013B();
 		case 313: return new ResetTxrom();
 		case 314: return new Bmc64in1NoRepeat();
 		case 315: break; //830134C
-		//   316-318 - Reserved Mappers
+		//   316-318 - Reserved mappers
 		case 319: return new Hp898f();
 		case 320: return new Bmc830425C4391T();
 		case 321: return new MMC3_Bmc411120C(); // duplicate of 287
@@ -653,13 +656,31 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 348: return new Bmc830118C();
 		case 349: return new BmcG146();
 		case 350: break; //891227
-
+		case 351: break; //
+		case 352: break; //
+		case 353: break; //
+		case 354: break; //
+		case 355: break; //
+		case 356: break; //
+		case 357: break; //
 		case 358: return new Jy358();
-
+		case 359: break; //
+		case 361: break; //
+		case 362: break; //
+		case 363: break; //
+		case 364: break; //
+		case 365: break; //
 		case 366: return new BmcGn45();
-
+		case 367: break; //
 		case 368: return new Mapper368();
-
+		case 369: break; //
+		case 370: break; //
+		case 371: break; //
+		case 372: break; //
+		case 373: break; //
+		case 374: break; //
+		case 375: break; //
+		case 376: break; //
 		case 377: return new MMC3_267_377();
 		case 378: break; //
 		case 379: break; //
@@ -745,7 +766,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 535: break; //
 		case 536: break; //
 		case 537: break; //
-		case 538: break; //
+		case 538: return new Mapper538(); // bootleg cart conversion of Super Soccer Champion
 		case 539: break; //
 		case 540: break; //
 		case 541: break; //
