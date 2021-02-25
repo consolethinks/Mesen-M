@@ -205,15 +205,15 @@ void ControlManager::UpdateControlDevices()
 		RegisterControlDevice(expDevice);
 	}
 
+	if(_mapperControlDevice) {
+		RegisterControlDevice(_mapperControlDevice);
+	}
+
 	bool hasKeyboard = HasKeyboard();
 	if(!hasKeyboard) {
 		settings->DisableKeyboardMode();
 	} else if(!hadKeyboard && hasKeyboard) {
 		settings->EnableKeyboardMode();
-	}
-
-	if(_mapperControlDevice) {
-		RegisterControlDevice(_mapperControlDevice);
 	}
 
 	if(std::dynamic_pointer_cast<FamilyBasicKeyboard>(expDevice)) {
@@ -224,8 +224,13 @@ void ControlManager::UpdateControlDevices()
 
 bool ControlManager::HasKeyboard()
 {
-	shared_ptr<BaseControlDevice> expDevice = GetControlDevice(BaseControlDevice::ExpDevicePort);
-	return expDevice && expDevice->IsKeyboard();
+	bool keyboardExists = false;
+	for(shared_ptr<BaseControlDevice> &device : _controlDevices) {
+		keyboardExists |= device->IsKeyboard();
+		if(keyboardExists) { break; }
+	}
+	//shared_ptr<BaseControlDevice> expDevice = GetControlDevice(BaseControlDevice::ExpDevicePort);
+	return keyboardExists;
 }
 
 uint8_t ControlManager::GetOpenBusMask(uint8_t port)

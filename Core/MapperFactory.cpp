@@ -13,6 +13,7 @@
 #include "Mappers/Ac08.h"
 #include "Mappers/Action53.h"
 #include "Mappers/ActionEnterprises.h"
+#include "Mappers/AsderPC95.h"
 #include "Mappers/Ax5705.h"
 #include "Mappers/AXROM.h"
 #include "Mappers/Bandai74161_7432.h"
@@ -489,6 +490,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 166: return new Subor166();
 		case 167: return new Subor166();
 		case 168: return new Racermate();
+		//   169 - Yuxing, undocumented mapper
 		case 170: return new Mapper170();
 		case 171: return new Kaiser7058();
 		case 172: return new Txc22211B();
@@ -670,7 +672,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 362: break; //
 		case 363: break; //
 		case 364: break; //
-		case 365: break; //
+		case 365: return new AsderPC95(); // Asder PC-95 (Polish, Arabic)
 		case 366: return new BmcGn45();
 		case 367: break; //
 		case 368: return new Mapper368();
