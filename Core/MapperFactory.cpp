@@ -166,6 +166,7 @@
 #include "Mappers/MMC1.h"
 #include "Mappers/MMC1_105.h"
 #include "Mappers/MMC1_155.h"
+#include "Mappers/MMC1_374.h"
 #include "Mappers/MMC2.h"
 #include "Mappers/MMC3.h"
 #include "Mappers/MMC3_12.h"
@@ -233,6 +234,7 @@
 #include "Mappers/Rambo1.h"
 #include "Mappers/Rambo1_158.h"
 #include "Mappers/Realtec8031.h"
+#include "Mappers/Realtec8210.h"
 #include "Mappers/ResetTxrom.h"
 #include "Mappers/Rt01.h"
 #include "Mappers/Sachen_133.h"
@@ -681,7 +683,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 371: break; //
 		case 372: break; //
 		case 373: break; //
-		case 374: break; //
+		case 374: return new MMC1_374(); // MMC1 reset-based multicart
 		case 375: break; //
 		case 376: break; //
 		case 377: return new MMC3_267_377();
@@ -702,7 +704,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 392: break; // 00202650
 		case 393: return new _820720C();
 		case 394: return new HSK007();
-		case 395: break; // Realtec 8210
+		case 395: return new Realtec8210();
 		case 396: return new YY850437C();
 		case 397: return new Jy397();
 		case 398: break; //

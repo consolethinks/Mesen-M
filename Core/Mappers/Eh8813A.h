@@ -30,7 +30,7 @@ protected:
 	void StreamState(bool saving) override
 	{
 		BaseMapper::StreamState(saving);
-		Stream(_readDIP);
+		Stream(_readDIP, _lock, _chrPage);
 	}
 
 	uint8_t ReadRegister(uint16_t addr) override
