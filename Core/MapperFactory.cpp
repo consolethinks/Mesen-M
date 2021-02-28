@@ -167,6 +167,7 @@
 #include "Mappers/MMC1_105.h"
 #include "Mappers/MMC1_155.h"
 #include "Mappers/MMC1_374.h"
+#include "Mappers/MMC1_543.h"
 #include "Mappers/MMC2.h"
 #include "Mappers/MMC3.h"
 #include "Mappers/MMC3_12.h"
@@ -776,7 +777,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 540: break; //
 		case 541: break; //
 		case 542: break; //
-		case 543: break; //
+		case 543: return new MMC1_543();
 		case 544: break; //
 		case 545: break; //
 		case 546: break; //
