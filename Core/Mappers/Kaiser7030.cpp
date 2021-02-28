@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Kaiser7030.h"
 #include "FdsAudio.h" // FDS exp. audio emulation when desired
 

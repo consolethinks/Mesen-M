@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Mapper538.h"
 #include "FdsAudio.h" // FDS exp. audio emulation when desired
 

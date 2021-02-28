@@ -127,21 +127,6 @@
     <ClInclude Include="MapperFactory.h">
       <Filter>Nes\Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="NROM.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="CNROM.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="UNROM.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="AXROM.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="ColorDreams.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="IMessageManager.h">
       <Filter>Nes\Interfaces</Filter>
     </ClInclude>
@@ -168,9 +153,6 @@
     </ClInclude>
     <ClInclude Include="INotificationListener.h">
       <Filter>Nes\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Nanjing.h">
-      <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Debugger.h">
       <Filter>Debugger</Filter>
@@ -214,9 +196,6 @@
     <ClInclude Include="DeltaModulationChannel.h">
       <Filter>Nes\APU</Filter>
     </ClInclude>
-    <ClInclude Include="BF909x.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="HdNesPack.h">
       <Filter>HdPacks</Filter>
     </ClInclude>
@@ -228,24 +207,6 @@
     </ClInclude>
     <ClInclude Include="IRenderingDevice.h">
       <Filter>Nes\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="CpRom.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="GxRom.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="UnlPci556.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Nina03_06.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="BnRom.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Nina01.h">
-      <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="DefaultVideoFilter.h">
       <Filter>VideoDecoder</Filter>
@@ -304,24 +265,6 @@
     <ClInclude Include="SoundMixer.h">
       <Filter>Nes\APU</Filter>
     </ClInclude>
-    <ClInclude Include="UnRom_180.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="UnRom_94.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="BF9096.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="NtdecTc112.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Rambo1.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseMapper.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="FdsLoader.h">
       <Filter>Nes\RomLoader</Filter>
     </ClInclude>
@@ -333,171 +276,6 @@
     </ClInclude>
     <ClInclude Include="RomData.h">
       <Filter>Nes\RomLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC1.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC2.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_12.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_37.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_44.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_45.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_47.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_49.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_52.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_115.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_189.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_205.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_ChrRam.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC4.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC5.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper57.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper58.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper61.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper62.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper91.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper107.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper112.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper200.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper202.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper203.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper225.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper226.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper230.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper231.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper240.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper242.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper246.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunsoft89.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunsoft93.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunsoft184.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Namco108.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
-    <ClInclude Include="Namco108_76.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
-    <ClInclude Include="Namco108_88.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
-    <ClInclude Include="Namco108_95.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
-    <ClInclude Include="Namco108_154.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
-    <ClInclude Include="IremG101.h">
-      <Filter>Nes\Mappers\Irem</Filter>
-    </ClInclude>
-    <ClInclude Include="IremH3001.h">
-      <Filter>Nes\Mappers\Irem</Filter>
-    </ClInclude>
-    <ClInclude Include="IremLrog017.h">
-      <Filter>Nes\Mappers\Irem</Filter>
-    </ClInclude>
-    <ClInclude Include="IremTamS1.h">
-      <Filter>Nes\Mappers\Irem</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_145.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_147.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_148.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_149.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="JalecoJf11_14.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="JalecoJf16.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="JalecoJf17_19.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="JalecoJfxx.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="JalecoSs88006.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="FDS.h">
-      <Filter>Nes\Mappers\FDS</Filter>
     </ClInclude>
     <ClInclude Include="FdsAudio.h">
       <Filter>Nes\Mappers\FDS</Filter>
@@ -532,29 +310,8 @@
     <ClInclude Include="ReverbFilter.h">
       <Filter>Nes\APU\Filters</Filter>
     </ClInclude>
-    <ClInclude Include="TaitoX1005.h">
-      <Filter>Nes\Mappers\Taito</Filter>
-    </ClInclude>
-    <ClInclude Include="TaitoTc0190.h">
-      <Filter>Nes\Mappers\Taito</Filter>
-    </ClInclude>
-    <ClInclude Include="TaitoX1017.h">
-      <Filter>Nes\Mappers\Taito</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper241.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="VsSystem.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="VsControlManager.h">
       <Filter>Nes</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper15.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper60.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="ScaleFilter.h">
       <Filter>VideoDecoder</Filter>
@@ -574,28 +331,10 @@
     <ClInclude Include="stdafx.h">
       <Filter>Misc</Filter>
     </ClInclude>
-    <ClInclude Include="TxSRom.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="WaveRecorder.h">
       <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="VrcIrq.h">
-      <Filter>Nes\Mappers\VRC</Filter>
-    </ClInclude>
-    <ClInclude Include="VRC1.h">
-      <Filter>Nes\Mappers\VRC</Filter>
-    </ClInclude>
-    <ClInclude Include="VRC2_4.h">
-      <Filter>Nes\Mappers\VRC</Filter>
-    </ClInclude>
-    <ClInclude Include="VRC3.h">
-      <Filter>Nes\Mappers\VRC</Filter>
-    </ClInclude>
-    <ClInclude Include="VRC6.h">
-      <Filter>Nes\Mappers\VRC</Filter>
-    </ClInclude>
-    <ClInclude Include="VRC7.h">
       <Filter>Nes\Mappers\VRC</Filter>
     </ClInclude>
     <ClInclude Include="Vrc6Pulse.h">
@@ -604,22 +343,10 @@
     <ClInclude Include="Vrc6Saw.h">
       <Filter>Nes\Mappers\VRC</Filter>
     </ClInclude>
-    <ClInclude Include="Namco163.h">
-      <Filter>Nes\Mappers\Namco</Filter>
-    </ClInclude>
     <ClInclude Include="Namco163Audio.h">
       <Filter>Nes\Mappers\Namco</Filter>
     </ClInclude>
-    <ClInclude Include="SunsoftFme7.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
     <ClInclude Include="Sunsoft5bAudio.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunsoft3.h">
-      <Filter>Nes\Mappers\Sunsoft</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunsoft4.h">
       <Filter>Nes\Mappers\Sunsoft</Filter>
     </ClInclude>
     <ClInclude Include="MMC5Audio.h">
@@ -631,50 +358,11 @@
     <ClInclude Include="Vrc6Audio.h">
       <Filter>Nes\Mappers\VRC</Filter>
     </ClInclude>
-    <ClInclude Include="Bandai74161_7432.h">
-      <Filter>Nes\Mappers\Bandai</Filter>
-    </ClInclude>
-    <ClInclude Include="BandaiFcg.h">
-      <Filter>Nes\Mappers\Bandai</Filter>
-    </ClInclude>
-    <ClInclude Include="FrontFareast.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="GameDatabase.h">
       <Filter>Nes\RomLoader</Filter>
     </ClInclude>
-    <ClInclude Include="JalecoJf13.h">
-      <Filter>Nes\Mappers\Jaleco</Filter>
-    </ClInclude>
-    <ClInclude Include="DaouInfosys.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC1_155.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper218.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen8259.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_143.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="ActionEnterprises.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen74LS374N.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper227.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
     <ClInclude Include="NsfLoader.h">
       <Filter>Nes\RomLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="NsfMapper.h">
-      <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="NsfeLoader.h">
       <Filter>Nes\RomLoader</Filter>
@@ -694,221 +382,17 @@
     <ClInclude Include="OpllChannel.h">
       <Filter>Nes\Mappers\VRC</Filter>
     </ClInclude>
-    <ClInclude Include="NsfCart31.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper40.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper50.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper42.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="ColorDreams46.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="TaitoTc0690.h">
-      <Filter>Nes\Mappers\Taito</Filter>
-    </ClInclude>
-    <ClInclude Include="Waixing252.h">
-      <Filter>Nes\Mappers\Waixing</Filter>
-    </ClInclude>
-    <ClInclude Include="Waixing164.h">
-      <Filter>Nes\Mappers\Waixing</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_182.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Action53.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_133.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7058.h">
-      <Filter>Nes\Mappers\Kaiser</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7022.h">
-      <Filter>Nes\Mappers\Kaiser</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser202.h">
-      <Filter>Nes\Mappers\Kaiser</Filter>
-    </ClInclude>
-    <ClInclude Include="Henggedianzi177.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Henggedianzi179.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper170.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
     <ClInclude Include="VideoHud.h">
       <Filter>VideoDecoder</Filter>
     </ClInclude>
     <ClInclude Include="FrameInfo.h">
       <Filter>VideoDecoder</Filter>
     </ClInclude>
-    <ClInclude Include="Caltron41.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc235.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc51.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc63.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="JyCompany.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_245.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Waixing178.h">
-      <Filter>Nes\Mappers\Waixing</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper35.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_165.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Subor166.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Txc22000.h">
-      <Filter>Nes\Mappers\Txc</Filter>
-    </ClInclude>
-    <ClInclude Include="Txc22211A.h">
-      <Filter>Nes\Mappers\Txc</Filter>
-    </ClInclude>
-    <ClInclude Include="Txc22211B.h">
-      <Filter>Nes\Mappers\Txc</Filter>
-    </ClInclude>
-    <ClInclude Include="Txc22211C.h">
-      <Filter>Nes\Mappers\Txc</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper234.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_197.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_187.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="OekaKids.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Supervision.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_250.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_249.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper212.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_14.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper221.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper103.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Racermate.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_114.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="BandaiKaraoke.h">
-      <Filter>Nes\Mappers\Bandai</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_121.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper120.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper244.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_254.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_238.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper233.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper229.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper222.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper213.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper214.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper204.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc255.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper183.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper253.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen_136.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
     <ClInclude Include="UnifLoader.h">
       <Filter>Nes\RomLoader</Filter>
     </ClInclude>
-    <ClInclude Include="Tf1201.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper106.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper117.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
     <ClInclude Include="A12Watcher.h">
       <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="StudyBox.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC1_105.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Waixing162.h">
-      <Filter>Nes\Mappers\Waixing</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_196.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_219.h">
-      <Filter>Nes\Mappers\MMC</Filter>
     </ClInclude>
     <ClInclude Include="AutoSaveManager.h">
       <Filter>Misc</Filter>
@@ -916,151 +400,7 @@
     <ClInclude Include="ShortcutKeyHandler.h">
       <Filter>Misc</Filter>
     </ClInclude>
-    <ClInclude Include="MMC3_134.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper216.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_123.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_126.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_199.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_215.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_217.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_Coolboy.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper83.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Smb2j.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Malee.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_StreetHeroes.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="DreamTech01.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Edu2000.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Gs2013.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Gs2004.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="NovelDiamond.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_Kof97.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="T262.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="A65AS.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bs5.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc190in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Ghostbusters63in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc70in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Ax5705.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Super40in1Ws.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Cc21.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper43.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7016.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Rt01.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Hp898f.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
     <ClInclude Include="UnifBoards.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bb.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Ac08.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="BmcG146.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="BmcNtd03.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc11160.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc12in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc64in1NoRepeat.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc810544CA1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_BmcF15.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Lh10.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7037.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7057.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7013B.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7012.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Lh32.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_MaliSB.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_Bmc411120C.h">
       <Filter>Nes\Mappers\Unif</Filter>
     </ClInclude>
     <ClInclude Include="MemoryDumper.h">
@@ -1087,12 +427,6 @@
     <ClInclude Include="BisqwitNtscFilter.h">
       <Filter>VideoDecoder</Filter>
     </ClInclude>
-    <ClInclude Include="MagicKidGooGoo.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Eh8813A.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
     <ClInclude Include="Assembler.h">
       <Filter>Debugger</Filter>
     </ClInclude>
@@ -1102,32 +436,11 @@
     <ClInclude Include="Types.h">
       <Filter>Nes</Filter>
     </ClInclude>
-    <ClInclude Include="UnlPuzzle.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Unl255in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="UnlD1038.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="GoldenFive.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="MesenMovie.h">
       <Filter>Movies</Filter>
     </ClInclude>
     <ClInclude Include="MovieManager.h">
       <Filter>Movies</Filter>
-    </ClInclude>
-    <ClInclude Include="Cheapocabra.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="UnRom512.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="SealieComputing.h">
-      <Filter>Nes\Mappers</Filter>
     </ClInclude>
     <ClInclude Include="BizhawkMovie.h">
       <Filter>Movies</Filter>
@@ -1146,12 +459,6 @@
     </ClInclude>
     <ClInclude Include="RewindManager.h">
       <Filter>Rewinder</Filter>
-    </ClInclude>
-    <ClInclude Include="Rambo1_158.h">
-      <Filter>Nes\Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper174.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="BaseRenderer.h">
       <Filter>VideoDecoder</Filter>
@@ -1209,9 +516,6 @@
     </ClInclude>
     <ClInclude Include="VirtualFile.h">
       <Filter>Nes\RomLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper39.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
     </ClInclude>
     <ClInclude Include="MovieRecorder.h">
       <Filter>Movies</Filter>
@@ -1327,9 +631,6 @@
     <ClInclude Include="Zapper.h">
       <Filter>Nes\Input\Controllers</Filter>
     </ClInclude>
-    <ClInclude Include="MMC3_198.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
     <ClInclude Include="HdPackConditions.h">
       <Filter>HdPacks</Filter>
     </ClInclude>
@@ -1348,70 +649,7 @@
     <ClInclude Include="ServerInformationMessage.h">
       <Filter>NetPlay\Messages</Filter>
     </ClInclude>
-    <ClInclude Include="Bmc8in1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc830118C.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc8157.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Sachen9602.h">
-      <Filter>Nes\Mappers\Sachen</Filter>
-    </ClInclude>
-    <ClInclude Include="Unl158B.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7017.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc80013B.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Dance2000.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="CityFighter.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Kaiser7031.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Mapper116.h">
-      <Filter>Nes\Mappers\Unnamed</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_208.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="Yoko.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="T230.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Unl8237A.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="BmcHpxx.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="DragonFighter.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="BmcGn45.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="UnlDripGame.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
     <ClInclude Include="UnlDripGameAudio.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="MMC3_224.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
-    <ClInclude Include="FamicomBox.h">
       <Filter>Nes\Mappers\Unif</Filter>
     </ClInclude>
     <ClInclude Include="MemoryManager.h">
@@ -1423,41 +661,14 @@
     <ClInclude Include="OpenBusHandler.h">
       <Filter>Nes\MemoryManager</Filter>
     </ClInclude>
-    <ClInclude Include="Bmc60311C.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
     <ClInclude Include="NotificationManager.h">
       <Filter>Misc</Filter>
     </ClInclude>
     <ClInclude Include="NESHeader.h">
       <Filter>Nes\RomLoader</Filter>
     </ClInclude>
-    <ClInclude Include="Gkcx1.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Lh51.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="ResetTxrom.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="Bmc830425C4391T.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="FaridSlrom.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="FaridUnrom.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
-    <ClInclude Include="BmcK3046.h">
-      <Filter>Nes\Mappers\Unif</Filter>
-    </ClInclude>
     <ClInclude Include="HistoryViewer.h">
       <Filter>Rewinder</Filter>
-    </ClInclude>
-    <ClInclude Include="Fk23C.h">
-      <Filter>Nes\Mappers\Unif</Filter>
     </ClInclude>
     <ClInclude Include="StereoCombFilter.h">
       <Filter>Nes\APU\Filters</Filter>
@@ -1487,9 +698,6 @@
     <ClInclude Include="TxcChip.h">
       <Filter>Nes\Mappers\Txc</Filter>
     </ClInclude>
-    <ClInclude Include="McAcc.h">
-      <Filter>Nes\Mappers\MMC</Filter>
-    </ClInclude>
     <ClInclude Include="StudyBoxLoader.h">
       <Filter>Nes\RomLoader</Filter>
     </ClInclude>
@@ -1502,6 +710,297 @@
     <ClInclude Include="VbController.h">
       <Filter>Nes\Input\Controllers</Filter>
     </ClInclude>
+    <ClInclude Include="Mappers\820720C.h" />
+    <ClInclude Include="Mappers\970630C.h" />
+    <ClInclude Include="Mappers\A65AS.h" />
+    <ClInclude Include="Mappers\Ac08.h" />
+    <ClInclude Include="Mappers\Action53.h" />
+    <ClInclude Include="Mappers\ActionEnterprises.h" />
+    <ClInclude Include="Mappers\AsderPC95.h" />
+    <ClInclude Include="Mappers\Ax5705.h" />
+    <ClInclude Include="Mappers\AXROM.h" />
+    <ClInclude Include="Mappers\Bandai74161_7432.h" />
+    <ClInclude Include="Mappers\BandaiFcg.h" />
+    <ClInclude Include="Mappers\BandaiKaraoke.h" />
+    <ClInclude Include="Mappers\BaseMapper.h" />
+    <ClInclude Include="Mappers\Bb.h" />
+    <ClInclude Include="Mappers\BF909x.h" />
+    <ClInclude Include="Mappers\BF9096.h" />
+    <ClInclude Include="Mappers\Bmc8in1.h" />
+    <ClInclude Include="Mappers\Bmc12in1.h" />
+    <ClInclude Include="Mappers\Bmc51.h" />
+    <ClInclude Include="Mappers\Bmc63.h" />
+    <ClInclude Include="Mappers\Bmc64in1NoRepeat.h" />
+    <ClInclude Include="Mappers\Bmc70in1.h" />
+    <ClInclude Include="Mappers\Bmc190in1.h" />
+    <ClInclude Include="Mappers\Bmc235.h" />
+    <ClInclude Include="Mappers\Bmc255.h" />
+    <ClInclude Include="Mappers\Bmc8157.h" />
+    <ClInclude Include="Mappers\Bmc11160.h" />
+    <ClInclude Include="Mappers\Bmc60311C.h" />
+    <ClInclude Include="Mappers\Bmc80013B.h" />
+    <ClInclude Include="Mappers\Bmc810544CA1.h" />
+    <ClInclude Include="Mappers\Bmc830118C.h" />
+    <ClInclude Include="Mappers\Bmc830425C4391T.h" />
+    <ClInclude Include="Mappers\BmcG146.h" />
+    <ClInclude Include="Mappers\BmcGn45.h" />
+    <ClInclude Include="Mappers\BmcHpxx.h" />
+    <ClInclude Include="Mappers\BmcK3046.h" />
+    <ClInclude Include="Mappers\BmcNtd03.h" />
+    <ClInclude Include="Mappers\BnRom.h" />
+    <ClInclude Include="Mappers\Bs5.h" />
+    <ClInclude Include="Mappers\Caltron41.h" />
+    <ClInclude Include="Mappers\Cc21.h" />
+    <ClInclude Include="Mappers\Cheapocabra.h" />
+    <ClInclude Include="Mappers\CityFighter.h" />
+    <ClInclude Include="Mappers\CNROM.h" />
+    <ClInclude Include="Mappers\ColorDreams.h" />
+    <ClInclude Include="Mappers\ColorDreams46.h" />
+    <ClInclude Include="Mappers\Coolgirl.h" />
+    <ClInclude Include="Mappers\CpRom.h" />
+    <ClInclude Include="Mappers\Dance2000.h" />
+    <ClInclude Include="Mappers\DaouInfosys.h" />
+    <ClInclude Include="Mappers\DragonFighter.h" />
+    <ClInclude Include="Mappers\DreamTech01.h" />
+    <ClInclude Include="Mappers\Edu2000.h" />
+    <ClInclude Include="Mappers\Eh8813A.h" />
+    <ClInclude Include="Mappers\FamicomBox.h" />
+    <ClInclude Include="Mappers\FaridSlrom.h" />
+    <ClInclude Include="Mappers\FaridUnrom.h" />
+    <ClInclude Include="Mappers\FDS.h" />
+    <ClInclude Include="Mappers\Fk23C.h" />
+    <ClInclude Include="Mappers\FrontFareast.h" />
+    <ClInclude Include="Mappers\FS303.h" />
+    <ClInclude Include="Mappers\Ghostbusters63in1.h" />
+    <ClInclude Include="Mappers\Gkcx1.h" />
+    <ClInclude Include="Mappers\GoldenFive.h" />
+    <ClInclude Include="Mappers\Gs2004.h" />
+    <ClInclude Include="Mappers\Gs2013.h" />
+    <ClInclude Include="Mappers\GxRom.h" />
+    <ClInclude Include="Mappers\Henggedianzi177.h" />
+    <ClInclude Include="Mappers\Henggedianzi179.h" />
+    <ClInclude Include="Mappers\Hp898f.h" />
+    <ClInclude Include="Mappers\HSK007.h" />
+    <ClInclude Include="Mappers\HuangX.h" />
+    <ClInclude Include="Mappers\IremG101.h" />
+    <ClInclude Include="Mappers\IremH3001.h" />
+    <ClInclude Include="Mappers\IremLrog017.h" />
+    <ClInclude Include="Mappers\IremTamS1.h" />
+    <ClInclude Include="Mappers\JalecoJf11_14.h" />
+    <ClInclude Include="Mappers\JalecoJf13.h" />
+    <ClInclude Include="Mappers\JalecoJf16.h" />
+    <ClInclude Include="Mappers\JalecoJf17_19.h" />
+    <ClInclude Include="Mappers\JalecoJfxx.h" />
+    <ClInclude Include="Mappers\JalecoSs88006.h" />
+    <ClInclude Include="Mappers\Jy281.h" />
+    <ClInclude Include="Mappers\Jy282.h" />
+    <ClInclude Include="Mappers\Jy295.h" />
+    <ClInclude Include="Mappers\Jy358.h" />
+    <ClInclude Include="Mappers\Jy386.h" />
+    <ClInclude Include="Mappers\Jy387.h" />
+    <ClInclude Include="Mappers\Jy388.h" />
+    <ClInclude Include="Mappers\Jy397.h" />
+    <ClInclude Include="Mappers\JyCompany.h" />
+    <ClInclude Include="Mappers\Kaiser202.h" />
+    <ClInclude Include="Mappers\Kaiser7012.h" />
+    <ClInclude Include="Mappers\Kaiser7013B.h" />
+    <ClInclude Include="Mappers\Kaiser7016.h" />
+    <ClInclude Include="Mappers\Kaiser7017.h" />
+    <ClInclude Include="Mappers\Kaiser7022.h" />
+    <ClInclude Include="Mappers\Kaiser7030.h" />
+    <ClInclude Include="Mappers\Kaiser7031.h" />
+    <ClInclude Include="Mappers\Kaiser7037.h" />
+    <ClInclude Include="Mappers\Kaiser7057.h" />
+    <ClInclude Include="Mappers\Kaiser7058.h" />
+    <ClInclude Include="Mappers\Lh10.h" />
+    <ClInclude Include="Mappers\Lh32.h" />
+    <ClInclude Include="Mappers\Lh51.h" />
+    <ClInclude Include="Mappers\MagicKidGooGoo.h" />
+    <ClInclude Include="Mappers\Malee.h" />
+    <ClInclude Include="Mappers\Mapper15.h" />
+    <ClInclude Include="Mappers\Mapper39.h" />
+    <ClInclude Include="Mappers\Mapper40.h" />
+    <ClInclude Include="Mappers\Mapper42.h" />
+    <ClInclude Include="Mappers\Mapper43.h" />
+    <ClInclude Include="Mappers\Mapper50.h" />
+    <ClInclude Include="Mappers\Mapper57.h" />
+    <ClInclude Include="Mappers\Mapper58.h" />
+    <ClInclude Include="Mappers\Mapper60.h" />
+    <ClInclude Include="Mappers\Mapper61.h" />
+    <ClInclude Include="Mappers\Mapper62.h" />
+    <ClInclude Include="Mappers\Mapper83.h" />
+    <ClInclude Include="Mappers\Mapper91.h" />
+    <ClInclude Include="Mappers\Mapper103.h" />
+    <ClInclude Include="Mappers\Mapper106.h" />
+    <ClInclude Include="Mappers\Mapper107.h" />
+    <ClInclude Include="Mappers\Mapper112.h" />
+    <ClInclude Include="Mappers\Mapper116.h" />
+    <ClInclude Include="Mappers\Mapper117.h" />
+    <ClInclude Include="Mappers\Mapper120.h" />
+    <ClInclude Include="Mappers\Mapper170.h" />
+    <ClInclude Include="Mappers\Mapper174.h" />
+    <ClInclude Include="Mappers\Mapper183.h" />
+    <ClInclude Include="Mappers\Mapper200.h" />
+    <ClInclude Include="Mappers\Mapper202.h" />
+    <ClInclude Include="Mappers\Mapper203.h" />
+    <ClInclude Include="Mappers\Mapper204.h" />
+    <ClInclude Include="Mappers\Mapper212.h" />
+    <ClInclude Include="Mappers\Mapper214.h" />
+    <ClInclude Include="Mappers\Mapper216.h" />
+    <ClInclude Include="Mappers\Mapper217.h" />
+    <ClInclude Include="Mappers\Mapper218.h" />
+    <ClInclude Include="Mappers\Mapper221.h" />
+    <ClInclude Include="Mappers\Mapper222.h" />
+    <ClInclude Include="Mappers\Mapper225.h" />
+    <ClInclude Include="Mappers\Mapper226.h" />
+    <ClInclude Include="Mappers\Mapper227.h" />
+    <ClInclude Include="Mappers\Mapper229.h" />
+    <ClInclude Include="Mappers\Mapper230.h" />
+    <ClInclude Include="Mappers\Mapper231.h" />
+    <ClInclude Include="Mappers\Mapper233.h" />
+    <ClInclude Include="Mappers\Mapper234.h" />
+    <ClInclude Include="Mappers\Mapper240.h" />
+    <ClInclude Include="Mappers\Mapper241.h" />
+    <ClInclude Include="Mappers\Mapper242.h" />
+    <ClInclude Include="Mappers\Mapper244.h" />
+    <ClInclude Include="Mappers\Mapper246.h" />
+    <ClInclude Include="Mappers\Mapper253.h" />
+    <ClInclude Include="Mappers\Mapper368.h" />
+    <ClInclude Include="Mappers\Mapper538.h" />
+    <ClInclude Include="Mappers\Mapper539.h" />
+    <ClInclude Include="Mappers\McAcc.h" />
+    <ClInclude Include="Mappers\MMC1.h" />
+    <ClInclude Include="Mappers\MMC1_105.h" />
+    <ClInclude Include="Mappers\MMC1_155.h" />
+    <ClInclude Include="Mappers\MMC1_374.h" />
+    <ClInclude Include="Mappers\MMC1_543.h" />
+    <ClInclude Include="Mappers\MMC2.h" />
+    <ClInclude Include="Mappers\MMC3.h" />
+    <ClInclude Include="Mappers\MMC3_12.h" />
+    <ClInclude Include="Mappers\MMC3_14.h" />
+    <ClInclude Include="Mappers\MMC3_37.h" />
+    <ClInclude Include="Mappers\MMC3_44.h" />
+    <ClInclude Include="Mappers\MMC3_45.h" />
+    <ClInclude Include="Mappers\MMC3_47.h" />
+    <ClInclude Include="Mappers\MMC3_49.h" />
+    <ClInclude Include="Mappers\MMC3_52.h" />
+    <ClInclude Include="Mappers\MMC3_114.h" />
+    <ClInclude Include="Mappers\MMC3_115.h" />
+    <ClInclude Include="Mappers\MMC3_121.h" />
+    <ClInclude Include="Mappers\MMC3_123.h" />
+    <ClInclude Include="Mappers\MMC3_126.h" />
+    <ClInclude Include="Mappers\MMC3_134.h" />
+    <ClInclude Include="Mappers\MMC3_165.h" />
+    <ClInclude Include="Mappers\MMC3_187.h" />
+    <ClInclude Include="Mappers\MMC3_189.h" />
+    <ClInclude Include="Mappers\MMC3_196.h" />
+    <ClInclude Include="Mappers\MMC3_197.h" />
+    <ClInclude Include="Mappers\MMC3_198.h" />
+    <ClInclude Include="Mappers\MMC3_199.h" />
+    <ClInclude Include="Mappers\MMC3_205.h" />
+    <ClInclude Include="Mappers\MMC3_208.h" />
+    <ClInclude Include="Mappers\MMC3_215.h" />
+    <ClInclude Include="Mappers\MMC3_217.h" />
+    <ClInclude Include="Mappers\MMC3_219.h" />
+    <ClInclude Include="Mappers\MMC3_224.h" />
+    <ClInclude Include="Mappers\MMC3_238.h" />
+    <ClInclude Include="Mappers\MMC3_245.h" />
+    <ClInclude Include="Mappers\MMC3_249.h" />
+    <ClInclude Include="Mappers\MMC3_250.h" />
+    <ClInclude Include="Mappers\MMC3_254.h" />
+    <ClInclude Include="Mappers\MMC3_267_377.h" />
+    <ClInclude Include="Mappers\MMC3_534.h" />
+    <ClInclude Include="Mappers\MMC3_Bmc411120C.h" />
+    <ClInclude Include="Mappers\MMC3_BmcF15.h" />
+    <ClInclude Include="Mappers\MMC3_ChrRam.h" />
+    <ClInclude Include="Mappers\MMC3_Coolboy.h" />
+    <ClInclude Include="Mappers\MMC3_Kof97.h" />
+    <ClInclude Include="Mappers\MMC3_MaliSB.h" />
+    <ClInclude Include="Mappers\MMC3_StreetHeroes.h" />
+    <ClInclude Include="Mappers\MMC4.h" />
+    <ClInclude Include="Mappers\MMC5.h" />
+    <ClInclude Include="Mappers\N715021.h" />
+    <ClInclude Include="Mappers\Namco108.h" />
+    <ClInclude Include="Mappers\Namco108_76.h" />
+    <ClInclude Include="Mappers\Namco108_88.h" />
+    <ClInclude Include="Mappers\Namco108_95.h" />
+    <ClInclude Include="Mappers\Namco108_154.h" />
+    <ClInclude Include="Mappers\Namco163.h" />
+    <ClInclude Include="Mappers\Nanjing.h" />
+    <ClInclude Include="Mappers\Nanjing163.h" />
+    <ClInclude Include="Mappers\Nina01.h" />
+    <ClInclude Include="Mappers\Nina03_06.h" />
+    <ClInclude Include="Mappers\NovelDiamond.h" />
+    <ClInclude Include="Mappers\NROM.h" />
+    <ClInclude Include="Mappers\NsfCart31.h" />
+    <ClInclude Include="Mappers\NsfMapper.h" />
+    <ClInclude Include="Mappers\NtdecTc112.h" />
+    <ClInclude Include="Mappers\OekaKids.h" />
+    <ClInclude Include="Mappers\Racermate.h" />
+    <ClInclude Include="Mappers\Rambo1.h" />
+    <ClInclude Include="Mappers\Rambo1_158.h" />
+    <ClInclude Include="Mappers\Realtec8031.h" />
+    <ClInclude Include="Mappers\Realtec8210.h" />
+    <ClInclude Include="Mappers\ResetTxrom.h" />
+    <ClInclude Include="Mappers\Rt01.h" />
+    <ClInclude Include="Mappers\Sachen_133.h" />
+    <ClInclude Include="Mappers\Sachen_136.h" />
+    <ClInclude Include="Mappers\Sachen_143.h" />
+    <ClInclude Include="Mappers\Sachen_145.h" />
+    <ClInclude Include="Mappers\Sachen_147.h" />
+    <ClInclude Include="Mappers\Sachen_148.h" />
+    <ClInclude Include="Mappers\Sachen_149.h" />
+    <ClInclude Include="Mappers\Sachen74LS374N.h" />
+    <ClInclude Include="Mappers\Sachen8259.h" />
+    <ClInclude Include="Mappers\Sachen9602.h" />
+    <ClInclude Include="Mappers\SealieComputing.h" />
+    <ClInclude Include="Mappers\Smb2j.h" />
+    <ClInclude Include="Mappers\StudyBox.h" />
+    <ClInclude Include="Mappers\Subor166.h" />
+    <ClInclude Include="Mappers\Sunsoft3.h" />
+    <ClInclude Include="Mappers\Sunsoft4.h" />
+    <ClInclude Include="Mappers\Sunsoft89.h" />
+    <ClInclude Include="Mappers\Sunsoft93.h" />
+    <ClInclude Include="Mappers\Sunsoft184.h" />
+    <ClInclude Include="Mappers\SunsoftFme7.h" />
+    <ClInclude Include="Mappers\Super40in1Ws.h" />
+    <ClInclude Include="Mappers\Supervision.h" />
+    <ClInclude Include="Mappers\T230.h" />
+    <ClInclude Include="Mappers\T262.h" />
+    <ClInclude Include="Mappers\TaitoTc0190.h" />
+    <ClInclude Include="Mappers\TaitoTc0690.h" />
+    <ClInclude Include="Mappers\TaitoX1005.h" />
+    <ClInclude Include="Mappers\TaitoX1017.h" />
+    <ClInclude Include="Mappers\Tf1201.h" />
+    <ClInclude Include="Mappers\Txc22000.h" />
+    <ClInclude Include="Mappers\Txc22211A.h" />
+    <ClInclude Include="Mappers\Txc22211B.h" />
+    <ClInclude Include="Mappers\Txc22211C.h" />
+    <ClInclude Include="Mappers\TxSRom.h" />
+    <ClInclude Include="Mappers\Unl158B.h" />
+    <ClInclude Include="Mappers\Unl255in1.h" />
+    <ClInclude Include="Mappers\Unl8237A.h" />
+    <ClInclude Include="Mappers\UnlD1038.h" />
+    <ClInclude Include="Mappers\UnlDripGame.h" />
+    <ClInclude Include="Mappers\UnlPci556.h" />
+    <ClInclude Include="Mappers\UnlPuzzle.h" />
+    <ClInclude Include="Mappers\UNROM.h" />
+    <ClInclude Include="Mappers\UnRom_94.h" />
+    <ClInclude Include="Mappers\UnRom_180.h" />
+    <ClInclude Include="Mappers\UnRom512.h" />
+    <ClInclude Include="Mappers\VRC1.h" />
+    <ClInclude Include="Mappers\VRC2_4.h" />
+    <ClInclude Include="Mappers\VRC3.h" />
+    <ClInclude Include="Mappers\VRC6.h" />
+    <ClInclude Include="Mappers\VRC7.h" />
+    <ClInclude Include="Mappers\VsSystem.h" />
+    <ClInclude Include="Mappers\Waixing162.h" />
+    <ClInclude Include="Mappers\Waixing164.h" />
+    <ClInclude Include="Mappers\Waixing178.h" />
+    <ClInclude Include="Mappers\Waixing252.h" />
+    <ClInclude Include="Mappers\Yoko.h" />
+    <ClInclude Include="Mappers\YY850437C.h" />
+    <ClInclude Include="AsderKeyboard.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -1594,9 +1093,6 @@
     <ClCompile Include="RomLoader.cpp">
       <Filter>Nes\RomLoader</Filter>
     </ClCompile>
-    <ClCompile Include="FDS.cpp">
-      <Filter>Nes\Mappers\FDS</Filter>
-    </ClCompile>
     <ClCompile Include="VideoRenderer.cpp">
       <Filter>VideoDecoder</Filter>
     </ClCompile>
@@ -1618,9 +1114,6 @@
     <ClCompile Include="VsControlManager.cpp">
       <Filter>Nes</Filter>
     </ClCompile>
-    <ClCompile Include="BaseMapper.cpp">
-      <Filter>Nes\Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="ScaleFilter.cpp">
       <Filter>VideoDecoder</Filter>
     </ClCompile>
@@ -1635,9 +1128,6 @@
     </ClCompile>
     <ClCompile Include="GameDatabase.cpp">
       <Filter>Nes\RomLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="NsfMapper.cpp">
-      <Filter>Nes\Mappers</Filter>
     </ClCompile>
     <ClCompile Include="VideoHud.cpp">
       <Filter>VideoDecoder</Filter>
@@ -1802,6 +1292,27 @@
       <Filter>Debugger</Filter>
     </ClCompile>
     <ClCompile Include="StudyBoxLoader.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\BaseMapper.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\Coolgirl.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\FDS.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\Kaiser7030.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\Mapper538.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\Mapper539.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Mappers\NsfMapper.cpp">
       <Filter>Misc</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Coolgirl.h"
 #define PRG_MAPPED(prg_register) (((_prgBase & 0x1FFF) << 1) | (_prgBanks[prg_register] & ((~(_prgMask << 1) & 0xFE) | 1)))
 
