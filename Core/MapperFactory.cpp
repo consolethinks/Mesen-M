@@ -185,7 +185,6 @@
 #include "Mappers/MMC3_126.h"
 #include "Mappers/MMC3_134.h"
 #include "Mappers/MMC3_165.h"
-#include "Mappers/MMC3_182.h"
 #include "Mappers/MMC3_187.h"
 #include "Mappers/MMC3_189.h"
 #include "Mappers/MMC3_196.h"
@@ -505,7 +504,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 178: return new Waixing178();
 		case 179: return new Henggedianzi179();
 		case 180: return new UnRom_180();
-		case 182: return new MMC3_182();
+		case 182: return new MMC3_114();
 		case 183: return new Mapper183();
 		case 184: return new Sunsoft184();
 		case 185: return new CNROM(true);
