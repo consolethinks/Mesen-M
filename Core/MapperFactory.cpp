@@ -160,6 +160,7 @@
 #include "Mappers/Mapper246.h"
 #include "Mappers/Mapper253.h"
 #include "Mappers/Mapper368.h"
+#include "Mappers/Mapper428.h"
 #include "Mappers/Mapper538.h"
 #include "Mappers/Mapper539.h"
 #include "Mappers/McAcc.h"
@@ -737,7 +738,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 425: break; //
 		case 426: break; //
 		case 427: break; //
-		case 428: break; //
+		case 428: return new Mapper428();
 		// 429-430 aren't assigned
 		case 431: break; //
 		case 432: break; //
