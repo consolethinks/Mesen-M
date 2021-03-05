@@ -7,6 +7,7 @@
 #include "RomData.h"
 #include "VirtualFile.h"
 
+#include "Mappers/820401C.h"
 #include "Mappers/820720C.h"
 #include "Mappers/970630C.h"
 #include "Mappers/A65AS.h"
@@ -744,6 +745,8 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 432: break; //
 		case 433: break; //
 		case 434: break; //
+		case 435: break;
+		case 436: return new _820401C();
 		// 434-511 aren't assigned
 
 		case 512: break; // Zhongguo Daheng

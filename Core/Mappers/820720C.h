@@ -14,11 +14,13 @@ protected:
     uint32_t GetSaveRamSize() override { return 0x0000; }
     uint32_t GetWorkRamSize() override { return 0x0000; }
 
-    void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override {
+    void SelectPRGPage(uint16_t slot, uint16_t page, PrgMemoryType memoryType = PrgMemoryType::PrgRom) override
+    {
         BaseMapper::SelectPRGPage(slot, ((addrLatch & 0x07) << 4) | (page & 0x0F), memoryType);
     }
 
-    void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::ChrRom) override {
+    void SelectCHRPage(uint16_t slot, uint16_t page, ChrMemoryType memoryType = ChrMemoryType::ChrRom) override
+    {
         BaseMapper::SelectCHRPage(slot, ((addrLatch & 0x07) << 8) | (page & 0xFF), memoryType);
     }
 
