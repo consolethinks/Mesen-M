@@ -61,8 +61,10 @@ protected:
     void WriteRegister(uint16_t addr, uint8_t value) override
     {
         if(addr < 0x8000) {
-            _latch = value;
-            MMC3::UpdateState();
+            if((_state.RegA001 & 0xC0) == 0x80) {
+                _latch = value;
+                MMC3::UpdateState();
+            }
         } else {
             MMC3::WriteRegister(addr, value);
         }
