@@ -5,14 +5,7 @@
 #include "stdafx.h"
 #include "SimpleLock.h"
 #include "BaseCodec.h"
-
-enum class VideoCodec
-{
-	None = 0,
-	ZMBV = 1,
-	CSCD = 2,
-	GIF = 3
-};
+#include "AviWriterCodec.h"
 
 class AviWriter
 {

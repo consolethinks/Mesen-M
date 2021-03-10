@@ -7,6 +7,7 @@ using std::thread;
 #include "../Utilities/AutoResetEvent.h"
 #include "EmulationSettings.h"
 #include "FrameInfo.h"
+#include "VideoDecoderTypes.h"
 
 class BaseVideoFilter;
 class ScaleFilter;
@@ -15,13 +16,6 @@ class IRenderingDevice;
 class VideoHud;
 class Console;
 struct HdScreenInfo;
-
-struct ScreenSize
-{
-	int32_t Width;
-	int32_t Height;
-	double Scale;
-};
 
 class VideoDecoder
 {

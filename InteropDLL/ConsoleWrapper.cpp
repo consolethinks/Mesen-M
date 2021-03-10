@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+#include "ConsoleWrapper.h"
 #include "../Core/MessageManager.h"
 #include "../Core/NotificationManager.h"
 #include "../Core/Console.h"
@@ -102,19 +103,6 @@ namespace InteropEmu {
 		{
 			_callback((int)type, parameter);
 		}
-	};
-
-	struct InteropRomInfo
-	{
-		const char* RomName;
-		uint32_t Crc32;
-		uint32_t PrgCrc32;
-		RomFormat Format;
-		bool IsChrRam;
-		bool HasBusConflicts;
-		uint16_t MapperId;
-		uint32_t FilePrgOffset;
-		char Sha1[40];
 	};
 
 	extern "C" {
@@ -395,7 +383,7 @@ namespace InteropEmu {
 			}
 		}
 
-		DllExport void __stdcall GetRomInfo(InteropRomInfo &interopRomInfo, char* filename)
+		DllExport void __stdcall GetRomInfo(InteropDll::InteropRomInfo &interopRomInfo, char* filename)
 		{
 			string romPath = filename;
 			if(romPath.empty()) {
