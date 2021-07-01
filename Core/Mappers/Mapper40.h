@@ -3,7 +3,7 @@
 #include "BaseMapper.h"
 #include "CPU.h"
 
-class Mapper40 : public BaseMapper
+class Mapper40 : virtual public BaseMapper
 {
 private:
 	uint16_t _irqCounter;

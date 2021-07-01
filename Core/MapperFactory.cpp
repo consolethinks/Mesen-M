@@ -215,6 +215,7 @@
 #include "Mappers/MMC3_StreetHeroes.h"
 #include "Mappers/MMC4.h"
 #include "Mappers/MMC5.h"
+#include "Mappers/N49C-300.h"
 #include "Mappers/N715021.h"
 #include "Mappers/Namco108.h"
 #include "Mappers/Namco108_76.h"
@@ -680,7 +681,7 @@ BaseMapper* MapperFactory::GetMapperFromID(RomData &romData)
 		case 366: return new BmcGn45();
 		case 367: break; //
 		case 368: return new Mapper368();
-		case 369: break; //
+		case 369: return new N49C300();
 		case 370: break; //
 		case 371: break; //
 		case 372: break; //
