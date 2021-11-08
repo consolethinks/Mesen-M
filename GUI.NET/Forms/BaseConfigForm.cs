@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using Mesen.GUI.Config;
 using System.ComponentModel;
@@ -148,11 +148,13 @@ namespace Mesen.GUI.Forms
 
 		private void btnOK_Click(object sender, EventArgs e)
 		{
+			this.DialogResult = ((Button)sender).DialogResult;
 			this.Close();
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
+			this.DialogResult = ((Button)sender).DialogResult;
 			this.Close();
 		}
 	}
